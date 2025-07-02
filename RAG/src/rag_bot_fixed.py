@@ -61,38 +61,21 @@ class RAGBot:
             os.environ["AZURE_OPENAI_ENDPOINT"] = azure_config["endpoint"]
             os.environ["AZURE_OPENAI_DEPLOYMENT_NAME"] = azure_config["deployment"]
             os.environ["AZURE_OPENAI_EMBEDDING_DEPLOYMENT"] = azure_config["embedding_deployment"]
-            os.environ["AZURE_OPENAI_API_VERSION"] = azure_config.get("api_version", "2023-03-15-preview")
+            os.environ["AZURE_OPENAI_API_VERSION"] = azure_config.get(
+                "api_version", "2024-12-01-preview"
+            )
             try:
                 from langchain_openai import AzureOpenAIEmbeddings, AzureChatOpenAI
-                
-                # Debug info
-                st.info(f"🔍 Initializing Azure OpenAI Embeddings with:")
-                st.info(f"• Endpoint: {azure_config['endpoint']}")
-                st.info(f"• Embedding Deployment: {azure_config['embedding_deployment']}")
-                st.info(f"• API Version: {azure_config['api_version']}")
-                
-                # Set up Azure OpenAI embeddings with explicit parameters
                 self.embeddings = AzureOpenAIEmbeddings(
                     azure_deployment=azure_config["embedding_deployment"],
-                    openai_api_version=azure_config["api_version"],
+                    api_version=azure_config["api_version"],
                     azure_endpoint=azure_config["endpoint"],
-                    openai_api_key=azure_config["api_key"]
+                    api_key=azure_config["api_key"]
                 )
                 st.success("✅ Azure OpenAI API Key and deployments set!")
                 return True
             except Exception as e:
-                error_msg = str(e)
-                if "DeploymentNotFound" in error_msg:
-                    st.error("❌ **Deployment Not Found**: The embedding deployment doesn't exist!")
-                    st.error(f"• You entered: `{azure_config['embedding_deployment']}`")
-                    st.error("• From your Azure URL, it should be: `text-embedding-ada-002`")
-                    st.error("• Check your Azure AI Studio deployments to verify the exact name")
-                elif "404" in error_msg:
-                    st.error("❌ **Resource Not Found**: Check your Azure endpoint URL")
-                    st.error(f"• You entered: `{azure_config['endpoint']}`")
-                    st.error("• It should be: `https://liftr-platorm-service.openai.azure.com/`")
-                else:
-                    st.error(f"❌ Azure OpenAI error: {e}")
+                st.error(f"❌ Azure OpenAI error: {e}")
                 return False
         else:
             # Validate the API key first
@@ -196,36 +179,26 @@ class RAGBot:
         if provider == "azure" and azure_config:
             try:
                 from langchain_openai import AzureChatOpenAI
-                
-                # Debug info for chat model
-                st.info("🔍 Initializing Azure OpenAI Chat with:")
-                st.info(f"• Endpoint: {azure_config['endpoint']}")
-                st.info(f"• Chat Deployment: {azure_config['deployment']}")
-                st.info(f"• API Version: {azure_config['api_version']}")
-                
-                # Use explicit parameters for Azure OpenAI
                 llm = AzureChatOpenAI(
                     azure_deployment=azure_config["deployment"],
-                    openai_api_version=azure_config["api_version"],
+                    api_version=azure_config["api_version"],
+                    temperature=0.7,
                     azure_endpoint=azure_config["endpoint"],
-                    openai_api_key=azure_config["api_key"],
-                    temperature=0.7
+                    api_key=azure_config["api_key"]
                 )
             except Exception as e:
                 error_msg = str(e)
                 if "DeploymentNotFound" in error_msg:
                     st.error("❌ **Chat Deployment Not Found**!")
                     st.error(f"• You entered: `{azure_config['deployment']}`")
-                    st.error("• Check your Azure AI Studio deployments")
-                    st.error("• From your URL, it should be: `gpt-4.1`")
-                    st.error("• Make sure the deployment exists and is active")
-                elif "OperationNotSupported" in error_msg and "embedding" in error_msg:
-                    st.error("❌ **Configuration Error**: You're using an embedding model for chat! Please check your Azure deployments:")
-                    st.error("• **Chat Deployment** should be a GPT model (gpt-35-turbo, gpt-4, etc.)")
-                    st.error("• **Embedding Deployment** should be text-embedding-ada-002")
-                    st.error("You need TWO separate deployments in Azure!")
+                    st.error("• Check your Azure AI Studio deployments for the exact name")
+                    st.error("• Common names: `gpt-4.1`, `gpt-35-turbo`, `gpt-4`")
+                    st.error("• Make sure the deployment is 'Succeeded' status")
+                elif "404" in error_msg:
+                    st.error("❌ **Resource/Endpoint Error**!")
+                    st.error(f"• Check endpoint: `{azure_config['endpoint']}`")
                 else:
-                    st.error(f"Azure LLM error: {e}")
+                    st.error(f"❌ Azure LLM error: {e}")
                 return
         else:
             llm = ChatOpenAI(
@@ -247,13 +220,8 @@ class RAGBot:
             return "Please load documents first!", []
             
         try:
-            # Try the new invoke method first, fallback to old method if needed
-            try:
-                result = self.qa_chain.invoke({"query": question})
-            except Exception as invoke_error:
-                st.warning(f"Invoke method failed: {invoke_error}, trying legacy method...")
-                result = self.qa_chain({"query": question})
-            
+            # Use the newer invoke method instead of deprecated __call__
+            result = self.qa_chain.invoke({"query": question})
             answer = result["result"]
             source_docs = result["source_documents"]
             
@@ -290,30 +258,15 @@ def main():
         st.session_state.current_provider = "azure" if provider == "Azure OpenAI" else "openai"
         
         if provider == "Azure OpenAI":
-            st.info("📋 **Azure OpenAI Setup Guide:**")
-            st.markdown("""
-            - **Azure Endpoint**: Your Azure OpenAI resource URL (e.g., https://your-resource.openai.azure.com/)
-            - **Chat Deployment**: A GPT model deployment (gpt-35-turbo, gpt-4, etc.) - **REQUIRED for chat**
-            - **Embedding Deployment**: An embedding model (text-embedding-ada-002) - **REQUIRED for document processing**
-            - **API Key**: Found in Azure Portal under "Keys and Endpoint"
-            """)
-            
             azure_api_key = st.text_input("Azure API Key", type="password", value=os.getenv("AZURE_OPENAI_API_KEY", ""))
-            azure_endpoint = st.text_input("Azure Endpoint", value=os.getenv("AZURE_OPENAI_ENDPOINT", "https://liftr-platorm-service.openai.azure.com/"))
-            azure_deployment = st.text_input(
-                "Azure Chat Deployment Name",
-                value=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4.1"),
-                help="Chat model like gpt-35-turbo or gpt-4, NOT embedding"
+            azure_endpoint = st.text_input(
+                "Azure Endpoint", 
+                value=os.getenv("AZURE_OPENAI_ENDPOINT", 
+                               "https://liftr-platorm-service.cognitiveservices.azure.com/")
             )
-            azure_embedding_deployment = st.text_input("Azure Embedding Deployment Name", value=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-ada-002"), help="Usually text-embedding-ada-002")
-            azure_api_version = st.text_input("Azure API Version", value=os.getenv("AZURE_OPENAI_API_VERSION", "2023-03-15-preview"))
-            
-            # Validation warnings
-            if azure_deployment and "embedding" in azure_deployment.lower():
-                st.error("⚠️ **Chat Deployment Error**: You've entered an embedding model for chat. You need a separate GPT model deployment for chat functionality.")
-            
-            if azure_embedding_deployment and ("gpt" in azure_embedding_deployment.lower() or "turbo" in azure_embedding_deployment.lower()):
-                st.warning("⚠️ **Embedding Deployment Warning**: You've entered a chat model for embeddings. This should typically be 'text-embedding-ada-002'.")
+            azure_deployment = st.text_input("Azure Chat Deployment Name", value=os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4.1"))
+            azure_embedding_deployment = st.text_input("Azure Embedding Deployment Name", value=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-ada-002"))
+            azure_api_version = st.text_input("Azure API Version", value=os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview"))
             
             if azure_api_key and azure_endpoint and azure_deployment and azure_embedding_deployment:
                 azure_config = {
