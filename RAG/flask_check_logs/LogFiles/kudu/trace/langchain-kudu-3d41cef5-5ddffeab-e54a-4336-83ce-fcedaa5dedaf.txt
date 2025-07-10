@@ -1,0 +1,2 @@
+2025-07-02T07:10:28  Startup Request, url: /api/continuouswebjobs/?api-version=2022-09-01&stream=False, method: GET, type: request, pid: 770,1,5, ScmType: None
+2025-07-02T07:10:30    Outgoing response, type: response, statusCode: 404, statusText: NotFound

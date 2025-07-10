@@ -1,0 +1,15 @@
+<step title="Incoming Request" date="2025-07-02T07:49:57.597" instance="978fb3" url="/api/zipdeploy?isAsync=true" method="POST" type="request" pid="768,1,17" Accept="*/*" Host="langchain-rag-bot-20250702123642.scm.azurewebsites.net" User-Agent="AZURECLI/2.58.0 (MSI)" Accept-Encoding="gzip, deflate" Authorization="Bea..." Cache-Control="no-cache" Content-Type="application/octet-stream" Content-Length="10356" x-ms-client-request-id="2143618e-5719-11f0-8b89-99c40e872c42" X-ARR-LOG-ID="2143618e-5719-11f0-8b89-99c40e872c42" CLIENT-IP="4.194.122.144:25228" X-SITE-DEPLOYMENT-ID="langchain-rag-bot-20250702123642" WAS-DEFAULT-HOSTNAME="langchain-rag-bot-20250702123642.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/zipdeploy?isAsync=true" X-Client-IP="4.194.122.144" X-Client-Port="25228" >
+  <step title="Cleanup Xml Logs" date="2025-07-02T07:49:57.615" /><!-- duration: 11ms -->
+  <step title="ZipPushDeploy" date="2025-07-02T07:49:57.642" >
+    <step title="ZipDeploy. Extract zip. Remote build." date="2025-07-02T07:49:57.654" /><!-- duration: 5ms -->
+    <step title="Starting PushDeployAsync" date="2025-07-02T07:49:57.668" /><!-- duration: 3ms -->
+    <step title="Writing artifact to /tmp/zipdeploy/691931a9-c09f-4acf-8199-b970b5e2e558.zip" date="2025-07-02T07:49:57.687" >
+      <step title="Writing multipart request body to /tmp/zipdeploy/691931a9-c09f-4acf-8199-b970b5e2e558.zip" date="2025-07-02T07:49:57.690" /><!-- duration: 4ms -->
+    </step><!-- duration: 31ms -->
+    <step title="Start deployment in the background" date="2025-07-02T07:49:57.748" >
+      <step title="Acquiring Deployment Lock" date="2025-07-02T07:49:57.772" /><!-- duration: 4ms -->
+      <step title="Acquired Deployment Lock" date="2025-07-02T07:49:57.828" /><!-- duration: 4ms -->
+    </step><!-- duration: 198ms -->
+  </step><!-- duration: 314ms -->
+  <step title="Outgoing response" date="2025-07-02T07:49:57.983" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 3ms -->
+</step><!-- duration: 399ms -->

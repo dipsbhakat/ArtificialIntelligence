@@ -1,0 +1,80 @@
+2025-07-02T10:00:37.3044208Z,Updating submodules.,fadb3a72-1960-4076-82dc-b6847278fe0b,0
+2025-07-02T10:00:38.4801504Z,Preparing deployment for commit id 'db256359-7'.,44a1faac-8e70-4d34-9a54-ae88c2a8f288,0
+2025-07-02T10:00:38.8419582Z,PreDeployment: context.CleanOutputPath False,9755ffce-f8d2-4b2d-85c1-ba84a9041610,0
+2025-07-02T10:00:38.9877430Z,PreDeployment: context.OutputPath /home/site/wwwroot,a6d73a6a-ba5b-441a-9fc2-606fdd2649e2,0
+2025-07-02T10:00:39.1472708Z,Repository path is /tmp/zipdeploy/extracted,11681aa6-0ac9-479a-a68f-f3f1b604bbfa,0
+2025-07-02T10:00:39.3888284Z,Running oryx build...,66328e48-9ed5-45b8-a1d7-e75fa096c346,0
+	2025-07-02T10:00:39.4027864Z,Command: oryx build /tmp/zipdeploy/extracted -o /home/site/wwwroot --platform python --platform-version 3.11 -p virtualenv_name=antenv --log-file /tmp/build-debug.log  -i /tmp/8ddb94f4c1a18df --compress-destination-dir | tee /tmp/oryx-build.log,,0
+	2025-07-02T10:00:42.2655995Z,Operation performed by Microsoft Oryx&comma; https://github.com/Microsoft/Oryx,,0
+	2025-07-02T10:00:42.3149562Z,You can report issues at https://github.com/Microsoft/Oryx/issues,,0
+	2025-07-02T10:00:42.4006366Z,,,0
+	2025-07-02T10:00:42.4437675Z,Oryx Version: 0.2.20250611.1+0649de32f1279969c9023dd41b389cce4bb94493&comma; Commit: 0649de32f1279969c9023dd41b389cce4bb94493&comma; ReleaseTagName: 20250611.1,,0
+	2025-07-02T10:00:42.4714880Z,,,0
+	2025-07-02T10:00:42.5267254Z,Build Operation ID: 0165ae7394afd34e,,0
+	2025-07-02T10:00:42.5567783Z,Repository Commit : db256359-7fd1-46c8-a608-806ce715a142,,0
+	2025-07-02T10:00:42.5967933Z,OS Type           : bullseye,,0
+	2025-07-02T10:00:42.6436483Z,Image Type        : githubactions,,0
+	2025-07-02T10:00:42.6897149Z,,,0
+	2025-07-02T10:00:42.7170115Z,Primary SDK Storage URL: https://oryxsdks-cdn.azureedge.net,,0
+	2025-07-02T10:00:42.7730517Z,Backup SDK Storage URL: https://oryx-cdn.microsoft.io,,0
+	2025-07-02T10:00:42.8126750Z,Detecting platforms...,,0
+	2025-07-02T10:00:42.8762302Z,External SDK provider is enabled.,,0
+	2025-07-02T10:00:42.8982962Z,Requesting metadata for platform python from external SDK provider,,0
+	2025-07-02T10:00:44.2936741Z,Requesting metadata for platform python from external SDK provider,,0
+	2025-07-02T10:00:44.4698970Z,Detected following platforms:,,0
+	2025-07-02T10:00:44.5061478Z,  python: 3.11.12,,0
+	2025-07-02T10:00:44.5445675Z,Requesting metadata for platform python from external SDK provider,,0
+	2025-07-02T10:00:48.0747351Z,Version '3.11.12' of platform 'python' is not installed. Generating script to install it...,,0
+	2025-07-02T10:00:48.1516666Z,,,0
+	2025-07-02T10:00:48.1992932Z,Using intermediate directory '/tmp/8ddb94f4c1a18df'.,,0
+	2025-07-02T10:00:48.2279662Z,,,0
+	2025-07-02T10:00:48.2679198Z,Copying files to the intermediate directory...,,0
+	2025-07-02T10:00:48.3054503Z,Done in 0 sec(s).,,0
+	2025-07-02T10:00:48.3346788Z,,,0
+	2025-07-02T10:00:48.3653026Z,Source directory     : /tmp/8ddb94f4c1a18df,,0
+	2025-07-02T10:00:48.4013513Z,Destination directory: /home/site/wwwroot,,0
+	2025-07-02T10:00:48.4386551Z,,,0
+	2025-07-02T10:00:48.4710367Z,,,0
+	2025-07-02T10:00:48.5081432Z,Downloading and extracting 'python' version '3.11.12' to '/tmp/oryx/platforms/python/3.11.12'...,,0
+	2025-07-02T10:00:48.5363350Z,Detected image debian flavor: bullseye.,,0
+	2025-07-02T10:00:48.7389781Z,Skipping download of python version 3.11.12 as it is available in external sdk provider cache...,,0
+	2025-07-02T10:00:48.7556932Z,Extracting contents...,,0
+	2025-07-02T10:01:15.7357950Z,Successfully extracted python version 3.11.12 from external sdk provider cache...,,0
+	2025-07-02T10:01:15.9483656Z,Done in 28 sec(s).,,0
+	2025-07-02T10:01:15.9859772Z,,,0
+	2025-07-02T10:01:16.0241559Z,image detector file exists&comma; platform is python..,,0
+	2025-07-02T10:01:16.0632867Z,OS detector file exists&comma; OS is bullseye..,,0
+	2025-07-02T10:01:16.3713487Z,Python Version: /tmp/oryx/platforms/python/3.11.12/bin/python3.11,,0
+	2025-07-02T10:01:16.4084690Z,Creating directory for command manifest file if it does not exist,,0
+	2025-07-02T10:01:16.4784826Z,Removing existing manifest file,,0
+	2025-07-02T10:01:16.5437478Z,Python Virtual Environment: antenv,,0
+	2025-07-02T10:01:16.6327391Z,Creating virtual environment...,,0
+	2025-07-02T10:01:37.5047191Z,Activating virtual environment...,,0
+	2025-07-02T10:01:37.5715954Z,Could not find setup.py or requirements.txt; Not running pip install. More information: https://aka.ms/requirements-not-found,,0
+	2025-07-02T10:01:37.6159876Z,Not a vso image&comma; so not writing build commands,,0
+	2025-07-02T10:01:37.6742918Z,Preparing output...,,0
+	2025-07-02T10:01:37.7318454Z,,,0
+	2025-07-02T10:01:37.7637104Z,Copying files to destination directory '/tmp/_preCompressedDestinationDir'...,,0
+	2025-07-02T10:01:39.1094077Z,Done in 2 sec(s).,,0
+	2025-07-02T10:01:39.2146991Z,Compressing content of directory '/tmp/_preCompressedDestinationDir'...,,0
+	2025-07-02T10:01:43.6872879Z,Copied the compressed output to '/home/site/wwwroot',,0
+	2025-07-02T10:01:43.8169523Z,,,0
+	2025-07-02T10:01:43.8375476Z,Removing existing manifest file,,0
+	2025-07-02T10:01:43.8653750Z,Creating a manifest file...,,0
+	2025-07-02T10:01:43.9052378Z,Manifest file created.,,0
+	2025-07-02T10:01:43.9424837Z,Copying .ostype to manifest output directory.,,0
+	2025-07-02T10:01:43.9688565Z,,,0
+	2025-07-02T10:01:44.0079245Z,Done in 56 sec(s).,,0
+2025-07-02T10:01:44.2361986Z,Running post deployment command(s)...,85ca98ec-913b-4328-8e6d-52af5f425aa0,0
+2025-07-02T10:01:44.3993813Z,,6d086a8f-55b7-4f8a-b39a-be23ed771f97,0
+2025-07-02T10:01:44.5553063Z,Generating summary of Oryx build,689382f0-5fb0-462b-8e6d-c39b846f5514,0
+2025-07-02T10:01:44.7314752Z,Parsing the build logs,53d1125b-058d-46d7-b890-36f01302c78a,0
+2025-07-02T10:01:44.9092887Z,Found 0 issue(s),560960f3-8279-421e-a936-b72dbe8bf79c,0
+2025-07-02T10:01:45.0476528Z,,9df782b9-c83a-412a-836e-f008c84f476f,0
+2025-07-02T10:01:45.2155649Z,Build Summary :,fa4f35e0-d2d4-4071-90ea-06d91e2e254c,0
+2025-07-02T10:01:45.3428798Z,===============,f08b3e57-7070-4869-bf77-f40669944be9,0
+2025-07-02T10:01:45.5173248Z,Errors (0),1368087a-841e-4ce2-aaff-9c6c7c5db8a5,0
+2025-07-02T10:01:45.6582528Z,Warnings (0),292f6c72-3546-4a4a-9e40-e5d938935fb9,0
+2025-07-02T10:01:45.8390870Z,,a40ca91a-d5cd-4d49-a622-80d694fe84a0,0
+2025-07-02T10:01:46.0191495Z,Triggering recycle (preview mode disabled).,78b99fbf-adb4-4ad9-97a4-5ea1ce1cd54a,0
+2025-07-02T10:01:46.2596174Z,Deployment successful. deployer = Push-Deployer deploymentPath = ZipDeploy. Extract zip. Remote build.,67ba5c7e-2676-4538-b841-4fa67a542f81,0

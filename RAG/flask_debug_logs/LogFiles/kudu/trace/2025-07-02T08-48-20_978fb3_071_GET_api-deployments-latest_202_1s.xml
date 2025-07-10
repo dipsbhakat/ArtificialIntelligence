@@ -1,0 +1,11 @@
+<step title="Incoming Request" date="2025-07-02T08:48:20.735" instance="978fb3" url="/api/deployments/latest" method="GET" type="request" pid="767,1,25" Accept="*/*" Host="langchain-rag-bot-20250702123642.scm.azurewebsites.net" User-Agent="AZURECLI/2.58.0 (MSI)" Accept-Encoding="gzip, deflate" Authorization="Bea..." x-ms-client-request-id="47d59d02-5720-11f0-8839-99c40e872c42" X-ARR-LOG-ID="47d59d02-5720-11f0-8839-99c40e872c42" CLIENT-IP="4.194.122.136:19716" X-SITE-DEPLOYMENT-ID="langchain-rag-bot-20250702123642" WAS-DEFAULT-HOSTNAME="langchain-rag-bot-20250702123642.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/deployments/latest" X-Client-IP="4.194.122.136" X-Client-Port="19716" >
+  <step title="Cleanup Xml Logs" date="2025-07-02T08:48:20.739" >
+    <step title="Cleanup Infos" date="2025-07-02T08:48:20.763" totalFiles="409" totalCleanup="249" /><!-- duration: 12ms -->
+  </step><!-- duration: 39ms -->
+  <step title="DeploymentService.GetResult" date="2025-07-02T08:48:20.789" >
+    <step title="DeploymentService.GetLatestDeployment" date="2025-07-02T08:48:20.792" >
+      <step title="DeploymentManager.GetResults" date="2025-07-02T08:48:20.796" /><!-- duration: 480ms -->
+    </step><!-- duration: 489ms -->
+  </step><!-- duration: 496ms -->
+  <step title="Outgoing response" date="2025-07-02T08:48:21.300" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 7ms -->
+</step><!-- duration: 582ms -->

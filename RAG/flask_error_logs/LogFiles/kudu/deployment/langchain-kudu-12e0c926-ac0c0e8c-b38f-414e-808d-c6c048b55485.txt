@@ -1,0 +1,56 @@
+2025-07-02T10:09:47  Fetching changes.
+2025-07-02T10:09:47    Starting  LocalZipHandler
+2025-07-02T10:09:47    Cleaning up temp folders from previous zip deployments and extracting pushed zip file /tmp/zipdeploy/978a639f-a807-44a4-8c17-0e77bd26f7cb.zip (0.49 MB) to /tmp/zipdeploy/extracted
+2025-07-02T10:09:53  Updating submodules.
+2025-07-02T10:09:53  Preparing deployment for commit id '383ffaba-4'.
+2025-07-02T10:09:54  PreDeployment: context.CleanOutputPath False
+2025-07-02T10:09:54  PreDeployment: context.OutputPath /home/site/wwwroot
+2025-07-02T10:09:54  Repository path is /tmp/zipdeploy/extracted
+2025-07-02T10:09:55  Running oryx build...
+2025-07-02T10:09:55    Command: oryx build /tmp/zipdeploy/extracted -o /home/site/wwwroot --platform python --platform-version 3.11 -p virtualenv_name=antenv --log-file /tmp/build-debug.log  -i /tmp/8ddb95097255a21 --compress-destination-dir | tee /tmp/oryx-build.log
+2025-07-02T10:09:57    Operation performed by Microsoft Oryx, https://github.com/Microsoft/Oryx
+2025-07-02T10:09:57    You can report issues at https://github.com/Microsoft/Oryx/issues
+2025-07-02T10:09:57    
+2025-07-02T10:09:57    Oryx Version: 0.2.20250611.1+0649de32f1279969c9023dd41b389cce4bb94493, Commit: 0649de32f1279969c9023dd41b389cce4bb94493, ReleaseTagName: 20250611.1
+2025-07-02T10:09:57    
+2025-07-02T10:09:57    Build Operation ID: 61f554449f678a28
+2025-07-02T10:09:57    Repository Commit : 383ffaba-4506-4418-89ed-1a510e8206e4
+2025-07-02T10:09:57    OS Type           : bullseye
+2025-07-02T10:09:57    Image Type        : githubactions
+2025-07-02T10:09:57    
+2025-07-02T10:09:57    Primary SDK Storage URL: https://oryxsdks-cdn.azureedge.net
+2025-07-02T10:09:57    Backup SDK Storage URL: https://oryx-cdn.microsoft.io
+2025-07-02T10:09:57    Detecting platforms...
+2025-07-02T10:09:57    External SDK provider is enabled.
+2025-07-02T10:09:58    Requesting metadata for platform python from external SDK provider
+2025-07-02T10:09:58    Requesting metadata for platform python from external SDK provider
+2025-07-02T10:09:58    Detected following platforms:
+2025-07-02T10:09:58      python: 3.11.12
+2025-07-02T10:09:58    Requesting metadata for platform python from external SDK provider
+2025-07-02T10:10:01    Version '3.11.12' of platform 'python' is not installed. Generating script to install it...
+2025-07-02T10:10:04    
+2025-07-02T10:10:05    Using intermediate directory '/tmp/8ddb95097255a21'.
+2025-07-02T10:10:05    
+2025-07-02T10:10:05    Copying files to the intermediate directory...
+2025-07-02T10:10:07    Done in 2 sec(s).
+2025-07-02T10:10:07    
+2025-07-02T10:10:08    Source directory     : /tmp/8ddb95097255a21
+2025-07-02T10:10:08    Destination directory: /home/site/wwwroot
+2025-07-02T10:10:08    
+2025-07-02T10:10:08    
+2025-07-02T10:10:08    Downloading and extracting 'python' version '3.11.12' to '/tmp/oryx/platforms/python/3.11.12'...
+2025-07-02T10:10:08    Detected image debian flavor: bullseye.
+2025-07-02T10:10:08    Skipping download of python version 3.11.12 as it is available in external sdk provider cache...
+2025-07-02T10:10:08    Extracting contents...
+2025-07-02T10:10:29    Successfully extracted python version 3.11.12 from external sdk provider cache...
+2025-07-02T10:10:29    Done in 20 sec(s).
+2025-07-02T10:10:29    
+2025-07-02T10:10:29    image detector file exists, platform is python..
+2025-07-02T10:10:29    OS detector file exists, OS is bullseye..
+2025-07-02T10:10:29    Python Version: /tmp/oryx/platforms/python/3.11.12/bin/python3.11
+2025-07-02T10:10:29    Creating directory for command manifest file if it does not exist
+2025-07-02T10:10:29    Removing existing manifest file
+2025-07-02T10:10:30    Python Virtual Environment: antenv
+2025-07-02T10:10:31    Creating virtual environment...
+2025-07-02T10:10:47    Activating virtual environment...
+2025-07-02T10:10:47    Running pip install...

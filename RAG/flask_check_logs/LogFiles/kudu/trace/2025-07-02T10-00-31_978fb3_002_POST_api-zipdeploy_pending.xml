@@ -1,0 +1,18 @@
+<step title="Incoming Request" date="2025-07-02T10:00:31.139" instance="978fb3" url="/api/zipdeploy?isAsync=true" method="POST" type="request" pid="768,1,7" Accept="*/*" Host="langchain-rag-bot-20250702123642.scm.azurewebsites.net" User-Agent="AZURECLI/2.58.0 (MSI)" Accept-Encoding="gzip, deflate" Authorization="Bea..." Cache-Control="no-cache" Content-Type="application/octet-stream" Content-Length="1455" x-ms-client-request-id="38588613-572b-11f0-acaa-99c40e872c42" X-ARR-LOG-ID="38588613-572b-11f0-acaa-99c40e872c42" CLIENT-IP="4.194.122.162:27717" X-SITE-DEPLOYMENT-ID="langchain-rag-bot-20250702123642" WAS-DEFAULT-HOSTNAME="langchain-rag-bot-20250702123642.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/zipdeploy?isAsync=true" X-Client-IP="4.194.122.162" X-Client-Port="27717" >
+  <step title="ZipPushDeploy" date="2025-07-02T10:00:31.700" >
+    <step title="ZipDeploy. Extract zip. Remote build." date="2025-07-02T10:00:31.728" /><!-- duration: 9ms -->
+    <step title="None repository commit" date="2025-07-02T10:00:31.748" >
+      <step title="Commit id: db256359-7fd1-46c8-a608-806ce715a142" date="2025-07-02T10:00:31.753" Message="N/A" AuthorName="N/A" AuthorEmail="N/A" /><!-- duration: 7ms -->
+    </step><!-- duration: 18ms -->
+    <step title="Starting PushDeployAsync" date="2025-07-02T10:00:31.784" /><!-- duration: 22ms -->
+    <step title="Writing artifact to /tmp/zipdeploy/513e3c4b-0f03-479d-aff0-82e11f5b77c3.zip" date="2025-07-02T10:00:31.911" >
+      <step title="Writing multipart request body to /tmp/zipdeploy/513e3c4b-0f03-479d-aff0-82e11f5b77c3.zip" date="2025-07-02T10:00:31.923" /><!-- duration: 10ms -->
+    </step><!-- duration: 69ms -->
+    <step title="Removing previous build artifact&apos;s manifest file" date="2025-07-02T10:00:32.029" >
+      <step title="Start deployment in the background" date="2025-07-02T10:00:32.124" >
+        <step title="Acquiring Deployment Lock" date="2025-07-02T10:00:32.193" /><!-- duration: 35ms -->
+        <step title="Acquired Deployment Lock" date="2025-07-02T10:00:32.385" /><!-- duration: 28ms -->
+      </step><!-- duration: 800ms -->
+    </step><!-- duration: 927ms -->
+    <step title="Outgoing response" date="2025-07-02T10:00:33.122" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 36ms -->
+  </step><!-- duration: 1477ms -->

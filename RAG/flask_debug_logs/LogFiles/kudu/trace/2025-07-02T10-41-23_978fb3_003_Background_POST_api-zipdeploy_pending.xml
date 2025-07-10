@@ -1,0 +1,46 @@
+<step title="BackgroundTrace" date="2025-07-02T10:41:23.312" instance="978fb3" url="/api/zipdeploy" method="POST" >
+  <step title="Creating temporary deployment - FetchDeploymentManager" date="2025-07-02T10:41:23.562" /><!-- duration: 8ms -->
+  <step title="Creating temporary deployment" date="2025-07-02T10:41:23.590" /><!-- duration: 189ms -->
+  <step title="Performing fetch based deployment" date="2025-07-02T10:41:23.988" >
+    <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file /tmp/zipdeploy/0d108dfe-09c6-4e39-8e42-23e1622bcb60.zip (0.49 MB) to /tmp/zipdeploy/extracted" date="2025-07-02T10:41:25.477" >
+      <step title="ChmodRecursive Process exited with total time taken in ms: 790" date="2025-07-02T10:41:28.410" /><!-- duration: 46ms -->
+    </step><!-- duration: 2998ms -->
+    <step title="Deployment timer started" date="2025-07-02T10:41:30.524" >
+      <step title="DeploymentManager.Deploy(id:2f9f9796-e6cd-4dbc-afda-c820d0e780c3)" date="2025-07-02T10:41:30.635" >
+        <step title="Collecting changeset information" date="2025-07-02T10:41:30.760" /><!-- duration: 1040ms -->
+        <step title="Updating submodules" date="2025-07-02T10:41:31.942" /><!-- duration: 1517ms -->
+        <step title="Determining deployment builder" date="2025-07-02T10:41:34.154" >
+          <step title="Builder is OryxBuilder" date="2025-07-02T10:41:34.257" /><!-- duration: 11ms -->
+        </step><!-- duration: 142ms -->
+        <step title="PreDeployment: context.CleanOutputPath False" date="2025-07-02T10:41:34.470" >
+          <step title="PreDeployment: context.OutputPath /home/site/wwwroot" date="2025-07-02T10:41:34.810" >
+            <step title="Building" date="2025-07-02T10:41:35.123" >
+              <step title="Executing external process" date="2025-07-02T10:41:36.078" type="process" path="bash" arguments="-c &quot;oryx build /tmp/zipdeploy/extracted -o /home/site/wwwroot --platform python --platform-version 3.11 -p virtualenv_name=antenv --log-file /tmp/build-debug.log  -i /tmp/8ddb95503cc7386 --compress-destination-dir | tee /tmp/oryx-build.log ; exit $PIPESTATUS &quot;" >
+                <step title="Cpu: python(928,30.740s)+ts(929,0.120s)+build.sh(927,0.000s)+build.sh(926,0.000s)+build.sh(823,0.050s)+oryx(798,6.570s)+tee(799,0.000s)+bash(797,0.000s)=total(37.480s)" date="2025-07-02T10:44:30.437" /><!-- duration: 35ms -->
+                <step title="bash: no io activity for 61s, prev-cpu=-1.000s, current-cpu=37.480s" date="2025-07-02T10:44:30.483" /><!-- duration: 9ms -->
+                <step title="Cpu: python(928,58.120s)+ts(929,0.210s)+build.sh(927,0.000s)+build.sh(926,0.000s)+build.sh(823,0.070s)+oryx(798,6.650s)+tee(799,0.000s)+bash(797,0.000s)=total(65.040s)" date="2025-07-02T10:45:30.860" /><!-- duration: 27ms -->
+                <step title="bash: no io activity for 122s, prev-cpu=37.480s, current-cpu=65.040s" date="2025-07-02T10:45:30.924" /><!-- duration: 21ms -->
+                <step title="Error occurred" date="2025-07-02T10:46:31.534" type="error" text="GetParentProcessLinux (1110) failed.: Could not find a part of the path &apos;/proc/1110/stat&apos;." stackTrace="   at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadLines(String path)
+   at Kudu.Core.Infrastructure.ProcessExtensions.GetParentProcessLinux(Process process, ITracer tracer) in /tmp/KuduLite/Kudu.Core/Infrastructure/ProcessExtensions.cs:line 155" /><!-- duration: 19ms -->
+                <step title="Cpu: python(928,87.600s)+ts(929,0.260s)+build.sh(927,0.000s)+build.sh(926,0.000s)+build.sh(823,0.070s)+oryx(798,6.700s)+tee(799,0.000s)+bash(797,0.000s)=total(94.620s)" date="2025-07-02T10:46:31.620" /><!-- duration: 20ms -->
+                <step title="bash: no io activity for 182s, prev-cpu=65.040s, current-cpu=94.620s" date="2025-07-02T10:46:31.677" /><!-- duration: 11ms -->
+                <step title="Error occurred" date="2025-07-02T10:47:32.516" type="error" text="GetParentProcessLinux (1134) failed.: Could not find a part of the path &apos;/proc/1134/stat&apos;." stackTrace="   at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadLines(String path)
+   at Kudu.Core.Infrastructure.ProcessExtensions.GetParentProcessLinux(Process process, ITracer tracer) in /tmp/KuduLite/Kudu.Core/Infrastructure/ProcessExtensions.cs:line 155" /><!-- duration: 102ms -->
+                <step title="Cpu: python(928,119.260s)+ts(929,0.260s)+build.sh(927,0.000s)+build.sh(926,0.000s)+build.sh(823,0.070s)+oryx(798,6.770s)+tee(799,0.000s)+bash(797,0.000s)=total(126.350s)" date="2025-07-02T10:47:33.172" /><!-- duration: 93ms -->
+                <step title="bash: no io activity for 243s, prev-cpu=94.620s, current-cpu=126.350s" date="2025-07-02T10:47:33.286" /><!-- duration: 68ms -->
+                <step title="Cpu: python(928,152.610s)+ts(929,0.260s)+build.sh(927,0.000s)+build.sh(926,0.000s)+build.sh(823,0.070s)+oryx(798,6.810s)+tee(799,0.000s)+bash(797,0.000s)=total(159.750s)" date="2025-07-02T10:48:33.849" /><!-- duration: 21ms -->
+                <step title="bash: no io activity for 305s, prev-cpu=126.350s, current-cpu=159.750s" date="2025-07-02T10:48:33.945" /><!-- duration: 29ms -->
+                <step title="Cpu: python(928,197.190s)+ts(929,0.260s)+build.sh(927,0.000s)+build.sh(926,0.000s)+build.sh(823,0.070s)+oryx(798,6.850s)+tee(799,0.000s)+bash(797,0.000s)=total(204.370s)" date="2025-07-02T10:49:34.221" /><!-- duration: 19ms -->
+                <step title="bash: no io activity for 365s, prev-cpu=159.750s, current-cpu=204.370s" date="2025-07-02T10:49:34.284" /><!-- duration: 19ms -->
+                <step title="Cpu: gzip(1227,37.870s)+sh(1225,0.000s)+tar(1223,3.930s)+build.sh(823,0.090s)+oryx(798,8.040s)+tee(799,0.000s)+bash(797,0.000s)=total(49.920s)" date="2025-07-02T10:52:12.229" /><!-- duration: 56ms -->
+                <step title="bash: no io activity for 60s, prev-cpu=-1.000s, current-cpu=49.920s" date="2025-07-02T10:52:12.313" /><!-- duration: 30ms -->
+                <step title="Cpu: gzip(1227,64.910s)+sh(1225,0.000s)+tar(1223,6.810s)+build.sh(823,0.090s)+oryx(798,8.060s)+tee(799,0.000s)+bash(797,0.000s)=total(79.860s)" date="2025-07-02T10:53:12.792" /><!-- duration: 28ms -->
+                <step title="bash: no io activity for 121s, prev-cpu=49.920s, current-cpu=79.860s" date="2025-07-02T10:53:12.849" /><!-- duration: 40ms -->

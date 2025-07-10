@@ -1,0 +1,946 @@
+2025-07-02T10:17:11.0296932Z,Updating submodules.,dfc27679-ac87-4bc4-a7ef-4d7d394d3800,0
+2025-07-02T10:17:13.3632797Z,Preparing deployment for commit id 'a41c121f-8'.,6dbc1674-4e09-4e3b-a8be-ef0945ee2ed9,0
+2025-07-02T10:17:14.0700456Z,PreDeployment: context.CleanOutputPath False,6c0b8161-a18b-4cb1-8b4d-dca642a96b6c,0
+2025-07-02T10:17:14.2935510Z,PreDeployment: context.OutputPath /home/site/wwwroot,422edb38-02c2-4aa8-bf2a-690ed237b6c5,0
+2025-07-02T10:17:14.5556759Z,Repository path is /tmp/zipdeploy/extracted,70c25173-4970-40b7-8bdd-68b1ff225aba,0
+2025-07-02T10:17:14.8119408Z,Running oryx build...,876dc56a-6fa3-4bf0-9568-0e0aee666dd1,0
+	2025-07-02T10:17:14.8600538Z,Command: oryx build /tmp/zipdeploy/extracted -o /home/site/wwwroot --platform python --platform-version 3.11 -p virtualenv_name=antenv --log-file /tmp/build-debug.log  -i /tmp/8ddb9519d389ae8 --compress-destination-dir | tee /tmp/oryx-build.log,,0
+	2025-07-02T10:17:28.7819300Z,Operation performed by Microsoft Oryx&comma; https://github.com/Microsoft/Oryx,,0
+	2025-07-02T10:17:28.8877326Z,You can report issues at https://github.com/Microsoft/Oryx/issues,,0
+	2025-07-02T10:17:29.1418621Z,,,0
+	2025-07-02T10:17:29.4050947Z,Oryx Version: 0.2.20250611.1+0649de32f1279969c9023dd41b389cce4bb94493&comma; Commit: 0649de32f1279969c9023dd41b389cce4bb94493&comma; ReleaseTagName: 20250611.1,,0
+	2025-07-02T10:17:29.6363955Z,,,0
+	2025-07-02T10:17:29.7700929Z,Build Operation ID: aa437620c51221ff,,0
+	2025-07-02T10:17:29.9255382Z,Repository Commit : a41c121f-82a5-4e8f-80be-be373287f752,,0
+	2025-07-02T10:17:30.0805942Z,OS Type           : bullseye,,0
+	2025-07-02T10:17:30.2429044Z,Image Type        : githubactions,,0
+	2025-07-02T10:17:30.3389635Z,,,0
+	2025-07-02T10:17:30.4842825Z,Primary SDK Storage URL: https://oryxsdks-cdn.azureedge.net,,0
+	2025-07-02T10:17:30.5511588Z,Backup SDK Storage URL: https://oryx-cdn.microsoft.io,,0
+	2025-07-02T10:17:30.6844072Z,Detecting platforms...,,0
+	2025-07-02T10:17:30.8863466Z,External SDK provider is enabled.,,0
+	2025-07-02T10:17:31.2127753Z,Requesting metadata for platform python from external SDK provider,,0
+	2025-07-02T10:17:33.8264472Z,Requesting metadata for platform python from external SDK provider,,0
+	2025-07-02T10:17:35.8143098Z,Detected following platforms:,,0
+	2025-07-02T10:17:35.8885864Z,  python: 3.11.12,,0
+	2025-07-02T10:17:35.9352408Z,Requesting metadata for platform python from external SDK provider,,0
+	2025-07-02T10:17:44.5569129Z,Version '3.11.12' of platform 'python' is not installed. Generating script to install it...,,0
+	2025-07-02T10:17:45.9830479Z,,,0
+	2025-07-02T10:17:46.1822277Z,Using intermediate directory '/tmp/8ddb9519d389ae8'.,,0
+	2025-07-02T10:17:46.2502235Z,,,0
+	2025-07-02T10:17:46.3326261Z,Copying files to the intermediate directory...,,0
+	2025-07-02T10:17:50.2360354Z,Done in 4 sec(s).,,0
+	2025-07-02T10:17:50.4759387Z,,,0
+	2025-07-02T10:17:50.4968363Z,Source directory     : /tmp/8ddb9519d389ae8,,0
+	2025-07-02T10:17:50.5174317Z,Destination directory: /home/site/wwwroot,,0
+	2025-07-02T10:17:50.5754511Z,,,0
+	2025-07-02T10:17:50.6947639Z,,,0
+	2025-07-02T10:17:50.8035561Z,Downloading and extracting 'python' version '3.11.12' to '/tmp/oryx/platforms/python/3.11.12'...,,0
+	2025-07-02T10:17:50.8989774Z,Detected image debian flavor: bullseye.,,0
+	2025-07-02T10:17:50.9586777Z,Skipping download of python version 3.11.12 as it is available in external sdk provider cache...,,0
+	2025-07-02T10:17:51.0232900Z,Extracting contents...,,0
+	2025-07-02T10:18:37.9417233Z,Successfully extracted python version 3.11.12 from external sdk provider cache...,,0
+	2025-07-02T10:18:38.0391538Z,Done in 47 sec(s).,,0
+	2025-07-02T10:18:38.1230157Z,,,0
+	2025-07-02T10:18:38.1542284Z,image detector file exists&comma; platform is python..,,0
+	2025-07-02T10:18:38.1806830Z,OS detector file exists&comma; OS is bullseye..,,0
+	2025-07-02T10:18:38.8222747Z,Python Version: /tmp/oryx/platforms/python/3.11.12/bin/python3.11,,0
+	2025-07-02T10:18:38.8711773Z,Creating directory for command manifest file if it does not exist,,0
+	2025-07-02T10:18:38.9832515Z,Removing existing manifest file,,0
+	2025-07-02T10:18:39.0521369Z,Python Virtual Environment: antenv,,0
+	2025-07-02T10:18:39.0913235Z,Creating virtual environment...,,0
+	2025-07-02T10:18:56.5149993Z,Activating virtual environment...,,0
+	2025-07-02T10:18:56.5841124Z,Running pip install...,,0
+	2025-07-02T10:25:07.5469735Z,[10:18:59+0000] Collecting langchain==0.1.0 (from -r requirements.txt (line 1)),,0
+	2025-07-02T10:25:07.6309859Z,[10:18:59+0000]   Downloading langchain-0.1.0-py3-none-any.whl.metadata (13 kB),,0
+	2025-07-02T10:25:07.6831576Z,[10:18:59+0000] Collecting langchain-community==0.0.10 (from -r requirements.txt (line 2)),,0
+	2025-07-02T10:25:07.7485516Z,[10:18:59+0000]   Downloading langchain_community-0.0.10-py3-none-any.whl.metadata (7.3 kB),,0
+	2025-07-02T10:25:07.7865194Z,[10:18:59+0000] Collecting langchain-openai==0.0.5 (from -r requirements.txt (line 3)),,0
+	2025-07-02T10:25:07.8079516Z,[10:18:59+0000]   Downloading langchain_openai-0.0.5-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:07.8440391Z,[10:19:00+0000] Collecting pypdf2==3.0.1 (from -r requirements.txt (line 4)),,0
+	2025-07-02T10:25:07.8746255Z,[10:19:00+0000]   Downloading pypdf2-3.0.1-py3-none-any.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:07.9210526Z,[10:19:00+0000] Collecting chromadb==0.4.22 (from -r requirements.txt (line 5)),,0
+	2025-07-02T10:25:07.9808784Z,[10:19:00+0000]   Downloading chromadb-0.4.22-py3-none-any.whl.metadata (7.3 kB),,0
+	2025-07-02T10:25:08.0387491Z,[10:19:00+0000] Collecting python-dotenv==1.0.0 (from -r requirements.txt (line 6)),,0
+	2025-07-02T10:25:08.0647814Z,[10:19:00+0000]   Downloading python_dotenv-1.0.0-py3-none-any.whl.metadata (21 kB),,0
+	2025-07-02T10:25:08.0937154Z,[10:19:00+0000] Collecting streamlit==1.29.0 (from -r requirements.txt (line 7)),,0
+	2025-07-02T10:25:08.1131127Z,[10:19:00+0000]   Downloading streamlit-1.29.0-py2.py3-none-any.whl.metadata (8.2 kB),,0
+	2025-07-02T10:25:08.1592969Z,[10:19:01+0000] Collecting openai<2.0.0&comma;>=1.10.0 (from -r requirements.txt (line 8)),,0
+	2025-07-02T10:25:08.1884130Z,[10:19:01+0000]   Downloading openai-1.93.0-py3-none-any.whl.metadata (29 kB),,0
+	2025-07-02T10:25:08.2113618Z,[10:19:01+0000] Collecting tiktoken==0.5.2 (from -r requirements.txt (line 9)),,0
+	2025-07-02T10:25:08.2863377Z,[10:19:01+0000]   Downloading tiktoken-0.5.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB),,0
+	2025-07-02T10:25:08.3252114Z,[10:19:01+0000] Collecting azure-identity==1.15.0 (from -r requirements.txt (line 12)),,0
+	2025-07-02T10:25:08.3829537Z,[10:19:01+0000]   Downloading azure_identity-1.15.0-py3-none-any.whl.metadata (75 kB),,0
+	2025-07-02T10:25:08.4383933Z,[10:19:01+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.4/75.4 kB 3.0 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:08.4783630Z,[10:19:01+0000] Collecting azure-keyvault-secrets==4.7.0 (from -r requirements.txt (line 13)),,0
+	2025-07-02T10:25:08.5288296Z,[10:19:01+0000]   Downloading azure_keyvault_secrets-4.7.0-py3-none-any.whl.metadata (28 kB),,0
+	2025-07-02T10:25:08.5855253Z,[10:19:02+0000] Collecting PyYAML>=5.3 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:08.6342292Z,[10:19:02+0000]   Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:08.6730417Z,[10:19:04+0000] Collecting SQLAlchemy<3&comma;>=1.4 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:08.7308684Z,[10:19:04+0000]   Downloading sqlalchemy-2.0.41-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB),,0
+	2025-07-02T10:25:08.7776183Z,[10:19:07+0000] Collecting aiohttp<4.0.0&comma;>=3.8.3 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:08.8374313Z,[10:19:07+0000]   Downloading aiohttp-3.12.13-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.6 kB),,0
+	2025-07-02T10:25:08.9164414Z,[10:19:07+0000] Collecting dataclasses-json<0.7&comma;>=0.5.7 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:08.9729024Z,[10:19:07+0000]   Downloading dataclasses_json-0.6.7-py3-none-any.whl.metadata (25 kB),,0
+	2025-07-02T10:25:09.0105330Z,[10:19:07+0000] Collecting jsonpatch<2.0&comma;>=1.33 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:09.0717574Z,[10:19:07+0000]   Downloading jsonpatch-1.33-py2.py3-none-any.whl.metadata (3.0 kB),,0
+	2025-07-02T10:25:09.1209002Z,[10:19:08+0000] Collecting langchain-core<0.2&comma;>=0.1.7 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:09.1494028Z,[10:19:08+0000]   Downloading langchain_core-0.1.53-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:09.1865611Z,[10:19:09+0000] Collecting langsmith<0.1.0&comma;>=0.0.77 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:09.2148666Z,[10:19:09+0000]   Downloading langsmith-0.0.92-py3-none-any.whl.metadata (9.9 kB),,0
+	2025-07-02T10:25:09.2459105Z,[10:19:09+0000] Collecting numpy<2&comma;>=1 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:09.2671769Z,[10:19:09+0000]   Downloading numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB),,0
+	2025-07-02T10:25:09.3056637Z,[10:19:09+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB 2.3 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:09.3429607Z,[10:19:10+0000] Collecting pydantic<3&comma;>=1 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:09.3810095Z,[10:19:10+0000]   Downloading pydantic-2.11.7-py3-none-any.whl.metadata (67 kB),,0
+	2025-07-02T10:25:09.4279733Z,[10:19:11+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━��━━━━━━━━━ 68.0/68.0 kB 96.0 kB/s eta 0:00:00,,0
+	2025-07-02T10:25:09.4487292Z,[10:19:11+0000] Collecting requests<3&comma;>=2 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:09.4878925Z,[10:19:11+0000]   Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB),,0
+	2025-07-02T10:25:09.5237077Z,[10:19:11+0000] Collecting tenacity<9.0.0&comma;>=8.1.0 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:09.5466931Z,[10:19:11+0000]   Downloading tenacity-8.5.0-py3-none-any.whl.metadata (1.2 kB),,0
+	2025-07-02T10:25:09.6027590Z,[10:19:12+0000] Collecting build>=1.0.3 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:09.6709264Z,[10:19:12+0000]   Downloading build-1.2.2.post1-py3-none-any.whl.metadata (6.5 kB),,0
+	2025-07-02T10:25:09.7286187Z,[10:19:13+0000] Collecting chroma-hnswlib==0.7.3 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:09.7967032Z,[10:19:13+0000]   Downloading chroma_hnswlib-0.7.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (252 bytes),,0
+	2025-07-02T10:25:09.8357978Z,[10:19:13+0000] Collecting fastapi>=0.95.2 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:09.8761056Z,[10:19:13+0000]   Downloading fastapi-0.115.14-py3-none-any.whl.metadata (27 kB),,0
+	2025-07-02T10:25:09.9342387Z,[10:19:14+0000] Collecting uvicorn>=0.18.3 (from uvicorn[standard]>=0.18.3->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:09.9628508Z,[10:19:14+0000]   Downloading uvicorn-0.35.0-py3-none-any.whl.metadata (6.5 kB),,0
+	2025-07-02T10:25:09.9940644Z,[10:19:14+0000] Collecting posthog>=2.4.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:10.0496100Z,[10:19:14+0000]   Downloading posthog-6.0.1-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:10.0882739Z,[10:19:14+0000] Collecting typing-extensions>=4.5.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:10.1271495Z,[10:19:14+0000]   Downloading typing_extensions-4.14.0-py3-none-any.whl.metadata (3.0 kB),,0
+	2025-07-02T10:25:10.1936957Z,[10:19:14+0000] Collecting pulsar-client>=3.1.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:10.2805133Z,[10:19:14+0000]   Downloading pulsar_client-3.7.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (1.2 kB),,0
+	2025-07-02T10:25:10.3582344Z,[10:19:15+0000] Collecting onnxruntime>=1.14.1 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:10.4461005Z,[10:19:15+0000]   Downloading onnxruntime-1.22.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (4.5 kB),,0
+	2025-07-02T10:25:10.5505555Z,[10:19:15+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:10.6940116Z,[10:19:15+0000]   Downloading opentelemetry_api-1.34.1-py3-none-any.whl.metadata (1.5 kB),,0
+	2025-07-02T10:25:10.7804684Z,[10:19:15+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:10.8286817Z,[10:19:15+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.34.1-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:10.9351711Z,[10:19:15+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:10.9925748Z,[10:19:15+0000]   Downloading opentelemetry_instrumentation_fastapi-0.55b1-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:11.0417923Z,[10:19:15+0000] Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:11.0821780Z,[10:19:16+0000]   Downloading opentelemetry_sdk-1.34.1-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:11.1306975Z,[10:19:16+0000] Collecting tokenizers>=0.13.2 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:11.1763588Z,[10:19:16+0000]   Downloading tokenizers-0.21.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:11.2353287Z,[10:19:16+0000] Collecting pypika>=0.48.9 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:11.2924011Z,[10:19:16+0000]   Downloading PyPika-0.48.9.tar.gz (67 kB),,0
+	2025-07-02T10:25:11.3513220Z,[10:19:16+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.3/67.3 kB 1.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:11.3896957Z,[10:19:17+0000]   Installing build dependencies: started,,0
+	2025-07-02T10:25:11.4467787Z,[10:19:25+0000]   Installing build dependencies: finished with status 'done',,0
+	2025-07-02T10:25:11.4926013Z,[10:19:25+0000]   Getting requirements to build wheel: started,,0
+	2025-07-02T10:25:11.5618919Z,[10:19:26+0000]   Getting requirements to build wheel: finished with status 'done',,0
+	2025-07-02T10:25:11.6373714Z,[10:19:26+0000]   Preparing metadata (pyproject.toml): started,,0
+	2025-07-02T10:25:11.6765581Z,[10:19:27+0000]   Preparing metadata (pyproject.toml): finished with status 'done',,0
+	2025-07-02T10:25:11.7252632Z,[10:19:28+0000] Collecting tqdm>=4.65.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:11.7639167Z,[10:19:28+0000]   Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB),,0
+	2025-07-02T10:25:11.8498845Z,[10:19:28+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 1.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:11.9004228Z,[10:19:28+0000] Collecting overrides>=7.3.1 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:11.9572951Z,[10:19:28+0000]   Downloading overrides-7.7.0-py3-none-any.whl.metadata (5.8 kB),,0
+	2025-07-02T10:25:11.9948494Z,[10:19:28+0000] Collecting importlib-resources (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:12.0427145Z,[10:19:28+0000]   Downloading importlib_resources-6.5.2-py3-none-any.whl.metadata (3.9 kB),,0
+	2025-07-02T10:25:12.0920882Z,[10:19:31+0000] Collecting grpcio>=1.58.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:12.1475915Z,[10:19:31+0000]   Downloading grpcio-1.73.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB),,0
+	2025-07-02T10:25:12.1865063Z,[10:19:32+0000] Collecting bcrypt>=4.0.1 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:12.2348598Z,[10:19:32+0000]   Downloading bcrypt-4.3.0-cp39-abi3-manylinux_2_28_x86_64.whl.metadata (10 kB),,0
+	2025-07-02T10:25:12.3011528Z,[10:19:32+0000] Collecting typer>=0.9.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:12.3763583Z,[10:19:32+0000]   Downloading typer-0.16.0-py3-none-any.whl.metadata (15 kB),,0
+	2025-07-02T10:25:12.4355147Z,[10:19:32+0000] Collecting kubernetes>=28.1.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:12.4745194Z,[10:19:32+0000]   Downloading kubernetes-33.1.0-py2.py3-none-any.whl.metadata (1.7 kB),,0
+	2025-07-02T10:25:12.5057210Z,[10:19:32+0000] Collecting mmh3>=4.0.1 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:12.5634847Z,[10:19:32+0000]   Downloading mmh3-5.1.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (16 kB),,0
+	2025-07-02T10:25:12.7128099Z,[10:19:33+0000] Collecting altair<6&comma;>=4.0 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:12.8191095Z,[10:19:33+0000]   Downloading altair-5.5.0-py3-none-any.whl.metadata (11 kB),,0
+	2025-07-02T10:25:12.8845898Z,[10:19:33+0000] Collecting blinker<2&comma;>=1.0.0 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:12.9142609Z,[10:19:33+0000]   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:12.9696409Z,[10:19:33+0000] Collecting cachetools<6&comma;>=4.0 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.0231834Z,[10:19:33+0000]   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB),,0
+	2025-07-02T10:25:13.0785262Z,[10:19:33+0000] Collecting click<9&comma;>=7.0 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.1193298Z,[10:19:33+0000]   Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:13.1646809Z,[10:19:33+0000] Collecting importlib-metadata<7&comma;>=1.4 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.2142421Z,[10:19:33+0000]   Downloading importlib_metadata-6.11.0-py3-none-any.whl.metadata (4.9 kB),,0
+	2025-07-02T10:25:13.2829076Z,[10:19:34+0000] Collecting packaging<24&comma;>=16.8 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.3586872Z,[10:19:34+0000]   Downloading packaging-23.2-py3-none-any.whl.metadata (3.2 kB),,0
+	2025-07-02T10:25:13.5446547Z,[10:19:34+0000] Collecting pandas<3&comma;>=1.3.0 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.5557673Z,[10:19:34+0000]   Downloading pandas-2.3.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (91 kB),,0
+	2025-07-02T10:25:13.6574429Z,[10:19:34+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.2/91.2 kB 1.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:13.6958848Z,[10:19:35+0000] Collecting pillow<11&comma;>=7.1.0 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.7038060Z,[10:19:35+0000]   Downloading pillow-10.4.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (9.2 kB),,0
+	2025-07-02T10:25:13.7134091Z,[10:19:36+0000] Collecting protobuf<5&comma;>=3.20 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.7235388Z,[10:19:36+0000]   Downloading protobuf-4.25.8-cp37-abi3-manylinux2014_x86_64.whl.metadata (541 bytes),,0
+	2025-07-02T10:25:13.7359364Z,[10:19:37+0000] Collecting pyarrow>=6.0 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.7452050Z,[10:19:37+0000]   Downloading pyarrow-20.0.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.3 kB),,0
+	2025-07-02T10:25:13.7537387Z,[10:19:37+0000] Collecting python-dateutil<3&comma;>=2.7.3 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.7890558Z,[10:19:37+0000]   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB),,0
+	2025-07-02T10:25:13.8669077Z,[10:19:38+0000] Collecting rich<14&comma;>=10.14.0 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:13.9914420Z,[10:19:38+0000]   Downloading rich-13.9.4-py3-none-any.whl.metadata (18 kB),,0
+	2025-07-02T10:25:14.0306824Z,[10:19:38+0000] Collecting toml<2&comma;>=0.10.1 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:14.1172679Z,[10:19:38+0000]   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB),,0
+	2025-07-02T10:25:14.1783948Z,[10:19:38+0000] Collecting tzlocal<6&comma;>=1.1 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:14.3009326Z,[10:19:38+0000]   Downloading tzlocal-5.3.1-py3-none-any.whl.metadata (7.6 kB),,0
+	2025-07-02T10:25:14.3462912Z,[10:19:38+0000] Collecting validators<1&comma;>=0.2 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:14.3856179Z,[10:19:38+0000]   Downloading validators-0.35.0-py3-none-any.whl.metadata (3.9 kB),,0
+	2025-07-02T10:25:14.4817342Z,[10:19:39+0000] Collecting gitpython!=3.1.19&comma;<4&comma;>=3.0.7 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:14.5200607Z,[10:19:39+0000]   Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB),,0
+	2025-07-02T10:25:14.5671149Z,[10:19:39+0000] Collecting pydeck<1&comma;>=0.8.0b4 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:14.6238693Z,[10:19:39+0000]   Downloading pydeck-0.9.1-py2.py3-none-any.whl.metadata (4.1 kB),,0
+	2025-07-02T10:25:14.7111814Z,[10:19:39+0000] Collecting tornado<7&comma;>=6.0.3 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:14.7416062Z,[10:19:39+0000]   Downloading tornado-6.5.1-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.8 kB),,0
+	2025-07-02T10:25:14.7808790Z,[10:19:39+0000] Collecting watchdog>=2.1.5 (from streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:14.8275996Z,[10:19:39+0000]   Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl.metadata (44 kB),,0
+	2025-07-02T10:25:14.8882288Z,[10:19:39+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.3/44.3 kB 984.2 kB/s eta 0:00:00,,0
+	2025-07-02T10:25:14.9565928Z,[10:19:41+0000] Collecting regex>=2022.1.18 (from tiktoken==0.5.2->-r requirements.txt (line 9)),,0
+	2025-07-02T10:25:15.0035399Z,[10:19:41+0000]   Downloading regex-2024.11.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB),,0
+	2025-07-02T10:25:15.0634184Z,[10:19:41+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 kB 731.2 kB/s eta 0:00:00,,0
+	2025-07-02T10:25:15.1390096Z,[10:19:41+0000] Collecting azure-core<2.0.0&comma;>=1.23.0 (from azure-identity==1.15.0->-r requirements.txt (line 12)),,0
+	2025-07-02T10:25:15.1802043Z,[10:19:41+0000]   Downloading azure_core-1.34.0-py3-none-any.whl.metadata (42 kB),,0
+	2025-07-02T10:25:15.2179826Z,[10:19:41+0000]      ━━━━━━���━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.9/42.9 kB 1.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:15.2389396Z,[10:19:42+0000] Collecting cryptography>=2.5 (from azure-identity==1.15.0->-r requirements.txt (line 12)),,0
+	2025-07-02T10:25:15.2567032Z,[10:19:42+0000]   Downloading cryptography-45.0.4-cp311-abi3-manylinux_2_28_x86_64.whl.metadata (5.7 kB),,0
+	2025-07-02T10:25:15.2866882Z,[10:19:43+0000] Collecting msal<2.0.0&comma;>=1.24.0 (from azure-identity==1.15.0->-r requirements.txt (line 12)),,0
+	2025-07-02T10:25:15.3551899Z,[10:19:43+0000]   Downloading msal-1.32.3-py3-none-any.whl.metadata (11 kB),,0
+	2025-07-02T10:25:15.4006133Z,[10:19:43+0000] Collecting msal-extensions<2.0.0&comma;>=0.3.0 (from azure-identity==1.15.0->-r requirements.txt (line 12)),,0
+	2025-07-02T10:25:15.4403298Z,[10:19:43+0000]   Downloading msal_extensions-1.3.1-py3-none-any.whl.metadata (7.8 kB),,0
+	2025-07-02T10:25:15.4714793Z,[10:19:43+0000] Collecting azure-common~=1.1 (from azure-keyvault-secrets==4.7.0->-r requirements.txt (line 13)),,0
+	2025-07-02T10:25:15.5480066Z,[10:19:43+0000]   Downloading azure_common-1.1.28-py2.py3-none-any.whl.metadata (5.0 kB),,0
+	2025-07-02T10:25:15.5941254Z,[10:19:43+0000] Collecting isodate>=0.6.1 (from azure-keyvault-secrets==4.7.0->-r requirements.txt (line 13)),,0
+	2025-07-02T10:25:15.6707433Z,[10:19:43+0000]   Downloading isodate-0.7.2-py3-none-any.whl.metadata (11 kB),,0
+	2025-07-02T10:25:15.7099365Z,[10:19:43+0000] Collecting anyio<5&comma;>=3.5.0 (from openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:15.7583797Z,[10:19:43+0000]   Downloading anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB),,0
+	2025-07-02T10:25:15.8261424Z,[10:19:43+0000] Collecting distro<2&comma;>=1.7.0 (from openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:15.8733778Z,[10:19:43+0000]   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:15.9293087Z,[10:19:43+0000] Collecting httpx<1&comma;>=0.23.0 (from openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:15.9587764Z,[10:19:43+0000]   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB),,0
+	2025-07-02T10:25:16.0137185Z,[10:19:44+0000] Collecting jiter<1&comma;>=0.4.0 (from openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:16.0720480Z,[10:19:44+0000]   Downloading jiter-0.10.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.2 kB),,0
+	2025-07-02T10:25:16.1104445Z,[10:19:44+0000] Collecting sniffio (from openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:16.1703827Z,[10:19:44+0000]   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB),,0
+	2025-07-02T10:25:16.2254748Z,[10:19:45+0000] Collecting aiohappyeyeballs>=2.5.0 (from aiohttp<4.0.0&comma;>=3.8.3->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:16.2559584Z,[10:19:45+0000]   Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:16.3045152Z,[10:19:45+0000] Collecting aiosignal>=1.1.2 (from aiohttp<4.0.0&comma;>=3.8.3->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:16.3424645Z,[10:19:45+0000]   Downloading aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB),,0
+	2025-07-02T10:25:16.4059449Z,[10:19:45+0000] Collecting attrs>=17.3.0 (from aiohttp<4.0.0&comma;>=3.8.3->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:16.4458296Z,[10:19:45+0000]   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB),,0
+	2025-07-02T10:25:16.5042586Z,[10:19:46+0000] Collecting frozenlist>=1.1.1 (from aiohttp<4.0.0&comma;>=3.8.3->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:16.5434081Z,[10:19:46+0000]   Downloading frozenlist-1.7.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (18 kB),,0
+	2025-07-02T10:25:16.6028295Z,[10:19:48+0000] Collecting multidict<7.0&comma;>=4.5 (from aiohttp<4.0.0&comma;>=3.8.3->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:16.6595500Z,[10:19:48+0000]   Downloading multidict-6.6.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.3 kB),,0
+	2025-07-02T10:25:16.7252298Z,[10:19:48+0000] Collecting propcache>=0.2.0 (from aiohttp<4.0.0&comma;>=3.8.3->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:16.7761277Z,[10:19:48+0000]   Downloading propcache-0.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB),,0
+	2025-07-02T10:25:16.8247923Z,[10:19:49+0000] Collecting yarl<2.0&comma;>=1.17.0 (from aiohttp<4.0.0&comma;>=3.8.3->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:16.8634157Z,[10:19:49+0000]   Downloading yarl-1.20.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (73 kB),,0
+	2025-07-02T10:25:16.9136026Z,[10:19:49+0000]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.9/73.9 kB 2.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:16.9698946Z,[10:19:49+0000] Collecting jinja2 (from altair<6&comma;>=4.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:17.0070818Z,[10:19:49+0000]   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB),,0
+	2025-07-02T10:25:17.0674065Z,[10:19:50+0000] Collecting jsonschema>=3.0 (from altair<6&comma;>=4.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:17.1141006Z,[10:19:50+0000]   Downloading jsonschema-4.24.0-py3-none-any.whl.metadata (7.8 kB),,0
+	2025-07-02T10:25:17.1535078Z,[10:19:50+0000] Collecting narwhals>=1.14.2 (from altair<6&comma;>=4.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:17.1937883Z,[10:19:50+0000]   Downloading narwhals-1.45.0-py3-none-any.whl.metadata (11 kB),,0
+	2025-07-02T10:25:17.2315619Z,[10:19:50+0000] Collecting idna>=2.8 (from anyio<5&comma;>=3.5.0->openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:17.2690538Z,[10:19:50+0000]   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB),,0
+	2025-07-02T10:25:17.3081422Z,[10:19:51+0000] Collecting six>=1.11.0 (from azure-core<2.0.0&comma;>=1.23.0->azure-identity==1.15.0->-r requirements.txt (line 12)),,0
+	2025-07-02T10:25:17.3283342Z,[10:19:51+0000]   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB),,0
+	2025-07-02T10:25:17.4032045Z,[10:19:51+0000] Collecting pyproject_hooks (from build>=1.0.3->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:17.4421219Z,[10:19:51+0000]   Downloading pyproject_hooks-1.2.0-py3-none-any.whl.metadata (1.3 kB),,0
+	2025-07-02T10:25:17.5209499Z,[10:19:52+0000] Collecting cffi>=1.14 (from cryptography>=2.5->azure-identity==1.15.0->-r requirements.txt (line 12)),,0
+	2025-07-02T10:25:17.6084972Z,[10:19:52+0000]   Downloading cffi-1.17.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB),,0
+	2025-07-02T10:25:17.6764309Z,[10:19:52+0000] Collecting marshmallow<4.0.0&comma;>=3.18.0 (from dataclasses-json<0.7&comma;>=0.5.7->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:17.7267258Z,[10:19:52+0000]   Downloading marshmallow-3.26.1-py3-none-any.whl.metadata (7.3 kB),,0
+	2025-07-02T10:25:17.7916572Z,[10:19:52+0000] Collecting typing-inspect<1&comma;>=0.4.0 (from dataclasses-json<0.7&comma;>=0.5.7->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:17.8488776Z,[10:19:52+0000]   Downloading typing_inspect-0.9.0-py3-none-any.whl.metadata (1.5 kB),,0
+	2025-07-02T10:25:17.9076945Z,[10:19:54+0000] Collecting starlette<0.47.0&comma;>=0.40.0 (from fastapi>=0.95.2->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:18.0149090Z,[10:19:54+0000]   Downloading starlette-0.46.2-py3-none-any.whl.metadata (6.2 kB),,0
+	2025-07-02T10:25:18.0927677Z,[10:19:54+0000] Collecting gitdb<5&comma;>=4.0.1 (from gitpython!=3.1.19&comma;<4&comma;>=3.0.7->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:18.1683993Z,[10:19:54+0000]   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB),,0
+	2025-07-02T10:25:18.2085532Z,[10:19:54+0000] Collecting certifi (from httpx<1&comma;>=0.23.0->openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:18.2554349Z,[10:19:54+0000]   Downloading certifi-2025.6.15-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:18.3047862Z,[10:19:54+0000] Collecting httpcore==1.* (from httpx<1&comma;>=0.23.0->openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:18.3523787Z,[10:19:54+0000]   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB),,0
+	2025-07-02T10:25:18.4296301Z,[10:19:55+0000] Collecting h11>=0.16 (from httpcore==1.*->httpx<1&comma;>=0.23.0->openai<2.0.0&comma;>=1.10.0->-r requirements.txt (line 8)),,0
+	2025-07-02T10:25:18.4687473Z,[10:19:55+0000]   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB),,0
+	2025-07-02T10:25:18.5378975Z,[10:19:55+0000] Collecting zipp>=0.5 (from importlib-metadata<7&comma;>=1.4->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:18.5859621Z,[10:19:55+0000]   Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB),,0
+	2025-07-02T10:25:18.6335040Z,[10:19:55+0000] Collecting jsonpointer>=1.9 (from jsonpatch<2.0&comma;>=1.33->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:18.6838661Z,[10:19:55+0000]   Downloading jsonpointer-3.0.0-py2.py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:18.7681253Z,[10:19:56+0000] Collecting google-auth>=1.0.1 (from kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:18.8852874Z,[10:19:56+0000]   Downloading google_auth-2.40.3-py2.py3-none-any.whl.metadata (6.2 kB),,0
+	2025-07-02T10:25:18.9256990Z,[10:19:56+0000] Collecting websocket-client!=0.40.0&comma;!=0.41.*&comma;!=0.42.*&comma;>=0.32.0 (from kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:18.9817282Z,[10:19:56+0000]   Downloading websocket_client-1.8.0-py3-none-any.whl.metadata (8.0 kB),,0
+	2025-07-02T10:25:19.0396599Z,[10:19:57+0000] Collecting requests-oauthlib (from kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:19.1270100Z,[10:19:57+0000]   Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl.metadata (11 kB),,0
+	2025-07-02T10:25:19.1960205Z,[10:19:57+0000] Collecting oauthlib>=3.2.2 (from kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:19.2648009Z,[10:19:57+0000]   Downloading oauthlib-3.3.1-py3-none-any.whl.metadata (7.9 kB),,0
+	2025-07-02T10:25:19.3132994Z,[10:19:57+0000] Collecting urllib3>=1.24.2 (from kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:19.3607530Z,[10:19:57+0000]   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB),,0
+	2025-07-02T10:25:19.4158133Z,[10:19:57+0000] Collecting durationpy>=0.7 (from kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:19.4868594Z,[10:19:57+0000]   Downloading durationpy-0.10-py3-none-any.whl.metadata (340 bytes),,0
+	2025-07-02T10:25:19.5532702Z,[10:19:57+0000] INFO: pip is looking at multiple versions of langchain-core to determine which version is compatible with other requirements. This could take a while.,,0
+	2025-07-02T10:25:19.6110506Z,[10:19:57+0000] Collecting langchain-core<0.2&comma;>=0.1.7 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:19.6601552Z,[10:19:57+0000]   Downloading langchain_core-0.1.52-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:19.7077419Z,[10:19:58+0000]   Downloading langchain_core-0.1.51-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:19.7481026Z,[10:19:58+0000]   Downloading langchain_core-0.1.50-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:19.7956623Z,[10:19:58+0000]   Downloading langchain_core-0.1.49-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:19.8725974Z,[10:19:58+0000]   Downloading langchain_core-0.1.48-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:19.9117925Z,[10:19:58+0000]   Downloading langchain_core-0.1.47-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:19.9594817Z,[10:19:58+0000]   Downloading langchain_core-0.1.46-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:19.9985905Z,[10:19:58+0000] INFO: pip is still looking at multiple versions of langchain-core to determine which version is compatible with other requirements. This could take a while.,,0
+	2025-07-02T10:25:20.0378086Z,[10:19:58+0000]   Downloading langchain_core-0.1.45-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:20.0976508Z,[10:19:58+0000]   Downloading langchain_core-0.1.44-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:20.1538290Z,[10:19:58+0000]   Downloading langchain_core-0.1.43-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:20.1901723Z,[10:19:58+0000]   Downloading langchain_core-0.1.42-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:20.2480435Z,[10:19:58+0000]   Downloading langchain_core-0.1.41-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:20.2871927Z,[10:19:58+0000] INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run&comma; press Ctrl + C.,,0
+	2025-07-02T10:25:20.3356686Z,[10:19:58+0000]   Downloading langchain_core-0.1.40-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:20.4418947Z,[10:19:58+0000]   Downloading langchain_core-0.1.39-py3-none-any.whl.metadata (5.9 kB),,0
+	2025-07-02T10:25:20.4903973Z,[10:19:58+0000]   Downloading langchain_core-0.1.38-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.5309741Z,[10:19:59+0000]   Downloading langchain_core-0.1.37-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.5782556Z,[10:19:59+0000]   Downloading langchain_core-0.1.36-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.6173840Z,[10:19:59+0000]   Downloading langchain_core-0.1.35-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.6645125Z,[10:19:59+0000]   Downloading langchain_core-0.1.34-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.7027738Z,[10:19:59+0000]   Downloading langchain_core-0.1.33-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.7334404Z,[10:19:59+0000]   Downloading langchain_core-0.1.32-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.8297633Z,[10:19:59+0000]   Downloading langchain_core-0.1.31-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.8857315Z,[10:19:59+0000]   Downloading langchain_core-0.1.30-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.9158941Z,[10:19:59+0000]   Downloading langchain_core-0.1.29-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:20.9542210Z,[10:19:59+0000]   Downloading langchain_core-0.1.28-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:21.0162378Z,[10:19:59+0000]   Downloading langchain_core-0.1.27-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:21.0714456Z,[10:19:59+0000]   Downloading langchain_core-0.1.26-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:21.1201053Z,[10:19:59+0000]   Downloading langchain_core-0.1.25-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:21.1701800Z,[10:19:59+0000]   Downloading langchain_core-0.1.24-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:21.2260668Z,[10:20:00+0000]   Downloading langchain_core-0.1.23-py3-none-any.whl.metadata (6.0 kB),,0
+	2025-07-02T10:25:21.2665290Z,[10:20:00+0000] Collecting langsmith<0.1.0&comma;>=0.0.77 (from langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:21.2857495Z,[10:20:00+0000]   Downloading langsmith-0.0.87-py3-none-any.whl.metadata (10 kB),,0
+	2025-07-02T10:25:21.3059577Z,[10:20:00+0000] Collecting PyJWT<3&comma;>=1.0.0 (from PyJWT[crypto]<3&comma;>=1.0.0->msal<2.0.0&comma;>=1.24.0->azure-identity==1.15.0->-r requirements.txt (line 12)),,0
+	2025-07-02T10:25:21.3717207Z,[10:20:00+0000]   Downloading PyJWT-2.10.1-py3-none-any.whl.metadata (4.0 kB),,0
+	2025-07-02T10:25:21.4009257Z,[10:20:01+0000] Collecting coloredlogs (from onnxruntime>=1.14.1->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:21.4280294Z,[10:20:01+0000]   Downloading coloredlogs-15.0.1-py2.py3-none-any.whl.metadata (12 kB),,0
+	2025-07-02T10:25:21.4576591Z,[10:20:01+0000] Collecting flatbuffers (from onnxruntime>=1.14.1->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:21.4918258Z,[10:20:01+0000]   Downloading flatbuffers-25.2.10-py2.py3-none-any.whl.metadata (875 bytes),,0
+	2025-07-02T10:25:21.5284396Z,[10:20:01+0000] Collecting sympy (from onnxruntime>=1.14.1->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:21.5575625Z,[10:20:01+0000]   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB),,0
+	2025-07-02T10:25:21.6229293Z,[10:20:05+0000] Collecting googleapis-common-protos~=1.52 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:21.7071477Z,[10:20:05+0000]   Downloading googleapis_common_protos-1.70.0-py3-none-any.whl.metadata (9.3 kB),,0
+	2025-07-02T10:25:21.8046534Z,[10:20:06+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.34.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:21.8801202Z,[10:20:06+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.34.1-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:21.9705248Z,[10:20:06+0000] Collecting opentelemetry-proto==1.34.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:22.0768706Z,[10:20:06+0000]   Downloading opentelemetry_proto-1.34.1-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:22.1723632Z,[10:20:06+0000] INFO: pip is looking at multiple versions of opentelemetry-proto to determine which version is compatible with other requirements. This could take a while.,,0
+	2025-07-02T10:25:22.2097954Z,[10:20:06+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:22.2707859Z,[10:20:06+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.34.0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:22.3853213Z,[10:20:06+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.34.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:22.4698343Z,[10:20:06+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.34.0-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:22.5097480Z,[10:20:06+0000] Collecting opentelemetry-proto==1.34.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:22.5588952Z,[10:20:06+0000]   Downloading opentelemetry_proto-1.34.0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:22.6355640Z,[10:20:06+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:22.6744259Z,[10:20:06+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.33.1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:22.7040714Z,[10:20:07+0000] Collecting deprecated>=1.2.6 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:22.7597940Z,[10:20:07+0000]   Downloading Deprecated-1.2.18-py2.py3-none-any.whl.metadata (5.7 kB),,0
+	2025-07-02T10:25:22.8190959Z,[10:20:07+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.33.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:22.9151388Z,[10:20:07+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.33.1-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:22.9734481Z,[10:20:07+0000] Collecting opentelemetry-proto==1.33.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.0240378Z,[10:20:07+0000]   Downloading opentelemetry_proto-1.33.1-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:23.0840030Z,[10:20:07+0000] Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.1595420Z,[10:20:07+0000]   Downloading opentelemetry_sdk-1.33.1-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:23.2470321Z,[10:20:07+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.3053591Z,[10:20:07+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.33.0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:23.3813370Z,[10:20:07+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.33.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.4397230Z,[10:20:07+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.33.0-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:23.5390789Z,[10:20:07+0000] Collecting opentelemetry-proto==1.33.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.5951393Z,[10:20:07+0000]   Downloading opentelemetry_proto-1.33.0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:23.6594535Z,[10:20:08+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.7184434Z,[10:20:08+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.32.1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:23.7392098Z,[10:20:08+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.32.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.7853215Z,[10:20:08+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.32.1-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:23.8261638Z,[10:20:08+0000] Collecting opentelemetry-proto==1.32.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.8733133Z,[10:20:08+0000]   Downloading opentelemetry_proto-1.32.1-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:23.9318672Z,[10:20:08+0000] Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:23.9889785Z,[10:20:08+0000]   Downloading opentelemetry_sdk-1.32.1-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:24.0192807Z,[10:20:08+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.0675685Z,[10:20:08+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.32.0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:24.0987755Z,[10:20:08+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.32.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.1727152Z,[10:20:08+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.32.0-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:24.2175919Z,[10:20:08+0000] Collecting opentelemetry-proto==1.32.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.2556724Z,[10:20:08+0000]   Downloading opentelemetry_proto-1.32.0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:24.2815210Z,[10:20:08+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.3609527Z,[10:20:08+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.31.1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:24.3982830Z,[10:20:08+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.31.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.4490119Z,[10:20:09+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.31.1-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:24.4959456Z,[10:20:09+0000] Collecting opentelemetry-proto==1.31.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.5543004Z,[10:20:09+0000]   Downloading opentelemetry_proto-1.31.1-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:24.5932304Z,[10:20:09+0000] Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.6168646Z,[10:20:09+0000]   Downloading opentelemetry_sdk-1.31.1-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:24.6712708Z,[10:20:09+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.7212278Z,[10:20:09+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.31.0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:24.7611771Z,[10:20:09+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.31.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.8393817Z,[10:20:09+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.31.0-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:24.8771823Z,[10:20:09+0000] Collecting opentelemetry-proto==1.31.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:24.9141054Z,[10:20:09+0000]   Downloading opentelemetry_proto-1.31.0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:24.9621653Z,[10:20:09+0000] INFO: pip is still looking at multiple versions of opentelemetry-proto to determine which version is compatible with other requirements. This could take a while.,,0
+	2025-07-02T10:25:25.0029407Z,[10:20:09+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.0396237Z,[10:20:09+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.30.0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:25.0801596Z,[10:20:09+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.30.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.1282191Z,[10:20:09+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.30.0-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:25.2229913Z,[10:20:09+0000] Collecting opentelemetry-proto==1.30.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.2912144Z,[10:20:09+0000]   Downloading opentelemetry_proto-1.30.0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:25.3302790Z,[10:20:09+0000] Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.3839186Z,[10:20:09+0000]   Downloading opentelemetry_sdk-1.30.0-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:25.4152164Z,[10:20:09+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.4738520Z,[10:20:09+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.29.0-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:25.5227610Z,[10:20:10+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.29.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.6173836Z,[10:20:10+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.29.0-py3-none-any.whl.metadata (1.8 kB),,0
+	2025-07-02T10:25:25.6570617Z,[10:20:10+0000] Collecting opentelemetry-proto==1.29.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.7373781Z,[10:20:10+0000]   Downloading opentelemetry_proto-1.29.0-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:25.8023470Z,[10:20:10+0000] Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.8973611Z,[10:20:10+0000]   Downloading opentelemetry_sdk-1.29.0-py3-none-any.whl.metadata (1.5 kB),,0
+	2025-07-02T10:25:25.9334882Z,[10:20:10+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:25.9629708Z,[10:20:10+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.28.2-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:26.0293196Z,[10:20:10+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.28.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:26.1368547Z,[10:20:10+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.28.2-py3-none-any.whl.metadata (1.8 kB),,0
+	2025-07-02T10:25:26.2018618Z,[10:20:10+0000] Collecting opentelemetry-proto==1.28.2 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:26.2571225Z,[10:20:10+0000]   Downloading opentelemetry_proto-1.28.2-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:26.2976791Z,[10:20:10+0000] Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:26.3715686Z,[10:20:10+0000]   Downloading opentelemetry_sdk-1.28.2-py3-none-any.whl.metadata (1.5 kB),,0
+	2025-07-02T10:25:26.4188316Z,[10:20:10+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:26.4768108Z,[10:20:10+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.28.1-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:26.5259895Z,[10:20:11+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.28.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:26.5856595Z,[10:20:11+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.28.1-py3-none-any.whl.metadata (1.8 kB),,0
+	2025-07-02T10:25:26.6510130Z,[10:20:11+0000] Collecting opentelemetry-proto==1.28.1 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:26.6721323Z,[10:20:11+0000]   Downloading opentelemetry_proto-1.28.1-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:26.7368384Z,[10:20:11+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:26.7858452Z,[10:20:11+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.28.0-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:26.8329401Z,[10:20:11+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.28.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:26.8734278Z,[10:20:11+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.28.0-py3-none-any.whl.metadata (1.8 kB),,0
+	2025-07-02T10:25:26.9485226Z,[10:20:11+0000] Collecting opentelemetry-proto==1.28.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:27.0177258Z,[10:20:11+0000]   Downloading opentelemetry_proto-1.28.0-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:27.1307298Z,[10:20:11+0000] INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run&comma; press Ctrl + C.,,0
+	2025-07-02T10:25:27.1704805Z,[10:20:11+0000] Collecting opentelemetry-exporter-otlp-proto-grpc>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:27.3313776Z,[10:20:11+0000]   Downloading opentelemetry_exporter_otlp_proto_grpc-1.27.0-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:27.4097789Z,[10:20:11+0000] Collecting opentelemetry-exporter-otlp-proto-common==1.27.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:27.4547581Z,[10:20:11+0000]   Downloading opentelemetry_exporter_otlp_proto_common-1.27.0-py3-none-any.whl.metadata (1.8 kB),,0
+	2025-07-02T10:25:27.5021964Z,[10:20:11+0000] Collecting opentelemetry-proto==1.27.0 (from opentelemetry-exporter-otlp-proto-grpc>=1.2.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:27.5327973Z,[10:20:12+0000]   Downloading opentelemetry_proto-1.27.0-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:27.6883908Z,[10:20:12+0000] Collecting opentelemetry-sdk>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:27.7630071Z,[10:20:12+0000]   Downloading opentelemetry_sdk-1.27.0-py3-none-any.whl.metadata (1.5 kB),,0
+	2025-07-02T10:25:27.8404133Z,[10:20:12+0000] Collecting opentelemetry-instrumentation-asgi==0.55b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:27.8816086Z,[10:20:12+0000]   Downloading opentelemetry_instrumentation_asgi-0.55b1-py3-none-any.whl.metadata (2.0 kB),,0
+	2025-07-02T10:25:27.9582369Z,[10:20:12+0000] Collecting opentelemetry-instrumentation==0.55b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:27.9974919Z,[10:20:12+0000]   Downloading opentelemetry_instrumentation-0.55b1-py3-none-any.whl.metadata (6.7 kB),,0
+	2025-07-02T10:25:28.0552722Z,[10:20:13+0000] Collecting opentelemetry-semantic-conventions==0.55b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:28.1234225Z,[10:20:13+0000]   Downloading opentelemetry_semantic_conventions-0.55b1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:28.1888563Z,[10:20:13+0000] Collecting opentelemetry-util-http==0.55b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:28.2442486Z,[10:20:13+0000]   Downloading opentelemetry_util_http-0.55b1-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:28.2843007Z,[10:20:14+0000] Collecting wrapt<2.0.0&comma;>=1.0.0 (from opentelemetry-instrumentation==0.55b1->opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:28.3474976Z,[10:20:14+0000]   Downloading wrapt-1.17.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB),,0
+	2025-07-02T10:25:28.3794916Z,[10:20:14+0000] Collecting asgiref~=3.0 (from opentelemetry-instrumentation-asgi==0.55b1->opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:28.4254748Z,[10:20:14+0000]   Downloading asgiref-3.8.1-py3-none-any.whl.metadata (9.3 kB),,0
+	2025-07-02T10:25:28.4901502Z,[10:20:14+0000] INFO: pip is looking at multiple versions of opentelemetry-sdk to determine which version is compatible with other requirements. This could take a while.,,0
+	2025-07-02T10:25:28.5572555Z,[10:20:14+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:28.6495451Z,[10:20:14+0000]   Downloading opentelemetry_instrumentation_fastapi-0.55b0-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:28.7241191Z,[10:20:15+0000] Collecting opentelemetry-instrumentation-asgi==0.55b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:28.8287657Z,[10:20:15+0000]   Downloading opentelemetry_instrumentation_asgi-0.55b0-py3-none-any.whl.metadata (2.0 kB),,0
+	2025-07-02T10:25:28.8825095Z,[10:20:15+0000] Collecting opentelemetry-instrumentation==0.55b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:28.9477882Z,[10:20:15+0000]   Downloading opentelemetry_instrumentation-0.55b0-py3-none-any.whl.metadata (6.7 kB),,0
+	2025-07-02T10:25:29.0196313Z,[10:20:15+0000] Collecting opentelemetry-semantic-conventions==0.55b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:29.1387223Z,[10:20:15+0000]   Downloading opentelemetry_semantic_conventions-0.55b0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:29.2476501Z,[10:20:15+0000] Collecting opentelemetry-util-http==0.55b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:29.2839120Z,[10:20:15+0000]   Downloading opentelemetry_util_http-0.55b0-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:29.3694066Z,[10:20:16+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:29.4480162Z,[10:20:16+0000]   Downloading opentelemetry_api-1.34.0-py3-none-any.whl.metadata (1.5 kB),,0
+	2025-07-02T10:25:29.5033128Z,[10:20:16+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:29.5530305Z,[10:20:16+0000]   Downloading opentelemetry_instrumentation_fastapi-0.54b1-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:29.6074823Z,[10:20:17+0000] Collecting opentelemetry-instrumentation-asgi==0.54b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:29.6713549Z,[10:20:17+0000]   Downloading opentelemetry_instrumentation_asgi-0.54b1-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:29.7288509Z,[10:20:17+0000] Collecting opentelemetry-instrumentation==0.54b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:29.7589469Z,[10:20:17+0000]   Downloading opentelemetry_instrumentation-0.54b1-py3-none-any.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:29.8182416Z,[10:20:17+0000] Collecting opentelemetry-semantic-conventions==0.54b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:29.8658433Z,[10:20:17+0000]   Downloading opentelemetry_semantic_conventions-0.54b1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:29.9323183Z,[10:20:17+0000] Collecting opentelemetry-util-http==0.54b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:29.9613343Z,[10:20:17+0000]   Downloading opentelemetry_util_http-0.54b1-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:29.9901467Z,[10:20:17+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.0095746Z,[10:20:17+0000]   Downloading opentelemetry_api-1.33.1-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:30.0530077Z,[10:20:18+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.0827990Z,[10:20:18+0000]   Downloading opentelemetry_instrumentation_fastapi-0.54b0-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:30.1023205Z,[10:20:18+0000] Collecting opentelemetry-instrumentation-asgi==0.54b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.1311471Z,[10:20:18+0000]   Downloading opentelemetry_instrumentation_asgi-0.54b0-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:30.1500617Z,[10:20:18+0000] Collecting opentelemetry-instrumentation==0.54b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.2246679Z,[10:20:18+0000]   Downloading opentelemetry_instrumentation-0.54b0-py3-none-any.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:30.2836464Z,[10:20:18+0000] Collecting opentelemetry-semantic-conventions==0.54b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.4078561Z,[10:20:18+0000]   Downloading opentelemetry_semantic_conventions-0.54b0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:30.4489031Z,[10:20:18+0000] Collecting opentelemetry-util-http==0.54b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.5037196Z,[10:20:18+0000]   Downloading opentelemetry_util_http-0.54b0-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:30.5906889Z,[10:20:18+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.6215212Z,[10:20:18+0000]   Downloading opentelemetry_api-1.33.0-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:30.6702734Z,[10:20:19+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.7501165Z,[10:20:19+0000]   Downloading opentelemetry_instrumentation_fastapi-0.53b1-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:30.7913330Z,[10:20:19+0000] Collecting opentelemetry-instrumentation-asgi==0.53b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.8392252Z,[10:20:19+0000]   Downloading opentelemetry_instrumentation_asgi-0.53b1-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:30.8788185Z,[10:20:19+0000] Collecting opentelemetry-instrumentation==0.53b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:30.9267881Z,[10:20:19+0000]   Downloading opentelemetry_instrumentation-0.53b1-py3-none-any.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:30.9666018Z,[10:20:19+0000] Collecting opentelemetry-semantic-conventions==0.53b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.0494236Z,[10:20:19+0000]   Downloading opentelemetry_semantic_conventions-0.53b1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:31.1094071Z,[10:20:19+0000] Collecting opentelemetry-util-http==0.53b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.1467324Z,[10:20:19+0000]   Downloading opentelemetry_util_http-0.53b1-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:31.1877948Z,[10:20:20+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.2256423Z,[10:20:20+0000]   Downloading opentelemetry_api-1.32.1-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:31.2811725Z,[10:20:20+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.3969531Z,[10:20:20+0000]   Downloading opentelemetry_instrumentation_fastapi-0.53b0-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:31.4450899Z,[10:20:20+0000] Collecting opentelemetry-instrumentation-asgi==0.53b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.5038641Z,[10:20:20+0000]   Downloading opentelemetry_instrumentation_asgi-0.53b0-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:31.5500099Z,[10:20:20+0000] Collecting opentelemetry-instrumentation==0.53b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.6001161Z,[10:20:20+0000]   Downloading opentelemetry_instrumentation-0.53b0-py3-none-any.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:31.6746172Z,[10:20:20+0000] Collecting opentelemetry-semantic-conventions==0.53b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.7124180Z,[10:20:20+0000]   Downloading opentelemetry_semantic_conventions-0.53b0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:31.7519142Z,[10:20:20+0000] Collecting opentelemetry-util-http==0.53b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.8114400Z,[10:20:20+0000]   Downloading opentelemetry_util_http-0.53b0-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:31.8847943Z,[10:20:21+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:31.9139706Z,[10:20:21+0000]   Downloading opentelemetry_api-1.32.0-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:31.9618783Z,[10:20:21+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.0227666Z,[10:20:21+0000]   Downloading opentelemetry_instrumentation_fastapi-0.52b1-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:32.0806840Z,[10:20:21+0000] Collecting opentelemetry-instrumentation-asgi==0.52b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.1274941Z,[10:20:21+0000]   Downloading opentelemetry_instrumentation_asgi-0.52b1-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:32.1943103Z,[10:20:21+0000] Collecting opentelemetry-instrumentation==0.52b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.2510252Z,[10:20:21+0000]   Downloading opentelemetry_instrumentation-0.52b1-py3-none-any.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:32.3082977Z,[10:20:21+0000] Collecting opentelemetry-semantic-conventions==0.52b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.3474461Z,[10:20:21+0000]   Downloading opentelemetry_semantic_conventions-0.52b1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:32.4345963Z,[10:20:21+0000] Collecting opentelemetry-util-http==0.52b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.4914077Z,[10:20:21+0000]   Downloading opentelemetry_util_http-0.52b1-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:32.5324593Z,[10:20:21+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.5890997Z,[10:20:21+0000]   Downloading opentelemetry_api-1.31.1-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:32.6927721Z,[10:20:22+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.7397120Z,[10:20:22+0000]   Downloading opentelemetry_instrumentation_fastapi-0.52b0-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:32.7962713Z,[10:20:22+0000] Collecting opentelemetry-instrumentation-asgi==0.52b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.8446180Z,[10:20:22+0000]   Downloading opentelemetry_instrumentation_asgi-0.52b0-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:32.9024740Z,[10:20:22+0000] Collecting opentelemetry-instrumentation==0.52b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:32.9419683Z,[10:20:22+0000]   Downloading opentelemetry_instrumentation-0.52b0-py3-none-any.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:33.0199300Z,[10:20:22+0000] Collecting opentelemetry-semantic-conventions==0.52b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.0676253Z,[10:20:22+0000]   Downloading opentelemetry_semantic_conventions-0.52b0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:33.1066992Z,[10:20:22+0000] Collecting opentelemetry-util-http==0.52b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.1368340Z,[10:20:22+0000]   Downloading opentelemetry_util_http-0.52b0-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:33.1836843Z,[10:20:23+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.2226706Z,[10:20:23+0000]   Downloading opentelemetry_api-1.31.0-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:33.2690887Z,[10:20:23+0000] INFO: pip is still looking at multiple versions of opentelemetry-sdk to determine which version is compatible with other requirements. This could take a while.,,0
+	2025-07-02T10:25:33.3240012Z,[10:20:23+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.3750296Z,[10:20:23+0000]   Downloading opentelemetry_instrumentation_fastapi-0.51b0-py3-none-any.whl.metadata (2.2 kB),,0
+	2025-07-02T10:25:33.4496885Z,[10:20:24+0000] Collecting opentelemetry-instrumentation-asgi==0.51b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.5096813Z,[10:20:24+0000]   Downloading opentelemetry_instrumentation_asgi-0.51b0-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:33.5465821Z,[10:20:24+0000] Collecting opentelemetry-instrumentation==0.51b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.5942371Z,[10:20:24+0000]   Downloading opentelemetry_instrumentation-0.51b0-py3-none-any.whl.metadata (6.3 kB),,0
+	2025-07-02T10:25:33.6487873Z,[10:20:24+0000] Collecting opentelemetry-semantic-conventions==0.51b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.6795274Z,[10:20:24+0000]   Downloading opentelemetry_semantic_conventions-0.51b0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:33.7001215Z,[10:20:24+0000] Collecting opentelemetry-util-http==0.51b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.7667295Z,[10:20:24+0000]   Downloading opentelemetry_util_http-0.51b0-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:33.8062986Z,[10:20:24+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:33.9320001Z,[10:20:24+0000]   Downloading opentelemetry_api-1.30.0-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:34.0267326Z,[10:20:25+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:34.0860422Z,[10:20:25+0000]   Downloading opentelemetry_instrumentation_fastapi-0.50b0-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:34.1732398Z,[10:20:25+0000] Collecting opentelemetry-instrumentation-asgi==0.50b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:34.2687972Z,[10:20:25+0000]   Downloading opentelemetry_instrumentation_asgi-0.50b0-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:34.3365771Z,[10:20:25+0000] Collecting opentelemetry-instrumentation==0.50b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:34.4032701Z,[10:20:25+0000]   Downloading opentelemetry_instrumentation-0.50b0-py3-none-any.whl.metadata (6.1 kB),,0
+	2025-07-02T10:25:34.4602592Z,[10:20:25+0000] Collecting opentelemetry-semantic-conventions==0.50b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:34.5116759Z,[10:20:25+0000]   Downloading opentelemetry_semantic_conventions-0.50b0-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:34.5583507Z,[10:20:25+0000] Collecting opentelemetry-util-http==0.50b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:34.6156756Z,[10:20:25+0000]   Downloading opentelemetry_util_http-0.50b0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:34.6810061Z,[10:20:26+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:34.7592867Z,[10:20:26+0000]   Downloading opentelemetry_api-1.29.0-py3-none-any.whl.metadata (1.4 kB),,0
+	2025-07-02T10:25:34.8256553Z,[10:20:26+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:34.8840158Z,[10:20:26+0000]   Downloading opentelemetry_instrumentation_fastapi-0.49b2-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:34.9414713Z,[10:20:26+0000] Collecting opentelemetry-instrumentation-asgi==0.49b2 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.0469300Z,[10:20:26+0000]   Downloading opentelemetry_instrumentation_asgi-0.49b2-py3-none-any.whl.metadata (1.9 kB),,0
+	2025-07-02T10:25:35.0974503Z,[10:20:26+0000] Collecting opentelemetry-instrumentation==0.49b2 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.1619393Z,[10:20:26+0000]   Downloading opentelemetry_instrumentation-0.49b2-py3-none-any.whl.metadata (6.1 kB),,0
+	2025-07-02T10:25:35.2585046Z,[10:20:26+0000] Collecting opentelemetry-semantic-conventions==0.49b2 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.2971481Z,[10:20:26+0000]   Downloading opentelemetry_semantic_conventions-0.49b2-py3-none-any.whl.metadata (2.3 kB),,0
+	2025-07-02T10:25:35.3180669Z,[10:20:26+0000] Collecting opentelemetry-util-http==0.49b2 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.3448667Z,[10:20:26+0000]   Downloading opentelemetry_util_http-0.49b2-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:35.3559377Z,[10:20:27+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.3676871Z,[10:20:27+0000]   Downloading opentelemetry_api-1.28.2-py3-none-any.whl.metadata (1.4 kB),,0
+	2025-07-02T10:25:35.3777215Z,[10:20:27+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.4222474Z,[10:20:27+0000]   Downloading opentelemetry_instrumentation_fastapi-0.49b1-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:35.4686690Z,[10:20:27+0000] Collecting opentelemetry-instrumentation-asgi==0.49b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.5457352Z,[10:20:27+0000]   Downloading opentelemetry_instrumentation_asgi-0.49b1-py3-none-any.whl.metadata (2.0 kB),,0
+	2025-07-02T10:25:35.6254651Z,[10:20:27+0000] Collecting opentelemetry-instrumentation==0.49b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.7347398Z,[10:20:27+0000]   Downloading opentelemetry_instrumentation-0.49b1-py3-none-any.whl.metadata (6.2 kB),,0
+	2025-07-02T10:25:35.7837618Z,[10:20:27+0000] Collecting opentelemetry-semantic-conventions==0.49b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.8424838Z,[10:20:27+0000]   Downloading opentelemetry_semantic_conventions-0.49b1-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:35.8903208Z,[10:20:27+0000] Collecting opentelemetry-util-http==0.49b1 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:35.9400189Z,[10:20:27+0000]   Downloading opentelemetry_util_http-0.49b1-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:36.0332057Z,[10:20:27+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:36.1283050Z,[10:20:27+0000]   Downloading opentelemetry_api-1.28.1-py3-none-any.whl.metadata (1.4 kB),,0
+	2025-07-02T10:25:36.1862462Z,[10:20:28+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:36.2469432Z,[10:20:28+0000]   Downloading opentelemetry_instrumentation_fastapi-0.49b0-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:36.2761315Z,[10:20:28+0000] Collecting opentelemetry-instrumentation-asgi==0.49b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:36.3123801Z,[10:20:28+0000]   Downloading opentelemetry_instrumentation_asgi-0.49b0-py3-none-any.whl.metadata (2.0 kB),,0
+	2025-07-02T10:25:36.3688946Z,[10:20:28+0000] Collecting opentelemetry-instrumentation==0.49b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:36.4094289Z,[10:20:28+0000]   Downloading opentelemetry_instrumentation-0.49b0-py3-none-any.whl.metadata (6.2 kB),,0
+	2025-07-02T10:25:36.4750951Z,[10:20:28+0000] Collecting opentelemetry-semantic-conventions==0.49b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:36.5921925Z,[10:20:28+0000]   Downloading opentelemetry_semantic_conventions-0.49b0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:36.6389299Z,[10:20:28+0000] Collecting opentelemetry-util-http==0.49b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:36.7070718Z,[10:20:28+0000]   Downloading opentelemetry_util_http-0.49b0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:36.7635622Z,[10:20:28+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:36.8326959Z,[10:20:28+0000]   Downloading opentelemetry_api-1.28.0-py3-none-any.whl.metadata (1.4 kB),,0
+	2025-07-02T10:25:36.8785072Z,[10:20:29+0000] INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run&comma; press Ctrl + C.,,0
+	2025-07-02T10:25:36.9444094Z,[10:20:29+0000] Collecting opentelemetry-instrumentation-fastapi>=0.41b0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:36.9938087Z,[10:20:29+0000]   Downloading opentelemetry_instrumentation_fastapi-0.48b0-py3-none-any.whl.metadata (2.1 kB),,0
+	2025-07-02T10:25:37.0128179Z,[10:20:29+0000] Collecting opentelemetry-instrumentation-asgi==0.48b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:37.0297391Z,[10:20:29+0000]   Downloading opentelemetry_instrumentation_asgi-0.48b0-py3-none-any.whl.metadata (2.0 kB),,0
+	2025-07-02T10:25:37.1004803Z,[10:20:29+0000] Collecting opentelemetry-instrumentation==0.48b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:37.1782939Z,[10:20:29+0000]   Downloading opentelemetry_instrumentation-0.48b0-py3-none-any.whl.metadata (6.1 kB),,0
+	2025-07-02T10:25:37.1984928Z,[10:20:29+0000] Collecting opentelemetry-semantic-conventions==0.48b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:37.2163096Z,[10:20:29+0000]   Downloading opentelemetry_semantic_conventions-0.48b0-py3-none-any.whl.metadata (2.4 kB),,0
+	2025-07-02T10:25:37.2459059Z,[10:20:29+0000] Collecting opentelemetry-util-http==0.48b0 (from opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:37.2923267Z,[10:20:29+0000]   Downloading opentelemetry_util_http-0.48b0-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:37.3521940Z,[10:20:29+0000] Requirement already satisfied: setuptools>=16.0 in ./antenv/lib/python3.11/site-packages (from opentelemetry-instrumentation==0.48b0->opentelemetry-instrumentation-fastapi>=0.41b0->chromadb==0.4.22->-r requirements.txt (line 5)) (65.5.0),,0
+	2025-07-02T10:25:37.4960590Z,[10:20:29+0000] Collecting opentelemetry-api>=1.2.0 (from chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:37.5441948Z,[10:20:29+0000]   Downloading opentelemetry_api-1.27.0-py3-none-any.whl.metadata (1.4 kB),,0
+	2025-07-02T10:25:37.6004814Z,[10:20:30+0000] Collecting pytz>=2020.1 (from pandas<3&comma;>=1.3.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:37.6560099Z,[10:20:30+0000]   Downloading pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB),,0
+	2025-07-02T10:25:37.7124908Z,[10:20:31+0000] Collecting tzdata>=2022.7 (from pandas<3&comma;>=1.3.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:37.7512782Z,[10:20:31+0000]   Downloading tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB),,0
+	2025-07-02T10:25:37.7736135Z,[10:20:31+0000] Collecting backoff>=1.10.0 (from posthog>=2.4.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:37.8311747Z,[10:20:31+0000]   Downloading backoff-2.2.1-py3-none-any.whl.metadata (14 kB),,0
+	2025-07-02T10:25:37.8795472Z,[10:20:31+0000] Collecting annotated-types>=0.6.0 (from pydantic<3&comma;>=1->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:37.9094568Z,[10:20:31+0000]   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB),,0
+	2025-07-02T10:25:37.9488926Z,[10:20:35+0000] Collecting pydantic-core==2.33.2 (from pydantic<3&comma;>=1->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:37.9873838Z,[10:20:35+0000]   Downloading pydantic_core-2.33.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:38.0642260Z,[10:20:35+0000] Collecting typing-inspection>=0.4.0 (from pydantic<3&comma;>=1->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:38.1025301Z,[10:20:35+0000]   Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB),,0
+	2025-07-02T10:25:38.1331058Z,[10:20:35+0000] Collecting charset_normalizer<4&comma;>=2 (from requests<3&comma;>=2->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:38.1631476Z,[10:20:36+0000]   Downloading charset_normalizer-3.4.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB),,0
+	2025-07-02T10:25:38.1915397Z,[10:20:36+0000] Collecting markdown-it-py>=2.2.0 (from rich<14&comma;>=10.14.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:38.2381611Z,[10:20:36+0000]   Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB),,0
+	2025-07-02T10:25:38.2585855Z,[10:20:36+0000] Collecting pygments<3.0.0&comma;>=2.13.0 (from rich<14&comma;>=10.14.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:38.3054796Z,[10:20:36+0000]   Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB),,0
+	2025-07-02T10:25:38.3732327Z,[10:20:38+0000] Collecting greenlet>=1 (from SQLAlchemy<3&comma;>=1.4->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:38.4533955Z,[10:20:38+0000]   Downloading greenlet-3.2.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (4.1 kB),,0
+	2025-07-02T10:25:38.5303461Z,[10:20:39+0000] Collecting huggingface-hub<1.0&comma;>=0.16.4 (from tokenizers>=0.13.2->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:38.6210341Z,[10:20:39+0000]   Downloading huggingface_hub-0.33.2-py3-none-any.whl.metadata (14 kB),,0
+	2025-07-02T10:25:38.6691107Z,[10:20:39+0000] Collecting shellingham>=1.3.0 (from typer>=0.9.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:38.7361493Z,[10:20:39+0000]   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB),,0
+	2025-07-02T10:25:38.7835551Z,[10:20:40+0000] Collecting httptools>=0.6.3 (from uvicorn[standard]>=0.18.3->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:38.8205959Z,[10:20:40+0000]   Downloading httptools-0.6.4-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.6 kB),,0
+	2025-07-02T10:25:38.8336357Z,[10:20:40+0000] Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.18.3->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:38.9015517Z,[10:20:40+0000]   Downloading uvloop-0.21.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB),,0
+	2025-07-02T10:25:39.0283394Z,[10:20:40+0000] Collecting watchfiles>=0.13 (from uvicorn[standard]>=0.18.3->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.1251895Z,[10:20:40+0000]   Downloading watchfiles-1.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB),,0
+	2025-07-02T10:25:39.1623889Z,[10:20:41+0000] Collecting websockets>=10.4 (from uvicorn[standard]>=0.18.3->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.1771735Z,[10:20:41+0000]   Downloading websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB),,0
+	2025-07-02T10:25:39.1883307Z,[10:20:42+0000] Collecting pycparser (from cffi>=1.14->cryptography>=2.5->azure-identity==1.15.0->-r requirements.txt (line 12)),,0
+	2025-07-02T10:25:39.1969559Z,[10:20:42+0000]   Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes),,0
+	2025-07-02T10:25:39.2704551Z,[10:20:42+0000] Collecting smmap<6&comma;>=3.0.1 (from gitdb<5&comma;>=4.0.1->gitpython!=3.1.19&comma;<4&comma;>=3.0.7->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:39.3205177Z,[10:20:42+0000]   Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB),,0
+	2025-07-02T10:25:39.3477011Z,[10:20:43+0000] Collecting pyasn1-modules>=0.2.1 (from google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.4048173Z,[10:20:43+0000]   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB),,0
+	2025-07-02T10:25:39.4436370Z,[10:20:43+0000] Collecting rsa<5&comma;>=3.1.4 (from google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.4932556Z,[10:20:43+0000]   Downloading rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB),,0
+	2025-07-02T10:25:39.5307859Z,[10:20:44+0000] Collecting filelock (from huggingface-hub<1.0&comma;>=0.16.4->tokenizers>=0.13.2->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.5774196Z,[10:20:44+0000]   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB),,0
+	2025-07-02T10:25:39.6161864Z,[10:20:44+0000] Collecting fsspec>=2023.5.0 (from huggingface-hub<1.0&comma;>=0.16.4->tokenizers>=0.13.2->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.6624767Z,[10:20:44+0000]   Downloading fsspec-2025.5.1-py3-none-any.whl.metadata (11 kB),,0
+	2025-07-02T10:25:39.6814121Z,[10:20:45+0000] Collecting hf-xet<2.0.0&comma;>=1.1.2 (from huggingface-hub<1.0&comma;>=0.16.4->tokenizers>=0.13.2->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.6979523Z,[10:20:45+0000]   Downloading hf_xet-1.1.5-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (879 bytes),,0
+	2025-07-02T10:25:39.7124552Z,[10:20:45+0000] Collecting MarkupSafe>=2.0 (from jinja2->altair<6&comma;>=4.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:39.7313564Z,[10:20:45+0000]   Downloading MarkupSafe-3.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB),,0
+	2025-07-02T10:25:39.7464107Z,[10:20:45+0000] Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=3.0->altair<6&comma;>=4.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:39.7609088Z,[10:20:45+0000]   Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl.metadata (2.9 kB),,0
+	2025-07-02T10:25:39.7733275Z,[10:20:46+0000] Collecting referencing>=0.28.4 (from jsonschema>=3.0->altair<6&comma;>=4.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:39.7896561Z,[10:20:46+0000]   Downloading referencing-0.36.2-py3-none-any.whl.metadata (2.8 kB),,0
+	2025-07-02T10:25:39.8036696Z,[10:20:47+0000] Collecting rpds-py>=0.7.1 (from jsonschema>=3.0->altair<6&comma;>=4.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:39.8274892Z,[10:20:47+0000]   Downloading rpds_py-0.26.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB),,0
+	2025-07-02T10:25:39.8539037Z,[10:20:47+0000] Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich<14&comma;>=10.14.0->streamlit==1.29.0->-r requirements.txt (line 7)),,0
+	2025-07-02T10:25:39.8683950Z,[10:20:47+0000]   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB),,0
+	2025-07-02T10:25:39.8789324Z,[10:20:49+0000] Collecting mypy-extensions>=0.3.0 (from typing-inspect<1&comma;>=0.4.0->dataclasses-json<0.7&comma;>=0.5.7->langchain==0.1.0->-r requirements.txt (line 1)),,0
+	2025-07-02T10:25:39.8892859Z,[10:20:49+0000]   Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB),,0
+	2025-07-02T10:25:39.9000022Z,[10:20:50+0000] Collecting humanfriendly>=9.1 (from coloredlogs->onnxruntime>=1.14.1->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.9173699Z,[10:20:50+0000]   Downloading humanfriendly-10.0-py2.py3-none-any.whl.metadata (9.2 kB),,0
+	2025-07-02T10:25:39.9255948Z,[10:20:51+0000] Collecting mpmath<1.4&comma;>=1.1.0 (from sympy->onnxruntime>=1.14.1->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.9338274Z,[10:20:51+0000]   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB),,0
+	2025-07-02T10:25:39.9429539Z,[10:20:52+0000] Collecting pyasn1<0.7.0&comma;>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth>=1.0.1->kubernetes>=28.1.0->chromadb==0.4.22->-r requirements.txt (line 5)),,0
+	2025-07-02T10:25:39.9514449Z,[10:20:52+0000]   Downloading pyasn1-0.6.1-py3-none-any.whl.metadata (8.4 kB),,0
+	2025-07-02T10:25:39.9604835Z,[10:20:54+0000] Downloading langchain-0.1.0-py3-none-any.whl (797 kB),,0
+	2025-07-02T10:25:39.9702087Z,[10:20:54+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 798.0/798.0 kB 13.8 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:39.9788935Z,[10:20:54+0000] Downloading langchain_community-0.0.10-py3-none-any.whl (1.5 MB),,0
+	2025-07-02T10:25:39.9871250Z,[10:20:54+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 16.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:39.9962410Z,[10:20:54+0000] Downloading langchain_openai-0.0.5-py3-none-any.whl (29 kB),,0
+	2025-07-02T10:25:40.0087081Z,[10:20:55+0000] Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB),,0
+	2025-07-02T10:25:40.0255553Z,[10:20:55+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.6/232.6 kB 2.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:40.0351677Z,[10:20:55+0000] Downloading chromadb-0.4.22-py3-none-any.whl (509 kB),,0
+	2025-07-02T10:25:40.0443135Z,[10:20:55+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.0/509.0 kB 9.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:40.0528101Z,[10:20:55+0000] Downloading python_dotenv-1.0.0-py3-none-any.whl (19 kB),,0
+	2025-07-02T10:25:40.0665323Z,[10:20:55+0000] Downloading streamlit-1.29.0-py2.py3-none-any.whl (8.4 MB),,0
+	2025-07-02T10:25:40.1410636Z,[10:20:55+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 18.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:40.1915512Z,[10:20:55+0000] Downloading tiktoken-0.5.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB),,0
+	2025-07-02T10:25:40.4302601Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 19.8 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:40.4776872Z,[10:20:56+0000] Downloading azure_identity-1.15.0-py3-none-any.whl (164 kB),,0
+	2025-07-02T10:25:40.6252304Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 164.7/164.7 kB 5.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:40.8543842Z,[10:20:56+0000] Downloading azure_keyvault_secrets-4.7.0-py3-none-any.whl (348 kB),,0
+	2025-07-02T10:25:40.9469844Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.6/348.6 kB 7.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:40.9989170Z,[10:20:56+0000] Downloading chroma_hnswlib-0.7.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.4 MB),,0
+	2025-07-02T10:25:41.0373890Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 17.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:41.0848268Z,[10:20:56+0000] Downloading openai-1.93.0-py3-none-any.whl (755 kB),,0
+	2025-07-02T10:25:41.1228647Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 755.0/755.0 kB 12.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:41.1810149Z,[10:20:56+0000] Downloading aiohttp-3.12.13-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB),,0
+	2025-07-02T10:25:41.2354718Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 15.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:41.2750823Z,[10:20:56+0000] Downloading altair-5.5.0-py3-none-any.whl (731 kB),,0
+	2025-07-02T10:25:41.3340810Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.2/731.2 kB 16.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:41.3901340Z,[10:20:56+0000] Downloading anyio-4.9.0-py3-none-any.whl (100 kB),,0
+	2025-07-02T10:25:41.4295470Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.9/100.9 kB 3.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:41.5045022Z,[10:20:56+0000] Downloading azure_common-1.1.28-py2.py3-none-any.whl (14 kB),,0
+	2025-07-02T10:25:41.5596415Z,[10:20:56+0000] Downloading azure_core-1.34.0-py3-none-any.whl (207 kB),,0
+	2025-07-02T10:25:41.5996576Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.4/207.4 kB 4.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:41.6282758Z,[10:20:56+0000] Downloading bcrypt-4.3.0-cp39-abi3-manylinux_2_28_x86_64.whl (284 kB),,0
+	2025-07-02T10:25:41.6953711Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 284.5/284.5 kB 7.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:41.7554310Z,[10:20:56+0000] Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB),,0
+	2025-07-02T10:25:41.8212256Z,[10:20:56+0000] Downloading build-1.2.2.post1-py3-none-any.whl (22 kB),,0
+	2025-07-02T10:25:41.8512633Z,[10:20:56+0000] Downloading cachetools-5.5.2-py3-none-any.whl (10 kB),,0
+	2025-07-02T10:25:41.8900278Z,[10:20:56+0000] Downloading click-8.2.1-py3-none-any.whl (102 kB),,0
+	2025-07-02T10:25:41.9412665Z,[10:20:56+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.2/102.2 kB 3.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:42.0077220Z,[10:20:56+0000] Downloading cryptography-45.0.4-cp311-abi3-manylinux_2_28_x86_64.whl (4.5 MB),,0
+	2025-07-02T10:25:42.0456828Z,[10:20:57+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 5.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:42.0760984Z,[10:20:57+0000] Downloading dataclasses_json-0.6.7-py3-none-any.whl (28 kB),,0
+	2025-07-02T10:25:42.1415446Z,[10:20:57+0000] Downloading distro-1.9.0-py3-none-any.whl (20 kB),,0
+	2025-07-02T10:25:42.1913018Z,[10:20:58+0000] Downloading fastapi-0.115.14-py3-none-any.whl (95 kB),,0
+	2025-07-02T10:25:42.2307874Z,[10:20:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.5/95.5 kB 1.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:42.3165328Z,[10:20:58+0000] Downloading GitPython-3.1.44-py3-none-any.whl (207 kB),,0
+	2025-07-02T10:25:42.3739797Z,[10:20:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.6/207.6 kB 3.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:42.4125680Z,[10:20:58+0000] Downloading grpcio-1.73.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.0 MB),,0
+	2025-07-02T10:25:42.4607929Z,[10:20:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 12.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:42.4817402Z,[10:20:58+0000] Downloading httpx-0.28.1-py3-none-any.whl (73 kB),,0
+	2025-07-02T10:25:42.5191717Z,[10:20:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 1.8 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:42.6075713Z,[10:20:58+0000] Downloading httpcore-1.0.9-py3-none-any.whl (78 kB),,0
+	2025-07-02T10:25:42.7094390Z,[10:20:58+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 2.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:42.7721174Z,[10:20:58+0000] Downloading importlib_metadata-6.11.0-py3-none-any.whl (23 kB),,0
+	2025-07-02T10:25:42.8311930Z,[10:20:59+0000] Downloading isodate-0.7.2-py3-none-any.whl (22 kB),,0
+	2025-07-02T10:25:42.8874920Z,[10:20:59+0000] Downloading jiter-0.10.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (352 kB),,0
+	2025-07-02T10:25:42.9288861Z,[10:20:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 352.2/352.2 kB 9.3 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:42.9944605Z,[10:20:59+0000] Downloading jsonpatch-1.33-py2.py3-none-any.whl (12 kB),,0
+	2025-07-02T10:25:43.0728861Z,[10:20:59+0000] Downloading kubernetes-33.1.0-py2.py3-none-any.whl (1.9 MB),,0
+	2025-07-02T10:25:43.1602334Z,[10:20:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 19.0 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:43.2155919Z,[10:20:59+0000] Downloading langchain_core-0.1.23-py3-none-any.whl (241 kB),,0
+	2025-07-02T10:25:43.2926936Z,[10:20:59+0000]    ━━━━━━━━━━━━━━━━━━���━━━━━━━━━━━━━━━━━━━━━ 241.2/241.2 kB 8.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:43.3439579Z,[10:20:59+0000] Downloading langsmith-0.0.87-py3-none-any.whl (55 kB),,0
+	2025-07-02T10:25:43.3805582Z,[10:20:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.4/55.4 kB 2.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:43.4379577Z,[10:20:59+0000] Downloading mmh3-5.1.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (101 kB),,0
+	2025-07-02T10:25:43.5049532Z,[10:20:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.6/101.6 kB 3.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:43.5644596Z,[10:20:59+0000] Downloading msal-1.32.3-py3-none-any.whl (115 kB),,0
+	2025-07-02T10:25:43.6226032Z,[10:20:59+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.4/115.4 kB 3.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:43.7099814Z,[10:20:59+0000] Downloading msal_extensions-1.3.1-py3-none-any.whl (20 kB),,0
+	2025-07-02T10:25:43.7678724Z,[10:20:59+0000] Downloading numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.3 MB),,0
+	2025-07-02T10:25:43.8064244Z,[10:21:00+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.3/18.3 MB 8.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:43.8831166Z,[10:21:00+0000] Downloading onnxruntime-1.22.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.4 MB),,0
+	2025-07-02T10:25:43.9250489Z,[10:21:02+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.4/16.4 MB 7.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:43.9716012Z,[10:21:02+0000] Downloading protobuf-4.25.8-cp37-abi3-manylinux2014_x86_64.whl (294 kB),,0
+	2025-07-02T10:25:44.0193091Z,[10:21:02+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.9/294.9 kB 6.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:44.0584338Z,[10:21:02+0000] Downloading opentelemetry_exporter_otlp_proto_grpc-1.27.0-py3-none-any.whl (18 kB),,0
+	2025-07-02T10:25:44.0895498Z,[10:21:02+0000] Downloading opentelemetry_proto-1.27.0-py3-none-any.whl (52 kB),,0
+	2025-07-02T10:25:44.1451335Z,[10:21:02+0000]    ━━━━━━━━��━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.5/52.5 kB 1.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:44.1655528Z,[10:21:02+0000] Downloading opentelemetry_exporter_otlp_proto_common-1.27.0-py3-none-any.whl (17 kB),,0
+	2025-07-02T10:25:44.2048407Z,[10:21:02+0000] Downloading opentelemetry_instrumentation_fastapi-0.48b0-py3-none-any.whl (11 kB),,0
+	2025-07-02T10:25:44.2512223Z,[10:21:02+0000] Downloading opentelemetry_instrumentation-0.48b0-py3-none-any.whl (29 kB),,0
+	2025-07-02T10:25:44.3000568Z,[10:21:02+0000] Downloading opentelemetry_instrumentation_asgi-0.48b0-py3-none-any.whl (15 kB),,0
+	2025-07-02T10:25:44.3486331Z,[10:21:02+0000] Downloading opentelemetry_semantic_conventions-0.48b0-py3-none-any.whl (149 kB),,0
+	2025-07-02T10:25:44.3878321Z,[10:21:02+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 149.7/149.7 kB 4.3 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:44.4261195Z,[10:21:02+0000] Downloading opentelemetry_api-1.27.0-py3-none-any.whl (63 kB),,0
+	2025-07-02T10:25:44.4584009Z,[10:21:02+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.0/64.0 kB 2.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:44.5152566Z,[10:21:02+0000] Downloading opentelemetry_util_http-0.48b0-py3-none-any.whl (6.9 kB),,0
+	2025-07-02T10:25:44.5451045Z,[10:21:03+0000] Downloading opentelemetry_sdk-1.27.0-py3-none-any.whl (110 kB),,0
+	2025-07-02T10:25:44.5825317Z,[10:21:03+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 110.5/110.5 kB 1.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:44.6412304Z,[10:21:03+0000] Downloading overrides-7.7.0-py3-none-any.whl (17 kB),,0
+	2025-07-02T10:25:44.6911402Z,[10:21:03+0000] Downloading packaging-23.2-py3-none-any.whl (53 kB),,0
+	2025-07-02T10:25:44.7289006Z,[10:21:03+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 53.0/53.0 kB 2.0 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:44.7700471Z,[10:21:03+0000] Downloading pandas-2.3.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.4 MB),,0
+	2025-07-02T10:25:44.8075375Z,[10:21:04+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 9.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:44.8555080Z,[10:21:04+0000] Downloading pillow-10.4.0-cp311-cp311-manylinux_2_28_x86_64.whl (4.5 MB),,0
+	2025-07-02T10:25:44.8929549Z,[10:21:04+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 18.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:44.9231554Z,[10:21:04+0000] Downloading posthog-6.0.1-py3-none-any.whl (104 kB),,0
+	2025-07-02T10:25:45.0001225Z,[10:21:04+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 105.0/105.0 kB 3.3 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.0495244Z,[10:21:04+0000] Downloading pulsar_client-3.7.0-cp311-cp311-manylinux_2_28_x86_64.whl (6.6 MB),,0
+	2025-07-02T10:25:45.0869119Z,[10:21:04+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 24.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.1176501Z,[10:21:04+0000] Downloading pyarrow-20.0.0-cp311-cp311-manylinux_2_28_x86_64.whl (42.3 MB),,0
+	2025-07-02T10:25:45.1463859Z,[10:21:08+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.3/42.3 MB 5.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.1943169Z,[10:21:08+0000] Downloading pydantic-2.11.7-py3-none-any.whl (444 kB),,0
+	2025-07-02T10:25:45.2145144Z,[10:21:08+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 444.8/444.8 kB 5.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.2425382Z,[10:21:08+0000] Downloading pydantic_core-2.33.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB),,0
+	2025-07-02T10:25:45.3104943Z,[10:21:08+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 16.0 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.3892337Z,[10:21:08+0000] Downloading pydeck-0.9.1-py2.py3-none-any.whl (6.9 MB),,0
+	2025-07-02T10:25:45.4660554Z,[10:21:08+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 16.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.5051881Z,[10:21:08+0000] Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB),,0
+	2025-07-02T10:25:45.5546903Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 6.3 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.5724970Z,[10:21:09+0000] Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (762 kB),,0
+	2025-07-02T10:25:45.6877441Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 763.0/763.0 kB 14.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.7278221Z,[10:21:09+0000] Downloading regex-2024.11.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (792 kB),,0
+	2025-07-02T10:25:45.7470862Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 792.7/792.7 kB 5.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.7884116Z,[10:21:09+0000] Downloading requests-2.32.4-py3-none-any.whl (64 kB),,0
+	2025-07-02T10:25:45.8462547Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.8/64.8 kB 2.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.8921995Z,[10:21:09+0000] Downloading rich-13.9.4-py3-none-any.whl (242 kB),,0
+	2025-07-02T10:25:45.9303728Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 kB 8.8 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:45.9586746Z,[10:21:09+0000] Downloading sniffio-1.3.1-py3-none-any.whl (10 kB),,0
+	2025-07-02T10:25:46.0012365Z,[10:21:09+0000] Downloading sqlalchemy-2.0.41-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB),,0
+	2025-07-02T10:25:46.0464480Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 20.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.0953106Z,[10:21:09+0000] Downloading tenacity-8.5.0-py3-none-any.whl (28 kB),,0
+	2025-07-02T10:25:46.1449201Z,[10:21:09+0000] Downloading tokenizers-0.21.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB),,0
+	2025-07-02T10:25:46.1669070Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 19.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.2022961Z,[10:21:09+0000] Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB),,0
+	2025-07-02T10:25:46.2437632Z,[10:21:09+0000] Downloading tornado-6.5.1-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (443 kB),,0
+	2025-07-02T10:25:46.3001429Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 443.3/443.3 kB 7.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.3208455Z,[10:21:09+0000] Downloading tqdm-4.67.1-py3-none-any.whl (78 kB),,0
+	2025-07-02T10:25:46.3688948Z,[10:21:09+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 2.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.4148327Z,[10:21:09+0000] Downloading typer-0.16.0-py3-none-any.whl (46 kB),,0
+	2025-07-02T10:25:46.4651931Z,[10:21:10+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.3/46.3 kB 947.7 kB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.4944795Z,[10:21:10+0000] Downloading typing_extensions-4.14.0-py3-none-any.whl (43 kB),,0
+	2025-07-02T10:25:46.5408371Z,[10:21:10+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.8/43.8 kB 278.5 kB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.5810330Z,[10:21:10+0000] Downloading tzlocal-5.3.1-py3-none-any.whl (18 kB),,0
+	2025-07-02T10:25:46.6183798Z,[10:21:10+0000] Downloading uvicorn-0.35.0-py3-none-any.whl (66 kB),,0
+	2025-07-02T10:25:46.6504012Z,[10:21:10+0000]    ━━━━━━━━━━━━━━━━━━━━━━��━━━━━━━━━━━━━━━━━ 66.4/66.4 kB 1.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.6959992Z,[10:21:10+0000] Downloading validators-0.35.0-py3-none-any.whl (44 kB),,0
+	2025-07-02T10:25:46.7169446Z,[10:21:10+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.7/44.7 kB 1.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.7434704Z,[10:21:10+0000] Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB),,0
+	2025-07-02T10:25:46.7661019Z,[10:21:10+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.1/79.1 kB 1.8 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:46.8217346Z,[10:21:10+0000] Downloading importlib_resources-6.5.2-py3-none-any.whl (37 kB),,0
+	2025-07-02T10:25:46.8534759Z,[10:21:10+0000] Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB),,0
+	2025-07-02T10:25:46.9287881Z,[10:21:10+0000] Downloading aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB),,0
+	2025-07-02T10:25:46.9564312Z,[10:21:10+0000] Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB),,0
+	2025-07-02T10:25:46.9958660Z,[10:21:10+0000] Downloading attrs-25.3.0-py3-none-any.whl (63 kB),,0
+	2025-07-02T10:25:47.0352368Z,[10:21:10+0000]    ━━━━━━━━━━━━━━��━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 2.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:47.0634399Z,[10:21:10+0000] Downloading backoff-2.2.1-py3-none-any.whl (15 kB),,0
+	2025-07-02T10:25:47.1108136Z,[10:21:10+0000] Downloading certifi-2025.6.15-py3-none-any.whl (157 kB),,0
+	2025-07-02T10:25:47.1695282Z,[10:21:10+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 157.7/157.7 kB 5.3 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:47.2166760Z,[10:21:10+0000] Downloading cffi-1.17.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (467 kB),,0
+	2025-07-02T10:25:47.2546038Z,[10:21:10+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 467.2/467.2 kB 8.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:47.3318081Z,[10:21:10+0000] Downloading charset_normalizer-3.4.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (147 kB),,0
+	2025-07-02T10:25:47.4568544Z,[10:21:10+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 147.3/147.3 kB 5.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:47.5327879Z,[10:21:10+0000] Downloading Deprecated-1.2.18-py2.py3-none-any.whl (10.0 kB),,0
+	2025-07-02T10:25:47.5831980Z,[10:21:11+0000] Downloading durationpy-0.10-py3-none-any.whl (3.9 kB),,0
+	2025-07-02T10:25:47.6303277Z,[10:21:11+0000] Downloading frozenlist-1.7.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (235 kB),,0
+	2025-07-02T10:25:47.7167048Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 235.3/235.3 kB 5.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:47.7756811Z,[10:21:11+0000] Downloading gitdb-4.0.12-py3-none-any.whl (62 kB),,0
+	2025-07-02T10:25:47.8461246Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 1.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:47.8731026Z,[10:21:11+0000] Downloading google_auth-2.40.3-py2.py3-none-any.whl (216 kB),,0
+	2025-07-02T10:25:47.9724653Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.1/216.1 kB 3.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.0380681Z,[10:21:11+0000] Downloading googleapis_common_protos-1.70.0-py3-none-any.whl (294 kB),,0
+	2025-07-02T10:25:48.0883974Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.5/294.5 kB 4.0 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.1358363Z,[10:21:11+0000] Downloading greenlet-3.2.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (585 kB),,0
+	2025-07-02T10:25:48.1762931Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 585.5/585.5 kB 5.0 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.2543756Z,[10:21:11+0000] Downloading h11-0.16.0-py3-none-any.whl (37 kB),,0
+	2025-07-02T10:25:48.3008283Z,[10:21:11+0000] Downloading httptools-0.6.4-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (459 kB),,0
+	2025-07-02T10:25:48.3495749Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 459.8/459.8 kB 8.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.3894997Z,[10:21:11+0000] Downloading huggingface_hub-0.33.2-py3-none-any.whl (515 kB),,0
+	2025-07-02T10:25:48.4460356Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 515.4/515.4 kB 11.0 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.4849196Z,[10:21:11+0000] Downloading idna-3.10-py3-none-any.whl (70 kB),,0
+	2025-07-02T10:25:48.5244349Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 2.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.5837332Z,[10:21:11+0000] Downloading jinja2-3.1.6-py3-none-any.whl (134 kB),,0
+	2025-07-02T10:25:48.6434607Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 3.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.6801235Z,[10:21:11+0000] Downloading jsonpointer-3.0.0-py2.py3-none-any.whl (7.6 kB),,0
+	2025-07-02T10:25:48.7020371Z,[10:21:11+0000] Downloading jsonschema-4.24.0-py3-none-any.whl (88 kB),,0
+	2025-07-02T10:25:48.7477265Z,[10:21:11+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.7/88.7 kB 2.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.7971892Z,[10:21:12+0000] Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB),,0
+	2025-07-02T10:25:48.8370601Z,[10:21:12+0000]    ━━━━━━━━━━��━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 3.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.9140029Z,[10:21:12+0000] Downloading marshmallow-3.26.1-py3-none-any.whl (50 kB),,0
+	2025-07-02T10:25:48.9617105Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.9/50.9 kB 1.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:48.9903857Z,[10:21:12+0000] Downloading multidict-6.6.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (246 kB),,0
+	2025-07-02T10:25:49.0201378Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 246.6/246.6 kB 4.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:49.0881836Z,[10:21:12+0000] Downloading narwhals-1.45.0-py3-none-any.whl (371 kB),,0
+	2025-07-02T10:25:49.1567763Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 371.6/371.6 kB 11.1 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:49.2236425Z,[10:21:12+0000] Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB),,0
+	2025-07-02T10:25:49.2621359Z,[10:21:12+0000]    ━━━���━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.1/160.1 kB 4.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:49.3128529Z,[10:21:12+0000] Downloading propcache-0.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (213 kB),,0
+	2025-07-02T10:25:49.3583211Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 213.5/213.5 kB 7.8 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:49.4076849Z,[10:21:12+0000] Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB),,0
+	2025-07-02T10:25:49.4779016Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 19.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:49.5250400Z,[10:21:12+0000] Downloading PyJWT-2.10.1-py3-none-any.whl (22 kB),,0
+	2025-07-02T10:25:49.5538840Z,[10:21:12+0000] Downloading pytz-2025.2-py2.py3-none-any.whl (509 kB),,0
+	2025-07-02T10:25:49.6006003Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.2/509.2 kB 10.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:49.6413111Z,[10:21:12+0000] Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB),,0
+	2025-07-02T10:25:49.6699330Z,[10:21:12+0000] Downloading six-1.17.0-py2.py3-none-any.whl (11 kB),,0
+	2025-07-02T10:25:49.7097848Z,[10:21:12+0000] Downloading starlette-0.46.2-py3-none-any.whl (72 kB),,0
+	2025-07-02T10:25:49.7665523Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.0/72.0 kB 2.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:49.8544940Z,[10:21:12+0000] Downloading typing_inspect-0.9.0-py3-none-any.whl (8.8 kB),,0
+	2025-07-02T10:25:49.8722493Z,[10:21:12+0000] Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB),,0
+	2025-07-02T10:25:49.8962787Z,[10:21:12+0000] Downloading tzdata-2025.2-py2.py3-none-any.whl (347 kB),,0
+	2025-07-02T10:25:49.9155147Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 347.8/347.8 kB 9.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:49.9291613Z,[10:21:12+0000] Downloading urllib3-2.5.0-py3-none-any.whl (129 kB),,0
+	2025-07-02T10:25:49.9812349Z,[10:21:12+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 3.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.0492238Z,[10:21:12+0000] Downloading uvloop-0.21.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.0 MB),,0
+	2025-07-02T10:25:50.1142740Z,[10:21:13+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 4.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.1268232Z,[10:21:13+0000] Downloading watchfiles-1.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (453 kB),,0
+	2025-07-02T10:25:50.1479693Z,[10:21:13+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 453.1/453.1 kB 8.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.1616041Z,[10:21:13+0000] Downloading websocket_client-1.8.0-py3-none-any.whl (58 kB),,0
+	2025-07-02T10:25:50.1730394Z,[10:21:13+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.8/58.8 kB 2.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.1851342Z,[10:21:13+0000] Downloading websockets-15.0.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (182 kB),,0
+	2025-07-02T10:25:50.2738570Z,[10:21:13+0000]    ━━━━━━━━━━━━━━━━━━��━━━━━━━━━━━━━━━━━━━━━ 182.3/182.3 kB 5.9 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.3008859Z,[10:21:13+0000] Downloading yarl-1.20.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (348 kB),,0
+	2025-07-02T10:25:50.3195956Z,[10:21:13+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 349.0/349.0 kB 9.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.3388760Z,[10:21:13+0000] Downloading zipp-3.23.0-py3-none-any.whl (10 kB),,0
+	2025-07-02T10:25:50.3595804Z,[10:21:13+0000] Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB),,0
+	2025-07-02T10:25:50.3793912Z,[10:21:13+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 kB 583.5 kB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.4007820Z,[10:21:13+0000] Downloading flatbuffers-25.2.10-py2.py3-none-any.whl (30 kB),,0
+	2025-07-02T10:25:50.4248813Z,[10:21:14+0000] Downloading pyproject_hooks-1.2.0-py3-none-any.whl (10 kB),,0
+	2025-07-02T10:25:50.4340042Z,[10:21:14+0000] Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB),,0
+	2025-07-02T10:25:50.4436134Z,[10:21:14+0000] Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB),,0
+	2025-07-02T10:25:50.4524707Z,[10:21:14+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 19.5 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.4973767Z,[10:21:14+0000] Downloading asgiref-3.8.1-py3-none-any.whl (23 kB),,0
+	2025-07-02T10:25:50.5459826Z,[10:21:14+0000] Downloading fsspec-2025.5.1-py3-none-any.whl (199 kB),,0
+	2025-07-02T10:25:50.5734265Z,[10:21:14+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 199.1/199.1 kB 5.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.6035288Z,[10:21:14+0000] Downloading hf_xet-1.1.5-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB),,0
+	2025-07-02T10:25:50.6542898Z,[10:21:14+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 19.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.6741812Z,[10:21:14+0000] Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB),,0
+	2025-07-02T10:25:50.7327133Z,[10:21:14+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.8/86.8 kB 2.8 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:50.7704819Z,[10:21:14+0000] Downloading jsonschema_specifications-2025.4.1-py3-none-any.whl (18 kB),,0
+	2025-07-02T10:25:50.8563633Z,[10:21:14+0000] Downloading MarkupSafe-3.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB),,0
+	2025-07-02T10:25:50.9033402Z,[10:21:14+0000] Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB),,0
+	2025-07-02T10:25:50.9334497Z,[10:21:14+0000] Downloading mpmath-1.3.0-py3-none-any.whl (536 kB),,0
+	2025-07-02T10:25:50.9631821Z,[10:21:14+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 9.0 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:51.0028884Z,[10:21:14+0000] Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB),,0
+	2025-07-02T10:25:51.0809626Z,[10:21:14+0000] Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB),,0
+	2025-07-02T10:25:51.1390522Z,[10:21:14+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.3/181.3 kB 5.2 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:51.2513438Z,[10:21:14+0000] Downloading referencing-0.36.2-py3-none-any.whl (26 kB),,0
+	2025-07-02T10:25:51.3675274Z,[10:21:15+0000] Downloading rpds_py-0.26.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (383 kB),,0
+	2025-07-02T10:25:51.4445198Z,[10:21:15+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 383.9/383.9 kB 10.7 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:51.4920437Z,[10:21:15+0000] Downloading rsa-4.9.1-py3-none-any.whl (34 kB),,0
+	2025-07-02T10:25:51.5897276Z,[10:21:15+0000] Downloading smmap-5.0.2-py3-none-any.whl (24 kB),,0
+	2025-07-02T10:25:51.6832658Z,[10:21:15+0000] Downloading wrapt-1.17.2-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (83 kB),,0
+	2025-07-02T10:25:51.7202519Z,[10:21:15+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.2/83.2 kB 3.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:51.8034285Z,[10:21:15+0000] Downloading filelock-3.18.0-py3-none-any.whl (16 kB),,0
+	2025-07-02T10:25:51.9031984Z,[10:21:15+0000] Downloading pycparser-2.22-py3-none-any.whl (117 kB),,0
+	2025-07-02T10:25:52.0014058Z,[10:21:15+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.6/117.6 kB 3.4 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:52.1246076Z,[10:21:15+0000] Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB),,0
+	2025-07-02T10:25:52.1905051Z,[10:21:15+0000]    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 83.1/83.1 kB 2.6 MB/s eta 0:00:00,,0
+	2025-07-02T10:25:52.2772923Z,[10:21:19+0000] Building wheels for collected packages: pypika,,0
+	2025-07-02T10:25:52.3474965Z,[10:21:19+0000]   Building wheel for pypika (pyproject.toml): started,,0
+	2025-07-02T10:25:52.4022689Z,[10:21:22+0000]   Building wheel for pypika (pyproject.toml): finished with status 'done',,0
+	2025-07-02T10:25:52.4411154Z,[10:21:22+0000]   Created wheel for pypika: filename=pypika-0.48.9-py2.py3-none-any.whl size=53803 sha256=f76759552ab9ebd8c6676a52abe20ba0cf706bcb019ba0b6a64368fce8782b1b,,0
+	2025-07-02T10:25:52.4993254Z,[10:21:22+0000]   Stored in directory: /usr/local/share/pip-cache/wheels/a3/01/bd/4c40ceb9d5354160cb186dcc153360f4ab7eb23e2b24daf96d,,0
+	2025-07-02T10:25:52.5763022Z,[10:21:22+0000] Successfully built pypika,,0
+	2025-07-02T10:25:52.6553478Z,[10:21:26+0000] Installing collected packages: pytz&comma; pypika&comma; mpmath&comma; flatbuffers&comma; durationpy&comma; azure-common&comma; zipp&comma; wrapt&comma; websockets&comma; websocket-client&comma; watchdog&comma; validators&comma; uvloop&comma; urllib3&comma; tzlocal&comma; tzdata&comma; typing-extensions&comma; tqdm&comma; tornado&comma; toml&comma; tenacity&comma; sympy&comma; sniffio&comma; smmap&comma; six&comma; shellingham&comma; rpds-py&comma; regex&comma; PyYAML&comma; python-dotenv&comma; pyproject_hooks&comma; pypdf2&comma; PyJWT&comma; pygments&comma; pycparser&comma; pyasn1&comma; pyarrow&comma; protobuf&comma; propcache&comma; pillow&comma; packaging&comma; overrides&comma; opentelemetry-util-http&comma; oauthlib&comma; numpy&comma; narwhals&comma; mypy-extensions&comma; multidict&comma; mmh3&comma; mdurl&comma; MarkupSafe&comma; jsonpointer&comma; jiter&comma; isodate&comma; importlib-resources&comma; idna&comma; humanfriendly&comma; httptools&comma; hf-xet&comma; h11&comma; grpcio&comma; greenlet&comma; fsspec&comma; frozenlist&comma; filelock&comma; distro&comma; click&comma; charset_normalizer&comma; certifi&comma; cachetools&comma; blinker&comma; bcrypt&comma; backoff&comma; attrs&comma; asgiref&comma; annotated-types&comma; aiohappyeyeballs&comma; yarl&comma; uvicorn&comma; typing-inspection&comma; typing-inspect&comma; SQLAlchemy&comma; rsa&comma; requests&comma; referencing&comma; python-dateutil&comma; pydantic-core&comma; pyasn1-modules&comma; pulsar-client&comma; opentelemetry-proto&comma; marshmallow&comma; markdown-it-py&comma; jsonpatch&comma; jinja2&comma; importlib-metadata&comma; httpcore&comma; googleapis-common-protos&comma; gitdb&comma; deprecated&comma; coloredlogs&comma; chroma-hnswlib&comma; cffi&comma; build&comma; anyio&comma; aiosignal&comma; watchfiles&comma; tiktoken&comma; starlette&comma; rich&comma; requests-oauthlib&comma; pydeck&comma; pydantic&comma; posthog&comma; pandas&comma; opentelemetry-exporter-otlp-proto-common&comma; opentelemetry-api&comma; onnxruntime&comma; jsonschema-specifications&comma; huggingface-hub&comma; httpx&comma; google-auth&comma; gitpython&comma; dataclasses-json&comma; cryptography&comma; azure-core&comma; aiohttp&comma; typer&comma; tokenizers&comma; opentelemetry-semantic-conventions&comma; opentelemetry-instrumentation&comma; openai&comma; langsmith&comma; kubernetes&comma; jsonschema&comma; fastapi&comma; azure-keyvault-secrets&comma; opentelemetry-sdk&comma; opentelemetry-instrumentation-asgi&comma; msal&comma; langchain-core&comma; altair&comma; streamlit&comma; opentelemetry-instrumentation-fastapi&comma; opentelemetry-exporter-otlp-proto-grpc&comma; msal-extensions&comma; langchain-openai&comma; langchain-community&comma; langchain&comma; chromadb&comma; azure-identity,,0
+	2025-07-02T10:25:52.7025239Z,[10:24:53+0000] Successfully installed MarkupSafe-3.0.2 PyJWT-2.10.1 PyYAML-6.0.2 SQLAlchemy-2.0.41 aiohappyeyeballs-2.6.1 aiohttp-3.12.13 aiosignal-1.3.2 altair-5.5.0 annotated-types-0.7.0 anyio-4.9.0 asgiref-3.8.1 attrs-25.3.0 azure-common-1.1.28 azure-core-1.34.0 azure-identity-1.15.0 azure-keyvault-secrets-4.7.0 backoff-2.2.1 bcrypt-4.3.0 blinker-1.9.0 build-1.2.2.post1 cachetools-5.5.2 certifi-2025.6.15 cffi-1.17.1 charset_normalizer-3.4.2 chroma-hnswlib-0.7.3 chromadb-0.4.22 click-8.2.1 coloredlogs-15.0.1 cryptography-45.0.4 dataclasses-json-0.6.7 deprecated-1.2.18 distro-1.9.0 durationpy-0.10 fastapi-0.115.14 filelock-3.18.0 flatbuffers-25.2.10 frozenlist-1.7.0 fsspec-2025.5.1 gitdb-4.0.12 gitpython-3.1.44 google-auth-2.40.3 googleapis-common-protos-1.70.0 greenlet-3.2.3 grpcio-1.73.1 h11-0.16.0 hf-xet-1.1.5 httpcore-1.0.9 httptools-0.6.4 httpx-0.28.1 huggingface-hub-0.33.2 humanfriendly-10.0 idna-3.10 importlib-metadata-6.11.0 importlib-resources-6.5.2 isodate-0.7.2 jinja2-3.1.6 jiter-0.10.0 jsonpatch-1.33 jsonpointer-3.0.0 jsonschema-4.24.0 jsonschema-specifications-2025.4.1 kubernetes-33.1.0 langchain-0.1.0 langchain-community-0.0.10 langchain-core-0.1.23 langchain-openai-0.0.5 langsmith-0.0.87 markdown-it-py-3.0.0 marshmallow-3.26.1 mdurl-0.1.2 mmh3-5.1.0 mpmath-1.3.0 msal-1.32.3 msal-extensions-1.3.1 multidict-6.6.3 mypy-extensions-1.1.0 narwhals-1.45.0 numpy-1.26.4 oauthlib-3.3.1 onnxruntime-1.22.0 openai-1.93.0 opentelemetry-api-1.27.0 opentelemetry-exporter-otlp-proto-common-1.27.0 opentelemetry-exporter-otlp-proto-grpc-1.27.0 opentelemetry-instrumentation-0.48b0 opentelemetry-instrumentation-asgi-0.48b0 opentelemetry-instrumentation-fastapi-0.48b0 opentelemetry-proto-1.27.0 opentelemetry-sdk-1.27.0 opentelemetry-semantic-conventions-0.48b0 opentelemetry-util-http-0.48b0 overrides-7.7.0 packaging-23.2 pandas-2.3.0 pillow-10.4.0 posthog-6.0.1 propcache-0.3.2 protobuf-4.25.8 pulsar-client-3.7.0 pyarrow-20.0.0 pyasn1-0.6.1 pyasn1-modules-0.4.2 pycparser-2.22 pydantic-2.11.7 pydantic-core-2.33.2 pydeck-0.9.1 pygments-2.19.2 pypdf2-3.0.1 pypika-0.48.9 pyproject_hooks-1.2.0 python-dateutil-2.9.0.post0 python-dotenv-1.0.0 pytz-2025.2 referencing-0.36.2 regex-2024.11.6 requests-2.32.4 requests-oauthlib-2.0.0 rich-13.9.4 rpds-py-0.26.0 rsa-4.9.1 shellingham-1.5.4 six-1.17.0 smmap-5.0.2 sniffio-1.3.1 starlette-0.46.2 streamlit-1.29.0 sympy-1.14.0 tenacity-8.5.0 tiktoken-0.5.2 tokenizers-0.21.2 toml-0.10.2 tornado-6.5.1 tqdm-4.67.1 typer-0.16.0 typing-extensions-4.14.0 typing-inspect-0.9.0 typing-inspection-0.4.1 tzdata-2025.2 tzlocal-5.3.1 urllib3-2.5.0 uvicorn-0.35.0 uvloop-0.21.0 validators-0.35.0 watchdog-6.0.0 watchfiles-1.1.0 websocket-client-1.8.0 websockets-15.0.1 wrapt-1.17.2 yarl-1.20.1 zipp-3.23.0,,0
+	2025-07-02T10:25:52.7613058Z,,,0
+	2025-07-02T10:25:52.7999013Z,[notice] A new release of pip is available: 24.0 -> 25.1.1,,0
+	2025-07-02T10:25:52.8405655Z,[notice] To update&comma; run: pip install --upgrade pip,,0
+	2025-07-02T10:25:52.8598578Z,Not a vso image&comma; so not writing build commands,,0
+	2025-07-02T10:25:52.8890913Z,Preparing output...,,0
+	2025-07-02T10:25:52.9181506Z,,,0
+	2025-07-02T10:25:52.9681945Z,Copying files to destination directory '/tmp/_preCompressedDestinationDir'...,,0
+	2025-07-02T10:26:37.6261504Z,Done in 90 sec(s).,,0
+	2025-07-02T10:26:37.7203543Z,Compressing content of directory '/tmp/_preCompressedDestinationDir'...,,0
+	2025-07-02T10:30:40.2404452Z,Copied the compressed output to '/home/site/wwwroot',,0
+	2025-07-02T10:30:40.4900731Z,,,0
+	2025-07-02T10:30:40.5205212Z,Removing existing manifest file,,0
+	2025-07-02T10:30:40.5799678Z,Creating a manifest file...,,0
+	2025-07-02T10:30:40.6384339Z,Manifest file created.,,0
+	2025-07-02T10:30:40.6936577Z,Copying .ostype to manifest output directory.,,0
+	2025-07-02T10:30:40.7320551Z,,,0
+	2025-07-02T10:30:40.7841134Z,Done in 774 sec(s).,,0
+2025-07-02T10:30:41.8241922Z,Running post deployment command(s)...,ef559c27-85b3-406f-a2ce-952e79c9701f,0
+2025-07-02T10:30:41.9671726Z,,648e6be3-748c-481a-b087-37befa004f9a,0
+2025-07-02T10:30:42.1141356Z,Generating summary of Oryx build,9e529155-fb9b-49aa-8d0f-2207a35301d1,0
+2025-07-02T10:30:42.3155639Z,Parsing the build logs,e4e71830-5ef2-423e-a379-633693d60ddc,0
+2025-07-02T10:30:42.5389350Z,Found 0 issue(s),b3b03a66-674a-4d5a-a823-5e23cf04ae18,0
+2025-07-02T10:30:42.7145128Z,,8f1a69b0-a222-4e78-b77e-e9493c406df1,0
+2025-07-02T10:30:42.8431267Z,Build Summary :,835c78b2-7048-4697-bc4f-d63b7585200b,0
+2025-07-02T10:30:43.0424797Z,===============,3dddfd04-0182-4c85-bad6-e5e775f8dd57,0
+2025-07-02T10:30:43.1943655Z,Errors (0),17e5df13-cb68-4479-bbc0-2037442cf2be,0
+2025-07-02T10:30:43.3413779Z,Warnings (0),47da7df6-dc1c-42de-9f9c-3009c2f95272,0
+2025-07-02T10:30:43.5142443Z,,f8a4b8d4-64fc-4e77-aff1-85b86fc9b70e,0
+2025-07-02T10:30:43.9082088Z,Triggering recycle (preview mode disabled).,a9e46c47-f9ee-4a8f-9772-aabbf9aefd92,0
+2025-07-02T10:30:44.2380684Z,Deployment successful. deployer = Push-Deployer deploymentPath = ZipDeploy. Extract zip. Remote build.,c9124317-359f-4469-9c1c-275cd2738198,0

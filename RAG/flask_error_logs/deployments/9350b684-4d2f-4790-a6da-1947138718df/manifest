@@ -1,0 +1,11 @@
+
+pdfs
+pdfs/sample_ai_healthcare_research.pdf
+pdfs/README.md
+startup.sh
+requirements.txt
+src
+src/azure_rag_bot.py
+src/cli_bot.py
+src/config.py
+src/rag_bot.py

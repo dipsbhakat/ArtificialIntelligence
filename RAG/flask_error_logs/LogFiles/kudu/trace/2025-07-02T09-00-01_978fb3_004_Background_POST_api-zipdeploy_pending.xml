@@ -1,0 +1,23 @@
+<step title="BackgroundTrace" date="2025-07-02T09:00:01.126" instance="978fb3" url="/api/zipdeploy" method="POST" >
+  <step title="Cleanup Xml Logs" date="2025-07-02T09:00:01.155" >
+    <step title="Cleanup Infos" date="2025-07-02T09:00:01.196" totalFiles="481" totalCleanup="321" /><!-- duration: 10ms -->
+  </step><!-- duration: 68ms -->
+  <step title="Creating temporary deployment - FetchDeploymentManager" date="2025-07-02T09:00:01.673" /><!-- duration: 10ms -->
+  <step title="Creating temporary deployment" date="2025-07-02T09:00:01.729" /><!-- duration: 643ms -->
+  <step title="Performing fetch based deployment" date="2025-07-02T09:00:03.118" >
+    <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file /tmp/zipdeploy/33288822-578b-4880-b0b2-7eb869e035c7.zip (0.00 MB) to /tmp/zipdeploy/extracted" date="2025-07-02T09:00:05.100" >
+      <step title="ChmodRecursive Process exited with total time taken in ms: 572" date="2025-07-02T09:00:05.950" /><!-- duration: 88ms -->
+    </step><!-- duration: 1037ms -->
+    <step title="Deployment timer started" date="2025-07-02T09:00:08.624" >
+      <step title="DeploymentManager.Deploy(id:00bfbd8d-046c-454f-9487-64e1268fb21e)" date="2025-07-02T09:00:08.753" >
+        <step title="Collecting changeset information" date="2025-07-02T09:00:08.905" /><!-- duration: 284ms -->
+        <step title="Updating submodules" date="2025-07-02T09:00:09.292" /><!-- duration: 1762ms -->
+        <step title="Determining deployment builder" date="2025-07-02T09:00:12.155" >
+          <step title="Builder is OryxBuilder" date="2025-07-02T09:00:12.321" /><!-- duration: 49ms -->
+        </step><!-- duration: 281ms -->
+        <step title="PreDeployment: context.CleanOutputPath False" date="2025-07-02T09:00:12.601" >
+          <step title="PreDeployment: context.OutputPath /home/site/wwwroot" date="2025-07-02T09:00:13.741" >
+            <step title="Building" date="2025-07-02T09:00:14.119" >
+              <step title="Executing external process" date="2025-07-02T09:00:14.823" type="process" path="bash" arguments="-c &quot;oryx build /tmp/zipdeploy/extracted -o /home/site/wwwroot --platform python --platform-version 3.11 -p virtualenv_name=antenv --log-file /tmp/build-debug.log  -i /tmp/8ddb946dab8ad7c --compress-destination-dir | tee /tmp/oryx-build.log ; exit $PIPESTATUS &quot;" >
+                <step title="Cpu: python3.11(964,8.880s)+python3.11(963,0.210s)+python3.11(962,0.160s)+build.sh(871,0.040s)+oryx(848,5.660s)+tee(849,0.000s)+bash(847,0.000s)=total(14.900s)" date="2025-07-02T09:02:21.610" /><!-- duration: 233ms -->
+                <step title="bash: no io activity for 60s, prev-cpu=-1.000s, current-cpu=14.900s" date="2025-07-02T09:02:22.657" /><!-- duration: 59ms -->

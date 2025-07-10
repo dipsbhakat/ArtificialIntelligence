@@ -1,0 +1,6 @@
+<step title="Incoming Request" date="2025-07-02T08:37:59.703" instance="978fb3" url="/dump" method="GET" type="request" pid="768,1,20" Host="langchain-rag-bot-20250702123642.scm.azurewebsites.net" User-Agent="AZURECLI/2.58.0 (MSI)" Accept-Encoding="identity" Authorization="Bea..." x-ms-client-request-id="d7fbb3c3-571f-11f0-8108-99c40e872c42" X-ARR-LOG-ID="d7fbb3c3-571f-11f0-8108-99c40e872c42" CLIENT-IP="4.194.122.136:11421" X-SITE-DEPLOYMENT-ID="langchain-rag-bot-20250702123642" WAS-DEFAULT-HOSTNAME="langchain-rag-bot-20250702123642.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/dump" X-Client-IP="4.194.122.136" X-Client-Port="11421" >
+  <step title="Cleanup Xml Logs" date="2025-07-02T08:37:59.728" >
+    <step title="Cleanup Infos" date="2025-07-02T08:37:59.776" totalFiles="337" totalCleanup="177" /><!-- duration: 20ms -->
+  </step><!-- duration: 96ms -->
+  <step title="Outgoing response" date="2025-07-02T08:38:11.427" type="response" statusCode="200" statusText="OK" /><!-- duration: 19ms -->
+</step><!-- duration: 11753ms -->

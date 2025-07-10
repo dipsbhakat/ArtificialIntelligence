@@ -1,0 +1,5 @@
+<step title="Incoming Request" date="2025-07-02T08:38:49.037" instance="978fb3" url="/logstream" method="GET" type="request" pid="768,1,23" Host="langchain-rag-bot-20250702123642.scm.azurewebsites.net" User-Agent="AZURECLI/2.58.0 (MSI)" Accept-Encoding="identity" Authorization="Bea..." x-ms-client-request-id="bcd3c9c6-571f-11f0-825f-99c40e872c42" X-ARR-LOG-ID="bcd3c9c6-571f-11f0-825f-99c40e872c42" CLIENT-IP="4.194.122.136:44747" X-SITE-DEPLOYMENT-ID="langchain-rag-bot-20250702123642" WAS-DEFAULT-HOSTNAME="langchain-rag-bot-20250702123642.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/logstream" X-Client-IP="4.194.122.136" X-Client-Port="44747" >
+  <step title="Cleanup Xml Logs" date="2025-07-02T08:38:49.069" >
+    <step title="Cleanup Infos" date="2025-07-02T08:38:49.116" totalFiles="338" totalCleanup="178" /><!-- duration: 11ms -->
+  </step><!-- duration: 67ms -->
+  <step title="LogStreamHandlerMiddleware.Invoke" date="2025-07-02T08:38:49.156" /><!-- duration: 343ms -->

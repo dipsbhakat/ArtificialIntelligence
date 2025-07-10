@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Streamlit Dashboard",
+            "type": "shell",
+            "command": "streamlit",
+            "args": ["run", "dashboard.py"],
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

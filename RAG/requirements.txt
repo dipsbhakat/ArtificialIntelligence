@@ -5,5 +5,9 @@ pypdf2==3.0.1
 chromadb==0.4.22
 python-dotenv==1.0.0
 streamlit==1.29.0
-openai==1.6.1
+openai>=1.14.0,<2.0.0  # ✅ updated minimum version
 tiktoken==0.5.2
+
+# Azure deployment dependencies
+azure-identity==1.15.0
+azure-keyvault-secrets==4.7.0
