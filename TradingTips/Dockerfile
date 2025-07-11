@@ -27,4 +27,4 @@ ENV STREAMLIT_SERVER_HEADLESS=true
 ENV STREAMLIT_SERVER_ENABLECORS=false
 
 # Run Streamlit
-CMD ["streamlit", "run", "dashboard.py"]
+CMD ["streamlit", "run", "enhanced_trading_app.py"]

@@ -2,10 +2,59 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Run Streamlit Dashboard",
+            "label": "Run Enhanced Trading Dashboard",
+            "type": "shell",
+            "command": "streamlit",
+            "args": ["run", "enhanced_trading_app.py"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Run Original Dashboard",
             "type": "shell",
             "command": "streamlit",
             "args": ["run", "dashboard.py"],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Test Setup",
+            "type": "shell",
+            "command": "python",
+            "args": ["test_setup.py"],
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Install Dependencies",
+            "type": "shell",
+            "command": "pip",
+            "args": ["install", "-r", "requirements.txt"],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Docker Image",
+            "type": "shell",
+            "command": "docker",
+            "args": ["build", "-t", "trading-app", "."],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Docker Container",
+            "type": "shell",
+            "command": "docker",
+            "args": ["run", "-p", "8501:8501", "trading-app"],
             "group": "build",
             "problemMatcher": []
         }
