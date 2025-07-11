@@ -216,8 +216,155 @@ def create_candlestick_chart(df, symbol):
     
     return fig
 
+def calculate_enhanced_technical_indicators(df):
+    """Calculate enhanced technical indicators for better predictions."""
+    try:
+        # Existing indicators from calculate_technical_indicators
+        df = calculate_technical_indicators(df)
+        
+        # Advanced momentum indicators
+        df['Stoch_K'] = ((df['Close'] - df['Low'].rolling(14).min()) / 
+                         (df['High'].rolling(14).max() - df['Low'].rolling(14).min())) * 100
+        df['Stoch_D'] = df['Stoch_K'].rolling(3).mean()
+        
+        # Williams %R
+        highest_high = df['High'].rolling(window=14).max()
+        lowest_low = df['Low'].rolling(window=14).min()
+        df['Williams_R'] = -100 * (highest_high - df['Close']) / (highest_high - lowest_low)
+        
+        # Average True Range (ATR)
+        high_low = df['High'] - df['Low']
+        high_close = np.abs(df['High'] - df['Close'].shift())
+        low_close = np.abs(df['Low'] - df['Close'].shift())
+        ranges = pd.concat([high_low, high_close, low_close], axis=1)
+        true_range = ranges.max(axis=1)
+        df['ATR'] = true_range.rolling(14).mean()
+        
+        # Money Flow Index (MFI)
+        typical_price = (df['High'] + df['Low'] + df['Close']) / 3
+        money_flow = typical_price * df['Volume']
+        
+        positive_flow = money_flow.where(typical_price > typical_price.shift(1), 0).rolling(14).sum()
+        negative_flow = money_flow.where(typical_price < typical_price.shift(1), 0).rolling(14).sum()
+        mfi_ratio = positive_flow / negative_flow
+        df['MFI'] = 100 - (100 / (1 + mfi_ratio))
+        
+        # Commodity Channel Index (CCI)
+        mad = typical_price.rolling(20).apply(lambda x: np.mean(np.abs(x - x.mean())))
+        df['CCI'] = (typical_price - typical_price.rolling(20).mean()) / (0.015 * mad)
+        
+        # Rate of Change (ROC)
+        df['ROC'] = ((df['Close'] - df['Close'].shift(12)) / df['Close'].shift(12)) * 100
+        
+        # Support and Resistance levels
+        df['Resistance_20'] = df['High'].rolling(20).max()
+        df['Support_20'] = df['Low'].rolling(20).min()
+        df['Distance_to_Resistance'] = (df['Resistance_20'] - df['Close']) / df['Close'] * 100
+        df['Distance_to_Support'] = (df['Close'] - df['Support_20']) / df['Close'] * 100
+        
+        # Price patterns
+        df['Higher_High'] = ((df['High'] > df['High'].shift(1)) & (df['High'].shift(1) > df['High'].shift(2))).astype(int)
+        df['Lower_Low'] = ((df['Low'] < df['Low'].shift(1)) & (df['Low'].shift(1) < df['Low'].shift(2))).astype(int)
+        
+        # Volatility indicators
+        df['Volatility'] = df['Close'].pct_change().rolling(20).std() * np.sqrt(252)  # Annualized
+        df['BB_Squeeze'] = (df['BB_Upper'] - df['BB_Lower']) / df['BB_Middle']
+        
+        return df
+    except Exception as e:
+        st.warning(f"Error calculating enhanced indicators: {e}")
+        return df
+
+
+def get_comprehensive_stock_analysis(symbol):
+    """Get comprehensive analysis with fundamental and technical data."""
+    try:
+        stock = yf.Ticker(symbol)
+        
+        # Get stock info
+        info = stock.info
+        
+        # Get historical data
+        df = stock.history(period="1y")
+        if df.empty:
+            return None
+        
+        # Calculate enhanced indicators
+        df = calculate_enhanced_technical_indicators(df)
+        
+        current_price = df['Close'].iloc[-1]
+        
+        # Technical analysis summary
+        latest = df.iloc[-1]
+        technical_signals = {
+            'RSI': 'Overbought' if latest['RSI'] > 70 else 'Oversold' if latest['RSI'] < 30 else 'Neutral',
+            'RSI_Value': latest['RSI'],
+            'MACD_Signal': 'Bullish' if latest['MACD'] > latest['MACD_Signal'] else 'Bearish',
+            'MACD_Value': latest['MACD'],
+            'BB_Position': 'Upper' if current_price > latest['BB_Upper'] else 'Lower' if current_price < latest['BB_Lower'] else 'Middle',
+            'Stochastic': 'Overbought' if latest['Stoch_K'] > 80 else 'Oversold' if latest['Stoch_K'] < 20 else 'Neutral',
+            'Williams_R': 'Overbought' if latest['Williams_R'] > -20 else 'Oversold' if latest['Williams_R'] < -80 else 'Neutral',
+            'MFI': 'Overbought' if latest['MFI'] > 80 else 'Oversold' if latest['MFI'] < 20 else 'Neutral',
+            'CCI': 'Overbought' if latest['CCI'] > 100 else 'Oversold' if latest['CCI'] < -100 else 'Neutral',
+            'Volume_Trend': 'High' if latest['Volume_Ratio'] > 1.5 else 'Normal',
+            'Trend_Direction': 'Uptrend' if current_price > latest['SMA_50'] else 'Downtrend',
+            'Volatility': 'High' if latest['Volatility'] > 0.3 else 'Medium' if latest['Volatility'] > 0.2 else 'Low'
+        }
+        
+        # Support and Resistance
+        support_resistance = {
+            'support_20d': latest['Support_20'],
+            'resistance_20d': latest['Resistance_20'],
+            'distance_to_support': latest['Distance_to_Support'],
+            'distance_to_resistance': latest['Distance_to_Resistance']
+        }
+        
+        # Fundamental metrics
+        fundamentals = {
+            'pe_ratio': info.get('trailingPE'),
+            'pb_ratio': info.get('priceToBook'),
+            'debt_to_equity': info.get('debtToEquity'),
+            'roe': info.get('returnOnEquity'),
+            'profit_margin': info.get('profitMargins'),
+            'market_cap': info.get('marketCap'),
+            'beta': info.get('beta'),
+            'dividend_yield': info.get('dividendYield')
+        }
+        
+        # Price momentum analysis
+        returns_1d = (current_price - df['Close'].iloc[-2]) / df['Close'].iloc[-2] * 100
+        returns_1w = (current_price - df['Close'].iloc[-6]) / df['Close'].iloc[-6] * 100 if len(df) >= 6 else 0
+        returns_1m = (current_price - df['Close'].iloc[-21]) / df['Close'].iloc[-21] * 100 if len(df) >= 21 else 0
+        returns_3m = (current_price - df['Close'].iloc[-63]) / df['Close'].iloc[-63] * 100 if len(df) >= 63 else 0
+        
+        momentum = {
+            '1_day': returns_1d,
+            '1_week': returns_1w,
+            '1_month': returns_1m,
+            '3_month': returns_3m
+        }
+        
+        return {
+            'symbol': symbol,
+            'current_price': current_price,
+            'technical_signals': technical_signals,
+            'support_resistance': support_resistance,
+            'fundamentals': fundamentals,
+            'momentum': momentum,
+            'company_info': {
+                'name': info.get('longName', symbol),
+                'sector': info.get('sector', 'N/A'),
+                'industry': info.get('industry', 'N/A')
+            }
+        }
+        
+    except Exception as e:
+        st.error(f"Error in comprehensive analysis: {e}")
+        return None
+
+
 def get_ai_analysis(symbol, df, analysis_type="comprehensive"):
-    """Get AI-powered stock analysis using Azure OpenAI."""
+    """Get enhanced AI-powered stock analysis using Azure OpenAI."""
     if not all([AZURE_OPENAI_KEY, AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_DEPLOYMENT]):
         return "❌ Azure OpenAI credentials not configured. Please check your .env file."
     
@@ -228,59 +375,101 @@ def get_ai_analysis(symbol, df, analysis_type="comprehensive"):
             api_version="2024-02-15-preview"
         )
         
-        # Prepare data summary
-        if df is None or df.empty:
-            return "❌ No data available for analysis."
+        # Get comprehensive analysis data
+        analysis_data = get_comprehensive_stock_analysis(symbol)
         
-        latest_data = df.tail(5)
-        current_price = df['Close'].iloc[-1]
-        sma_20 = df['SMA_20'].iloc[-1] if 'SMA_20' in df and pd.notna(df['SMA_20'].iloc[-1]) else None
-        sma_50 = df['SMA_50'].iloc[-1] if 'SMA_50' in df and pd.notna(df['SMA_50'].iloc[-1]) else None
-        rsi = df['RSI'].iloc[-1] if 'RSI' in df and pd.notna(df['RSI'].iloc[-1]) else None
-        macd = df['MACD'].iloc[-1] if 'MACD' in df and pd.notna(df['MACD'].iloc[-1]) else None
+        if not analysis_data:
+            return "❌ Could not gather comprehensive data for analysis."
+        
+        # Create enhanced prompt with all available data
+        tech_signals = analysis_data['technical_signals']
+        support_resistance = analysis_data['support_resistance']
+        fundamentals = analysis_data['fundamentals']
+        momentum = analysis_data['momentum']
+        company_info = analysis_data['company_info']
+        current_price = analysis_data['current_price']
         
         if analysis_type == "comprehensive":
             prompt = f"""
-            Analyze {symbol} stock with the following technical data:
+            Perform a comprehensive analysis of {symbol} ({company_info['name']}) stock:
             
-            Current Price: ₹{current_price:.2f}
-            20-day SMA: {f'₹{sma_20:.2f}' if sma_20 else 'N/A'}
-            50-day SMA: {f'₹{sma_50:.2f}' if sma_50 else 'N/A'}
-            RSI: {f'{rsi:.2f}' if rsi else 'N/A'}
-            MACD: {f'{macd:.4f}' if macd else 'N/A'}
+            CURRENT MARKET DATA:
+            - Current Price: ₹{current_price:.2f}
+            - Sector: {company_info['sector']}
+            - Industry: {company_info['industry']}
             
-            Recent 5-day price data:
-            {latest_data[['Close', 'Volume']].to_string()}
+            TECHNICAL INDICATORS:
+            - RSI: {tech_signals['RSI']} (Value: {tech_signals['RSI_Value']:.1f})
+            - MACD Signal: {tech_signals['MACD_Signal']} (Value: {tech_signals['MACD_Value']:.4f})
+            - Bollinger Bands: Price at {tech_signals['BB_Position']} band
+            - Stochastic: {tech_signals['Stochastic']} (Stoch_K: {df['Stoch_K'].iloc[-1]:.1f} if 'Stoch_K' in df else 'N/A')
+            - Williams %R: {tech_signals['Williams_R']}
+            - Money Flow Index: {tech_signals['MFI']}
+            - CCI: {tech_signals['CCI']}
+            - Volume Trend: {tech_signals['Volume_Trend']}
+            - Overall Trend: {tech_signals['Trend_Direction']}
+            - Volatility: {tech_signals['Volatility']}
             
-            Provide a comprehensive analysis including:
-            1. Technical outlook (bullish/bearish/neutral)
-            2. Key support and resistance levels
-            3. Entry and exit recommendations
-            4. Risk assessment
-            5. Time horizon for the trade
+            SUPPORT & RESISTANCE:
+            - 20-day Support: ₹{support_resistance['support_20d']:.2f} (Distance: {support_resistance['distance_to_support']:.1f}%)
+            - 20-day Resistance: ₹{support_resistance['resistance_20d']:.2f} (Distance: {support_resistance['distance_to_resistance']:.1f}%)
             
-            Format as a clear, structured response with specific price levels and reasoning.
+            MOMENTUM ANALYSIS:
+            - 1-Day Return: {momentum['1_day']:.2f}%
+            - 1-Week Return: {momentum['1_week']:.2f}%
+            - 1-Month Return: {momentum['1_month']:.2f}%
+            - 3-Month Return: {momentum['3_month']:.2f}%
+            
+            FUNDAMENTAL METRICS:
+            - P/E Ratio: {fundamentals['pe_ratio']}
+            - P/B Ratio: {fundamentals['pb_ratio']}
+            - Debt-to-Equity: {fundamentals['debt_to_equity']}
+            - ROE: {fundamentals['roe']}
+            - Profit Margin: {fundamentals['profit_margin']}
+            - Beta: {fundamentals['beta']}
+            - Dividend Yield: {fundamentals['dividend_yield']}
+            
+            Based on this comprehensive data, provide:
+            
+            1. **RECOMMENDATION**: Clear BUY/SELL/HOLD with confidence level (1-10)
+            2. **TARGET PRICES**: Conservative, moderate, and aggressive targets
+            3. **RISK MANAGEMENT**: Stop-loss levels and position sizing
+            4. **ENTRY STRATEGY**: Optimal entry points and timing
+            5. **TIME HORIZON**: Short-term (1-4 weeks) and medium-term (1-3 months) outlook
+            6. **KEY CATALYSTS**: Events or factors that could drive price movement
+            7. **RISK FACTORS**: Major risks to watch
+            
+            Provide specific price levels, percentages, and actionable insights.
+            Consider the convergence/divergence of technical and fundamental factors.
             """
         else:
+            # Quick analysis with key metrics
             prompt = f"""
-            Quick technical analysis for {symbol}:
-            Current Price: ₹{current_price:.2f}
-            RSI: {f'{rsi:.2f}' if rsi else 'N/A'}
+            Quick analysis for {symbol}:
             
-            Provide a concise BUY/SELL/HOLD recommendation with:
-            - Target price
-            - Stop loss
-            - Brief rationale
+            Current Price: ₹{current_price:.2f}
+            RSI: {tech_signals['RSI']} ({tech_signals['RSI_Value']:.1f})
+            MACD: {tech_signals['MACD_Signal']}
+            Trend: {tech_signals['Trend_Direction']}
+            Support: ₹{support_resistance['support_20d']:.2f}
+            Resistance: ₹{support_resistance['resistance_20d']:.2f}
+            1-Month Return: {momentum['1_month']:.1f}%
+            
+            Provide:
+            - BUY/SELL/HOLD recommendation with confidence (1-10)
+            - Target price and stop loss
+            - Key reason for recommendation
+            - Risk level (Low/Medium/High)
             """
         
         response = client.chat.completions.create(
             model=AZURE_OPENAI_DEPLOYMENT,
             messages=[
-                {"role": "system", "content": "You are an expert stock analyst providing technical analysis for Indian stocks. Be specific with price levels and provide actionable insights."},
+                {"role": "system", "content": "You are an expert Indian stock analyst with 15+ years experience. Provide specific, actionable insights with exact price levels. Consider both technical and fundamental factors. Be confident but realistic in your predictions."},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=500 if analysis_type == "quick" else 1000,
-            temperature=0.7
+            max_tokens=800 if analysis_type == "quick" else 1500,
+            temperature=0.6
         )
         
         return response.choices[0].message.content.strip()
@@ -505,8 +694,8 @@ def main():
     with st.sidebar:
         selected = option_menu(
             "Trading Dashboard",
-            ["Market Analysis", "AI Recommendations", "News & Insights"],
-            icons=['graph-up', 'robot', 'newspaper'],
+            ["Market Analysis", "AI Recommendations", "Advanced Predictions", "News & Insights"],
+            icons=['graph-up', 'robot', 'brain', 'newspaper'],
             menu_icon="cast",
             default_index=0
         )
@@ -908,6 +1097,218 @@ def main():
                 - Avoid emotional trading decisions
                 - Keep some cash reserves for opportunities
                 """)
+    
+    elif selected == "Advanced Predictions":
+        st.header("🧠 Advanced Prediction Engine")
+        st.markdown("*Enhanced AI predictions with comprehensive technical and fundamental analysis*")
+        
+        # Input section
+        col1, col2, col3 = st.columns([2, 1, 1])
+        
+        with col1:
+            symbol = st.text_input("Enter Stock Symbol for Advanced Analysis", value="RELIANCE.NS")
+        with col2:
+            prediction_type = st.selectbox("Prediction Type", ["Comprehensive", "Quick", "Multi-Timeframe"])
+        with col3:
+            confidence_threshold = st.slider("Min Confidence", 50, 95, 75)
+        
+        if symbol and st.button("🚀 Generate Advanced Prediction", type="primary"):
+            with st.spinner("Running advanced analysis..."):
+                
+                # Get comprehensive analysis
+                analysis_data = get_comprehensive_stock_analysis(symbol)
+                
+                if analysis_data:
+                    current_price = analysis_data['current_price']
+                    tech_signals = analysis_data['technical_signals']
+                    support_resistance = analysis_data['support_resistance']
+                    fundamentals = analysis_data['fundamentals']
+                    momentum = analysis_data['momentum']
+                    company_info = analysis_data['company_info']
+                    
+                    # Display key metrics dashboard
+                    st.subheader(f"📊 {company_info['name']} Analysis Dashboard")
+                    
+                    # Key metrics row
+                    col1, col2, col3, col4, col5 = st.columns(5)
+                    with col1:
+                        st.metric("Current Price", f"₹{current_price:.2f}")
+                    with col2:
+                        rsi_color = "🔴" if tech_signals['RSI_Value'] > 70 else "🟢" if tech_signals['RSI_Value'] < 30 else "🟡"
+                        st.metric("RSI", f"{tech_signals['RSI_Value']:.1f} {rsi_color}")
+                    with col3:
+                        trend_color = "🟢" if tech_signals['Trend_Direction'] == 'Uptrend' else "🔴"
+                        st.metric("Trend", f"{tech_signals['Trend_Direction']} {trend_color}")
+                    with col4:
+                        momentum_color = "🟢" if momentum['1_month'] > 0 else "🔴"
+                        st.metric("1M Return", f"{momentum['1_month']:.1f}% {momentum_color}")
+                    with col5:
+                        vol_color = "🔴" if tech_signals['Volatility'] == 'High' else "🟡" if tech_signals['Volatility'] == 'Medium' else "🟢"
+                        st.metric("Volatility", f"{tech_signals['Volatility']} {vol_color}")
+                    
+                    # Technical signals overview
+                    st.subheader("⚡ Technical Signals Summary")
+                    
+                    signal_cols = st.columns(4)
+                    signals = [
+                        ("RSI", tech_signals['RSI']),
+                        ("MACD", tech_signals['MACD_Signal']),
+                        ("Stochastic", tech_signals['Stochastic']),
+                        ("Williams %R", tech_signals['Williams_R'])
+                    ]
+                    
+                    for i, (indicator, signal) in enumerate(signals):
+                        with signal_cols[i]:
+                            color = "🟢" if signal in ['Neutral', 'Bullish'] else "🔴" if signal in ['Overbought', 'Bearish'] else "🟡"
+                            st.metric(indicator, f"{signal} {color}")
+                    
+                    # Support and Resistance levels
+                    st.subheader("📈 Key Levels")
+                    
+                    level_cols = st.columns(4)
+                    with level_cols[0]:
+                        st.metric("Support", f"₹{support_resistance['support_20d']:.2f}", 
+                                f"{support_resistance['distance_to_support']:.1f}% away")
+                    with level_cols[1]:
+                        st.metric("Resistance", f"₹{support_resistance['resistance_20d']:.2f}", 
+                                f"{support_resistance['distance_to_resistance']:.1f}% away")
+                    with level_cols[2]:
+                        pe_ratio = fundamentals.get('pe_ratio', 'N/A')
+                        st.metric("P/E Ratio", pe_ratio if pe_ratio != 'N/A' else 'N/A')
+                    with level_cols[3]:
+                        beta = fundamentals.get('beta', 'N/A')
+                        beta_str = f"{beta:.2f}" if isinstance(beta, (int, float)) else 'N/A'
+                        st.metric("Beta", beta_str)
+                    
+                    # Enhanced AI Analysis
+                    st.subheader("🤖 Enhanced AI Prediction")
+                    
+                    # Get stock data for AI analysis
+                    df = get_stock_data_with_indicators(symbol, "1y")
+                    if df is not None:
+                        df = calculate_enhanced_technical_indicators(df)
+                        
+                        analysis = get_ai_analysis(symbol, df, prediction_type.lower())
+                        
+                        # Display AI analysis in a nice format
+                        st.markdown("### 🎯 AI Analysis Results")
+                        st.write(analysis)
+                        
+                        # Additional insights based on convergence of signals
+                        st.subheader("🔍 Signal Convergence Analysis")
+                        
+                        # Count bullish vs bearish signals
+                        bullish_signals = 0
+                        total_signals = 0
+                        
+                        signal_analysis = {
+                            'RSI': tech_signals['RSI'] in ['Oversold', 'Neutral'],
+                            'MACD': tech_signals['MACD_Signal'] == 'Bullish',
+                            'Trend': tech_signals['Trend_Direction'] == 'Uptrend',
+                            'Momentum': momentum['1_month'] > 0,
+                            'Volume': tech_signals['Volume_Trend'] == 'High'
+                        }
+                        
+                        for signal, is_bullish in signal_analysis.items():
+                            total_signals += 1
+                            if is_bullish:
+                                bullish_signals += 1
+                        
+                        signal_strength = (bullish_signals / total_signals) * 100
+                        
+                        col1, col2, col3 = st.columns(3)
+                        with col1:
+                            st.metric("Signal Strength", f"{signal_strength:.0f}%")
+                        with col2:
+                            overall_sentiment = "Bullish" if signal_strength > 60 else "Bearish" if signal_strength < 40 else "Neutral"
+                            sentiment_color = "🟢" if overall_sentiment == "Bullish" else "🔴" if overall_sentiment == "Bearish" else "🟡"
+                            st.metric("Overall Sentiment", f"{overall_sentiment} {sentiment_color}")
+                        with col3:
+                            confidence = min(95, max(50, signal_strength + 10))
+                            conf_color = "🟢" if confidence >= confidence_threshold else "🟡"
+                            st.metric("Confidence", f"{confidence:.0f}% {conf_color}")
+                        
+                        # Risk assessment
+                        st.subheader("⚠️ Risk Assessment")
+                        
+                        risk_factors = []
+                        if tech_signals['Volatility'] == 'High':
+                            risk_factors.append("High volatility increases position risk")
+                        if fundamentals.get('pe_ratio') and fundamentals['pe_ratio'] > 30:
+                            risk_factors.append("High P/E ratio suggests overvaluation")
+                        if tech_signals['RSI'] == 'Overbought':
+                            risk_factors.append("RSI indicates overbought conditions")
+                        if momentum['1_month'] < -10:
+                            risk_factors.append("Strong negative momentum in past month")
+                        
+                        if risk_factors:
+                            for risk in risk_factors:
+                                st.warning(f"⚠️ {risk}")
+                        else:
+                            st.success("✅ No major risk factors identified")
+                        
+                        # Recommendation summary
+                        with st.expander("📋 Quick Recommendation Summary"):
+                            if signal_strength > 70:
+                                st.success(f"""
+                                **Strong BUY Signal** 
+                                - Signal Strength: {signal_strength:.0f}%
+                                - Confidence: {confidence:.0f}%
+                                - Target: ₹{support_resistance['resistance_20d']:.2f}
+                                - Stop Loss: ₹{support_resistance['support_20d']:.2f}
+                                """)
+                            elif signal_strength > 50:
+                                st.info(f"""
+                                **Moderate BUY Signal**
+                                - Signal Strength: {signal_strength:.0f}%
+                                - Confidence: {confidence:.0f}%
+                                - Consider partial position
+                                """)
+                            elif signal_strength < 30:
+                                st.error(f"""
+                                **SELL/AVOID Signal**
+                                - Signal Strength: {signal_strength:.0f}%
+                                - Multiple bearish indicators
+                                - Consider exit or avoid entry
+                                """)
+                            else:
+                                st.warning(f"""
+                                **HOLD/NEUTRAL**
+                                - Signal Strength: {signal_strength:.0f}%
+                                - Mixed signals, wait for clearer direction
+                                """)
+                else:
+                    st.error("Could not fetch comprehensive analysis data.")
+        
+        # Educational content
+        with st.expander("📚 Understanding Advanced Predictions"):
+            st.markdown("""
+            **Our Advanced Prediction Engine analyzes 20+ indicators:**
+            
+            **Technical Indicators:**
+            - RSI, MACD, Stochastic, Williams %R
+            - Money Flow Index (MFI), CCI, Rate of Change
+            - Support/Resistance levels, Bollinger Bands
+            - Volume analysis and momentum indicators
+            
+            **Fundamental Metrics:**
+            - P/E Ratio, P/B Ratio, Debt-to-Equity
+            - ROE, Profit Margins, Beta
+            - Market Cap, Dividend Yield
+            
+            **Signal Convergence:**
+            - Combines multiple timeframes
+            - Weighs technical vs fundamental signals
+            - Provides confidence scoring
+            - Risk assessment integration
+            
+            **Confidence Levels:**
+            - 90%+: Very High (strong convergence)
+            - 80-90%: High (good agreement)
+            - 70-80%: Medium (moderate signals)
+            - 60-70%: Low (weak signals)
+            - <60%: Very Low (conflicting signals)
+            """)
     
     elif selected == "News & Insights":
         create_news_ui()
