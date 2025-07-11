@@ -2,10 +2,10 @@
 #!/bin/bash
 
 # Set variables
-RESOURCE_GROUP="rg-agrimayadev-5135_ai"
-APP_NAME="rag-bot-app"
-LOCATION="eastus"
-PLAN_NAME="rag-bot-plan"
+RESOURCE_GROUP="Your Resource Group"
+APP_NAME="Your App"
+LOCATION="Your Location"
+PLAN_NAME="Your Plan"
 
 # Create App Service Plan
 az appservice plan create \
@@ -28,7 +28,7 @@ az webapp config appsettings set \
   --name $APP_NAME \
   --settings \
     AZURE_OPENAI_API_KEY="your-api-key" \
-    AZURE_OPENAI_ENDPOINT="https://liftr-platorm-service.cognitiveservices.azure.com/" \
+    AZURE_OPENAI_ENDPOINT="your-openapi-endpoint" \
     AZURE_OPENAI_DEPLOYMENT_NAME="gpt-4.1" \
     AZURE_OPENAI_EMBEDDING_DEPLOYMENT="text-embedding-ada-002" \
     AZURE_OPENAI_API_VERSION="2024-12-01-preview"
