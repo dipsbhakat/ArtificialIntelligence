@@ -8,15 +8,10 @@ from plotly.subplots import make_subplots
 import os
 from openai import AzureOpenAI
 import dotenv
-from datetime import datetime, timedelta
-import sqlite3
-import json
+from datetime import datetime
 from streamlit_option_menu import option_menu
-from st_aggrid import AgGrid, GridOptionsBuilder
-import requests
-from bs4 import BeautifulSoup
 
-# Import custom modules
+
 from news_manager import create_news_ui
 from prediction_score import calculate_prediction_score
 
@@ -28,25 +23,6 @@ AZURE_OPENAI_KEY = os.getenv("AZURE_OPENAI_KEY")
 AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")
 
-# Database setup
-def init_database():
-    """Initialize SQLite database for trading app."""
-    conn = sqlite3.connect('trading_app.db')
-    cursor = conn.cursor()
-    
-    # Basic table for any future needs
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS app_data (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            symbol TEXT NOT NULL,
-            data_type TEXT NOT NULL,
-            data_value TEXT,
-            created_date TEXT NOT NULL
-        )
-    ''')
-    
-    conn.commit()
-    conn.close()
 
 # Technical Analysis Functions
 def calculate_technical_indicators(df):
@@ -391,6 +367,7 @@ def get_ai_analysis(symbol, df, analysis_type="comprehensive"):
         current_price = analysis_data['current_price']
         
         if analysis_type == "comprehensive":
+            stoch_k_val = df['Stoch_K'].iloc[-1] if 'Stoch_K' in df.columns else 'N/A'
             prompt = f"""
             Perform a comprehensive analysis of {symbol} ({company_info['name']}) stock:
             
@@ -403,7 +380,7 @@ def get_ai_analysis(symbol, df, analysis_type="comprehensive"):
             - RSI: {tech_signals['RSI']} (Value: {tech_signals['RSI_Value']:.1f})
             - MACD Signal: {tech_signals['MACD_Signal']} (Value: {tech_signals['MACD_Value']:.4f})
             - Bollinger Bands: Price at {tech_signals['BB_Position']} band
-            - Stochastic: {tech_signals['Stochastic']} (Stoch_K: {df['Stoch_K'].iloc[-1]:.1f} if 'Stoch_K' in df else 'N/A')
+            - Stochastic: {tech_signals['Stochastic']} (Stoch_K: {stoch_k_val})
             - Williams %R: {tech_signals['Williams_R']}
             - Money Flow Index: {tech_signals['MFI']}
             - CCI: {tech_signals['CCI']}
@@ -800,9 +777,6 @@ def main():
         page_icon="📈",
         layout="wide"
     )
-    
-    # Initialize database
-    init_database()
     
     st.title("🚀 Advanced Trading Dashboard")
     st.markdown("*AI-Powered Stock Analysis & Market Insights*")

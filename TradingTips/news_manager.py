@@ -345,10 +345,14 @@ def create_news_ui():
         news_count = st.selectbox("Number of articles", [5, 10, 15, 20], index=1)
     
     if st.button("Refresh News"):
-        st.rerun()
-    
-    news_items = news_manager.get_market_news(news_count)
-    
+        st.session_state["force_news_refresh"] = True
+
+    # Only fetch news if not cached or refresh requested
+    if "news_cache" not in st.session_state or st.session_state.get("force_news_refresh", False):
+        st.session_state["news_cache"] = news_manager.get_market_news(news_count)
+        st.session_state["force_news_refresh"] = False
+    news_items = st.session_state["news_cache"]
+
     for i, news in enumerate(news_items):
         with st.expander(f"📄 {news['title']}", expanded=(i == 0)):
             col1, col2 = st.columns([3, 1])
