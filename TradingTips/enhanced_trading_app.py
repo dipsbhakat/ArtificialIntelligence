@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 
 # Import custom modules
 from news_manager import create_news_ui
+from prediction_score import calculate_prediction_score
 
 # Load environment variables
 dotenv.load_dotenv()
@@ -486,7 +487,7 @@ def get_ai_analysis(symbol, df, analysis_type="comprehensive"):
             return f"❌ Error getting AI analysis: {error_msg}"
 
 def get_nifty_top_picks():
-    """Get AI recommendations for Nifty 50 stocks."""
+    """Get AI recommendations for Nifty 50 stocks with enhanced prediction scoring."""
     if not all([AZURE_OPENAI_KEY, AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_DEPLOYMENT]):
         return "Azure OpenAI credentials not configured."
     
@@ -503,42 +504,90 @@ def get_nifty_top_picks():
             api_version="2024-02-15-preview"
         )
         
-        # Get basic data for top stocks
-        stock_data = []
+        # Get enhanced data for top stocks with prediction scores
+        stock_analysis = []
         for symbol in nifty_stocks[:5]:  # Analyze top 5 for performance
             try:
-                stock = yf.Ticker(symbol)
-                hist = stock.history(period="1mo")
-                if not hist.empty:
-                    current_price = hist['Close'].iloc[-1]
-                    month_return = ((current_price - hist['Close'].iloc[0]) / hist['Close'].iloc[0]) * 100
-                    stock_data.append(f"{symbol}: Price ₹{current_price:.2f}, 1M Return: {month_return:.1f}%")
-            except:
+                # Get stock data with technical indicators
+                df = get_stock_data_with_indicators(symbol, period="3mo")
+                if df is not None and not df.empty:
+                    current_price = df['Close'].iloc[-1]
+                    month_return = ((current_price - df['Close'].iloc[0]) / df['Close'].iloc[0]) * 100
+                    
+                    # Calculate prediction score
+                    pred_score, recommendation = calculate_prediction_score(df)
+                    
+                    # Get recent trend
+                    week_return = ((current_price - df['Close'].iloc[-5]) / df['Close'].iloc[-5]) * 100 if len(df) >= 5 else 0
+                    
+                    # Technical indicators summary
+                    rsi = df['RSI'].iloc[-1] if 'RSI' in df.columns else 50
+                    macd = df['MACD'].iloc[-1] if 'MACD' in df.columns else 0
+                    
+                    stock_analysis.append({
+                        'symbol': symbol,
+                        'price': current_price,
+                        'month_return': month_return,
+                        'week_return': week_return,
+                        'prediction_score': pred_score,
+                        'recommendation': recommendation,
+                        'rsi': rsi,
+                        'macd': macd
+                    })
+            except Exception as e:
+                st.warning(f"Could not analyze {symbol}: {str(e)}")
                 continue
         
+        if not stock_analysis:
+            return "Unable to analyze stocks at this time. Please try again later."
+        
+        # Sort by prediction score
+        stock_analysis.sort(key=lambda x: x['prediction_score'], reverse=True)
+        
+        # Create enhanced analysis text
+        analysis_text = "**Current Market Analysis:**\n\n"
+        for i, stock in enumerate(stock_analysis):
+            analysis_text += f"{i+1}. **{stock['symbol']}** - Price: ₹{stock['price']:.2f}\n"
+            analysis_text += f"   - Prediction Score: {stock['prediction_score']}/100 ({stock['recommendation']})\n"
+            analysis_text += f"   - 1M Return: {stock['month_return']:.1f}% | 1W Return: {stock['week_return']:.1f}%\n"
+            analysis_text += f"   - RSI: {stock['rsi']:.1f} | MACD: {stock['macd']:.4f}\n\n"
+        
+        # Enhanced AI prompt with prediction scores
         prompt = f"""
-        Based on current market conditions and the following Nifty 50 stock data:
-        
-        {chr(10).join(stock_data)}
-        
-        Provide your top 3 stock recommendations for the next 1-3 months with:
-        1. Stock name and symbol
-        2. Target price
-        3. Stop loss
-        4. Investment rationale
-        5. Risk level (Low/Medium/High)
-        
-        Consider technical analysis, fundamental strength, and market sentiment.
+        As an expert Indian stock market analyst, analyze the following comprehensive stock data with prediction scores:
+
+        {analysis_text}
+
+        Based on this technical analysis and prediction scoring (0-100 scale), provide your TOP 3 STOCK RECOMMENDATIONS for the next 1-3 months:
+
+        For EACH recommendation, provide:
+        1. **Stock Name & Symbol**
+        2. **Current Analysis** (why this stock is recommended)
+        3. **Target Price** (realistic based on current price and trends)
+        4. **Stop Loss** (risk management level)
+        5. **Investment Rationale** (fundamental + technical reasons)
+        6. **Risk Level** (Low/Medium/High)
+        7. **Time Horizon** (Short/Medium/Long term outlook)
+        8. **Key Catalysts** (what could drive the stock higher)
+
+        Consider:
+        - Technical indicators (RSI, MACD, moving averages)
+        - Prediction scores and recommendations
+        - Recent price momentum and volume
+        - Market sentiment and sector trends
+        - Risk-reward ratio
+
+        Present each recommendation in a clear, structured format with specific actionable insights.
         """
         
         response = client.chat.completions.create(
             model=AZURE_OPENAI_DEPLOYMENT,
             messages=[
-                {"role": "system", "content": "You are an expert stock analyst providing recommendations for Indian stocks."},
+                {"role": "system", "content": "You are a senior equity research analyst with 15+ years of experience in Indian stock markets. Provide detailed, actionable investment recommendations with specific price targets and risk assessments."},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=800,
-            temperature=0.7
+            max_tokens=1500,
+            temperature=0.6
         )
         
         return response.choices[0].message.content.strip()
@@ -631,9 +680,23 @@ def get_filtered_stocks(sector_filter=None, market_cap_filter=None, pe_filter=No
 
 
 def get_ai_stock_screener(criteria):
-    """Get AI-powered stock screening based on specific criteria."""
+    """Get AI-powered stock screening based on specific criteria with prediction scores."""
     if not all([AZURE_OPENAI_KEY, AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_DEPLOYMENT]):
         return "Azure OpenAI credentials not configured."
+    
+    # Expanded stock universe based on sector preference
+    sector_stocks = {
+        'Technology': ["TCS.NS", "INFY.NS", "HCLTECH.NS", "WIPRO.NS", "TECHM.NS"],
+        'Banking': ["HDFCBANK.NS", "ICICIBANK.NS", "SBIN.NS", "KOTAKBANK.NS", "AXISBANK.NS"],
+        'FMCG': ["HINDUNILVR.NS", "NESTLEIND.NS", "ITC.NS", "BRITANNIA.NS"],
+        'Auto': ["MARUTI.NS", "TATAMOTORS.NS", "M&M.NS", "BAJAJ-AUTO.NS"],
+        'Pharma': ["SUNPHARMA.NS", "DRREDDY.NS", "CIPLA.NS", "DIVISLAB.NS"],
+        'Energy': ["RELIANCE.NS", "ONGC.NS", "IOC.NS", "BPCL.NS"],
+        'Any': ["RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "ICICIBANK.NS", "HINDUNILVR.NS", "INFY.NS"]
+    }
+    
+    sector = criteria.get('sector', 'Any')
+    stocks_to_analyze = sector_stocks.get(sector, sector_stocks['Any'])
     
     try:
         client = AzureOpenAI(
@@ -642,33 +705,87 @@ def get_ai_stock_screener(criteria):
             api_version="2024-02-15-preview"
         )
         
+        # Analyze stocks with prediction scores
+        stock_analysis = []
+        for symbol in stocks_to_analyze[:6]:  # Analyze top 6 stocks
+            try:
+                df = get_stock_data_with_indicators(symbol, period="3mo")
+                if df is not None and not df.empty:
+                    current_price = df['Close'].iloc[-1]
+                    pred_score, recommendation = calculate_prediction_score(df)
+                    
+                    # Calculate performance metrics
+                    month_return = ((current_price - df['Close'].iloc[0]) / df['Close'].iloc[0]) * 100
+                    volatility = df['Close'].pct_change().std() * np.sqrt(252) * 100  # Annualized volatility
+                    
+                    stock_analysis.append({
+                        'symbol': symbol,
+                        'price': current_price,
+                        'prediction_score': pred_score,
+                        'recommendation': recommendation,
+                        'month_return': month_return,
+                        'volatility': volatility
+                    })
+            except Exception as e:
+                continue
+        
+        if not stock_analysis:
+            return "Unable to analyze stocks for the selected criteria. Please try again."
+        
+        # Sort by prediction score and filter based on criteria
+        stock_analysis.sort(key=lambda x: x['prediction_score'], reverse=True)
+        
+        # Filter based on risk tolerance
+        risk_tolerance = criteria.get('risk', 'Medium')
+        if risk_tolerance == 'Low':
+            stock_analysis = [s for s in stock_analysis if s['volatility'] < 25]
+        elif risk_tolerance == 'High':
+            stock_analysis = [s for s in stock_analysis if s['prediction_score'] >= 60]
+        
+        # Create analysis summary
+        analysis_summary = f"**Screening Results for {sector} Sector:**\n\n"
+        for i, stock in enumerate(stock_analysis[:5]):
+            analysis_summary += f"{i+1}. **{stock['symbol']}** - ₹{stock['price']:.2f}\n"
+            analysis_summary += f"   - Prediction Score: {stock['prediction_score']}/100 ({stock['recommendation']})\n"
+            analysis_summary += f"   - 3M Return: {stock['month_return']:.1f}% | Volatility: {stock['volatility']:.1f}%\n\n"
+        
+        # Enhanced prompt with prediction data
         prompt = f"""
-        As an expert stock analyst, recommend Indian stocks based on these criteria:
-        
-        Investment Strategy: {criteria.get('strategy', 'Growth')}
-        Risk Tolerance: {criteria.get('risk', 'Medium')}
-        Time Horizon: {criteria.get('time_horizon', '6-12 months')}
-        Sector Preference: {criteria.get('sector', 'Any')}
-        Investment Amount: {criteria.get('amount', '₹1-5 Lakhs')}
-        
-        Provide 3-5 specific stock recommendations with:
-        1. Stock symbol and name
-        2. Current price and target price
-        3. Why it fits the criteria
-        4. Risk assessment
-        5. Entry strategy
-        
-        Focus on actionable insights for Indian stock market.
+        As an expert Indian stock analyst, provide personalized recommendations based on:
+
+        **Investment Criteria:**
+        - Strategy: {criteria.get('strategy', 'Growth')}
+        - Risk Tolerance: {criteria.get('risk', 'Medium')}
+        - Time Horizon: {criteria.get('time_horizon', '6-12 months')}
+        - Sector: {criteria.get('sector', 'Any')}
+        - Investment Amount: {criteria.get('amount', '₹1-5L')}
+        - Market Outlook: {criteria.get('market_outlook', 'Neutral')}
+
+        **Stock Analysis with Prediction Scores:**
+        {analysis_summary}
+
+        Provide your TOP 3-4 PERSONALIZED RECOMMENDATIONS with:
+
+        1. **Stock Selection & Rationale** (why it matches the criteria)
+        2. **Current Price & Target Price** (realistic based on analysis)
+        3. **Investment Strategy** (entry points, position sizing)
+        4. **Risk Assessment** (specific to user's risk tolerance)
+        5. **Time Horizon Fit** (short/medium/long term outlook)
+        6. **Sector Analysis** (why this sector fits current market)
+        7. **Action Plan** (when to buy, hold, review)
+
+        Consider the prediction scores, volatility, and user's specific requirements.
+        Provide actionable, personalized advice with specific entry and exit strategies.
         """
         
         response = client.chat.completions.create(
             model=AZURE_OPENAI_DEPLOYMENT,
             messages=[
-                {"role": "system", "content": "You are an expert Indian stock market analyst providing personalized investment recommendations."},
+                {"role": "system", "content": f"You are a certified financial planner specializing in Indian equities. Provide personalized investment advice for {risk_tolerance} risk investors with {criteria.get('time_horizon', '6-12 months')} investment horizon."},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=1000,
-            temperature=0.7
+            max_tokens=1200,
+            temperature=0.6
         )
         
         return response.choices[0].message.content.strip()
@@ -774,12 +891,23 @@ def main():
             
             with col2:
                 st.info("""
-                **Features:**
-                - Top 3 stock picks
-                - Target prices
-                - Stop loss levels
-                - Risk assessment
-                - Investment rationale
+                **Enhanced Features:**
+                - AI-powered prediction scoring (0-100)
+                - Technical indicator analysis
+                - Target prices & stop losses
+                - Risk assessment & recommendations
+                - Comprehensive investment rationale
+                - Real-time market sentiment
+                """)
+                
+                st.success("""
+                **Prediction Score Guide:**
+                - 75-100: Strong Buy
+                - 65-74: Buy  
+                - 55-64: Weak Buy
+                - 45-54: Hold
+                - 25-44: Sell
+                - 0-24: Strong Sell
                 """)
         
         with tab2:
