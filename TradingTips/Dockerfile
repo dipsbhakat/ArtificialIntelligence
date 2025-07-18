@@ -26,5 +26,5 @@ ENV STREAMLIT_SERVER_PORT=8501
 ENV STREAMLIT_SERVER_HEADLESS=true
 ENV STREAMLIT_SERVER_ENABLECORS=false
 
-# Run Streamlit
-CMD ["streamlit", "run", "enhanced_trading_app.py"]
+# Run Streamlit with enhanced app
+CMD ["streamlit", "run", "enhanced_trading_app_v2.py"]
